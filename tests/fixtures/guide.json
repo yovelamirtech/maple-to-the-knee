@@ -1,0 +1,161 @@
+{
+  "builds": [
+    {
+      "id": "fighter-sword",
+      "nameHe": "פייטר עם חרב",
+      "nameEn": "Fighter (Sword)",
+      "jobPath": [
+        "beginner",
+        "warrior",
+        "fighter"
+      ],
+      "apPlan": [],
+      "skillPlan": [],
+      "gearPath": [],
+      "tips": [],
+      "stages": [
+        {
+          "id": "maple-island",
+          "order": 1,
+          "titleHe": "מייפל איילנד",
+          "levelFrom": 1,
+          "levelTo": 10,
+          "job": "beginner",
+          "regionHe": "מייפל איילנד",
+          "goalHe": "להגיע לרמה 10 ולהפליג לוויקטוריה",
+          "availability": "live",
+          "tasks": [
+            {
+              "id": "t-quest-a",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "קווסט בדיקה א",
+              "titleEn": "Test t-quest-a",
+              "summary": "משימת בדיקה",
+              "requirements": {
+                "level": 2
+              },
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            },
+            {
+              "id": "t-train-a",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "מפת אימון בדיקה",
+              "titleEn": "Test t-train-a",
+              "summary": "משימת בדיקה",
+              "requirements": {
+                "level": 5
+              },
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            },
+            {
+              "id": "t-gear-1h",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "נשק חד-ידני",
+              "titleEn": "Test t-gear-1h",
+              "summary": "משימת בדיקה",
+              "requirements": {
+                "level": 8
+              },
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            },
+            {
+              "id": "t-gear-2h",
+              "type": "gear",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "נשק דו-ידני",
+              "titleEn": "Test t-gear-2h",
+              "summary": "משימת בדיקה",
+              "requirements": {
+                "level": 8
+              },
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            },
+            {
+              "id": "t-tip-a",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "טיפ בדיקה",
+              "titleEn": "Test t-tip-a",
+              "summary": "משימת בדיקה",
+              "requirements": {},
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            },
+            {
+              "id": "t-pq-a",
+              "type": "pq",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "פרטי בדיקה",
+              "titleEn": "Test t-pq-a",
+              "summary": "משימת בדיקה",
+              "requirements": {},
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            }
+          ]
+        },
+        {
+          "id": "job1-warrior",
+          "order": 2,
+          "titleHe": "ג׳וב 1: Warrior",
+          "levelFrom": 10,
+          "levelTo": 10,
+          "job": "beginner",
+          "regionHe": "פריון",
+          "goalHe": "לעבור ל-Warrior אצל Dances with Balrog בפריון ולשים SP ראשון ב-Power Strike",
+          "availability": "live",
+          "tasks": [
+            {
+              "id": "t-job-a",
+              "type": "job",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "מעבר ג׳וב בדיקה",
+              "titleEn": "Test t-job-a",
+              "summary": "משימת בדיקה",
+              "requirements": {
+                "level": 10
+              },
+              "sources": [
+                "https://example.test"
+              ],
+              "verified": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

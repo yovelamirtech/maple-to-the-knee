@@ -1,0 +1,104 @@
+{
+  "builds": [
+    {
+      "id": "fighter-sword",
+      "nameHe": "פייטר עם חרב",
+      "nameEn": "Fighter (Sword)",
+      "jobPath": [
+        "beginner",
+        "warrior",
+        "fighter"
+      ],
+      "apPlan": [],
+      "skillPlan": [],
+      "gearPath": [],
+      "tips": [],
+      "stages": [
+        {
+          "id": "maple-island",
+          "order": 1,
+          "titleHe": "מייפל איילנד",
+          "levelFrom": 1,
+          "levelTo": 10,
+          "job": "beginner",
+          "regionHe": "מייפל איילנד",
+          "goalHe": "להגיע לרמה 10 ולהפליג לוויקטוריה",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "job1-warrior",
+          "order": 2,
+          "titleHe": "ג׳וב 1: Warrior",
+          "levelFrom": 10,
+          "levelTo": 10,
+          "job": "beginner",
+          "regionHe": "פריון",
+          "goalHe": "לעבור ל-Warrior אצל Dances with Balrog בפריון ולשים SP ראשון ב-Power Strike",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "victoria-10-21",
+          "order": 3,
+          "titleHe": "אימון ראשון בוויקטוריה",
+          "levelFrom": 10,
+          "levelTo": 21,
+          "job": "warrior",
+          "regionHe": "פריון והנסיס",
+          "goalHe": "להגיע לרמה 21 עם נשק ראשון מחנות בפריון",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "victoria-21-30",
+          "order": 4,
+          "titleHe": "לקראת ג׳וב 2",
+          "levelFrom": 21,
+          "levelTo": 30,
+          "job": "warrior",
+          "regionHe": "קרנינג וויקטוריה",
+          "goalHe": "להגיע לרמה 30 עם חרב ברמה 30 ו-Power Strike מלא",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "job2-fighter",
+          "order": 5,
+          "titleHe": "ג׳וב 2: Fighter",
+          "levelFrom": 30,
+          "levelTo": 30,
+          "job": "warrior",
+          "regionHe": "פריון",
+          "goalHe": "לעבור את המבחן ב-West Rocky Mountain IV ולהפוך ל-Fighter",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "fighter-30-40",
+          "order": 6,
+          "titleHe": "פייטר 30–40",
+          "levelFrom": 30,
+          "levelTo": 40,
+          "job": "fighter",
+          "regionHe": "ויקטוריה",
+          "goalHe": "להגיע לרמה 40 עם Sword Mastery מלא",
+          "availability": "live",
+          "tasks": []
+        },
+        {
+          "id": "fighter-40-50",
+          "order": 7,
+          "titleHe": "פייטר 40–50",
+          "levelFrom": 40,
+          "levelTo": 50,
+          "job": "fighter",
+          "regionHe": "Forgotten Hollow ו-Excavation Site",
+          "goalHe": "להגיע לרמה 50",
+          "availability": "live",
+          "tasks": []
+        }
+      ]
+    }
+  ]
+}

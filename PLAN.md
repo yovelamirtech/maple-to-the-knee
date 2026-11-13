@@ -38,7 +38,7 @@
 - [Grand Launch Release Notes (Nexon)](https://www.nexon.com/maplestory/news/general/46506/grand-launch-release-notes): המקור הרשמי. **עדיף על פני כל מקור אחר.**
 - [maplestorywiki.net/w/Classic_World](https://maplestorywiki.net/w/Classic_World).
 
-> ⚠️ **רשת:** בסשן הראשון החיפוש עבד, אבל WebFetch נחסם ל-`meowdb.com` ול-`maplestorywiki.net` (ENOTFOUND). כדי לקרוא דפים מלאים צריך להוסיף את הדומיינים האלה, ואת שאר המקורות, ל-allowed hosts של סביבת הסשן. לבקש את זה מהמשתמש בתחילת שלב המחקר.
+> ⚠️ **רשת:** בסשן הראשון (בענן) WebFetch נחסם ל-`meowdb.com` ול-`maplestorywiki.net` (ENOTFOUND). **עדכון 2026-11-13 (B0):** בסשן שרץ על המחשב של המשתמש יש רשת פתוחה. `nexon.com`, `maplestorywiki.net`, `ms-classic.com` ו-`maplestory.io` עונים 200. `meowdb.com` מחזיר 403 לבקשות סקריפט (הגנת בוטים) ו-`maplestory.quest` מחזיר 503, אז אותם לנסות לקרוא דרך הדפדפן המובנה. בסשן ענן ייתכן שעדיין צריך לבקש allowed hosts.
 
 > ⚠️ **מקורות סותרים:** מדריכי הקהילה לא מסכימים על מקומות אימון. חלקם מתארים תוכן מלפני ה-Big Bang או מגרסת בדיקה. כלל: מקור רשמי > meowdb, ms-classic, maplestory.quest > כל השאר. כשיש סתירה, לכתוב את שתי האפשרויות או לבחור אחת ולתעד בהערות של הפריט.
 
@@ -201,7 +201,7 @@
   - כל ה-ids ייחודיים.
   - כל הפניה (npc, maps, monsters, items, skill) קיימת בקובץ המתאים.
   - בכל שלב לפחות משימת חובה אחת **לכל סגנון נשק**. כל משימת חובה עם `variant` צריכה מקבילה בסגנון השני, כדי ששני הסגנונות יוכלו לסיים את השלב. אף משימה מסוג `pq` לא מסומנת `required`.
-  - טווחי הרמות של השלבים רציפים ולא חופפים.
+  - טווחי הרמות של השלבים רציפים ולא חופפים: `levelFrom` של כל שלב שווה ל-`levelTo` של השלב הקודם (שלב של ג'וב הוא `10–10` או `30–30`).
   - לכל משימה יש לפחות `sources` אחד.
   - הסקריפט מדפיס כמה משימות `verified: false` יש.
 - `tsc --noEmit --checkJs app.js`, אם tsc זמין דרך npx.
@@ -283,11 +283,11 @@
 | id | משימה | סטטוס | מי ומתי | הערות |
 | --- | --- | --- | --- | --- |
 | A0 | התוכנית הזו (`PLAN.md`) | ✅ | 2026-11-08, session_01Xf6Hw2uSqcuSNJhE29W4f1 | |
-| A1 | שלד: `index.html`, `styles.css` ו-`app.js` מועתקים ומותאמים מ-arrow-to-the-knee, עם RTL, Heebo ובהיר/כהה | ⬜ | | |
-| A2 | טעינת `guide.json` והקבצים הנלווים, ושמירה ב-`localStorage` (4.3) כולל migration בסיסי | ⬜ | | |
-| A3 | מסך השלב הנוכחי: כותרת, מטרה, פס התקדמות, קבוצות לפי סוג, תגיות חובה/מומלץ/רשות | ⬜ | | |
-| A4 | V עם אנימציה, toast עם ביטול, וקטע "בוצע בשלב הזה" עם אפשרות להחזיר | ⬜ | | |
-| A5 | באנר סיום שלב ומעבר ל-`currentStage` הבא | ⬜ | | |
+| A1 | שלד: `index.html`, `styles.css` ו-`app.js` מועתקים ומותאמים מ-arrow-to-the-knee, עם RTL, Heebo ובהיר/כהה | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | צבעי מייפל (כתום), בלי Cinzel. הוסרו מ-CSS החלקים של מפות העולם. נשארו סגנונות sheet, חיפוש וטאבים בשביל A7 ו-A9 |
+| A2 | טעינת `guide.json` והקבצים הנלווים, ושמירה ב-`localStorage` (4.3) כולל migration בסיסי | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | `migrate()` ו-`cleanBuildState()` ב-`app.js`, עם שדה `v: 1`. `currentStage` לא קיים ← השלב הראשון שלא הושלם. עדיין נטען רק `guide.json`: את `maps`/`monsters`/`npcs`/`items` (קיימים כמערכים ריקים) יטען A7 |
+| A3 | מסך השלב הנוכחי: כותרת, מטרה, פס התקדמות, קבוצות לפי סוג, תגיות חובה/מומלץ/רשות | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | תגית: `required` ← חובה, `priority: low` או `pq` ← רשות, אחרת מומלץ. שלב בלי משימות מציג "התוכן לשלב הזה עוד בכתיבה". הכרטיס עוד לא נפתח בלחיצה (A7) |
+| A4 | V עם אנימציה, toast עם ביטול, וקטע "בוצע בשלב הזה" עם אפשרות להחזיר | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | `toggleTask`, `showToast`, `<details id="done-section">` |
+| A5 | באנר סיום שלב ומעבר ל-`currentStage` הבא | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | בלי סגנון נשק נבחר, השלב נחשב גמור כשמשימות החובה המשותפות ומשימות החובה של **אחד** הסגנונות סומנו (`stageProgress`). בשלב האחרון: "הגעת לרמה N, התוכן הבא בדרך" |
 | A6 | ציר השלבים, חצים, ופס "צופה בשלב אחר" | ⬜ | | |
 | A7 | חלון פרטי משימה (3.4): צעדים, NPC, מסלול, מפלצות, פרס, דרישות, מקורות | ⬜ | | |
 | A8 | טאב הבילד: טבלאות AP, SP והתקדמות נשק | ⬜ | | |
@@ -304,7 +304,7 @@
 
 | id | שלב | R מחקר | W כתיבה | V אימות | הערות |
 | --- | --- | --- | --- | --- | --- |
-| B0 | בקשה להוסיף hosts לרשת (meowdb.com, maplestorywiki.net, ms-classic.com, maplestory.quest, nexon.com) | ⬜ | | | נחסם ב-WebFetch בסשן הראשון |
+| B0 | בקשה להוסיף hosts לרשת (meowdb.com, maplestorywiki.net, ms-classic.com, maplestory.quest, nexon.com) | ✅ | | | 2026-11-13: לא נדרש בסשן מקומי. meowdb (403) ו-maplestory.quest (503) דרך הדפדפן המובנה. ראו ההערה בסעיף 1 |
 | B1 | `maple-island` (1–10) | ⬜ | ⬜ | ⬜ | |
 | B2 | `job1-warrior` (10) | ⬜ | ⬜ | ⬜ | |
 | B3 | `victoria-10-21` | ⬜ | ⬜ | ⬜ | |
@@ -333,7 +333,7 @@
 | id | משימה | סטטוס | מי ומתי | הערות |
 | --- | --- | --- | --- | --- |
 | D1 | `scripts/validate.py` (4.5) | ⬜ | | |
-| D2 | `// @ts-check` ו-JSDoc ב-`app.js`, ובדיקה עם `tsc --checkJs` | ⬜ | | |
+| D2 | `// @ts-check` ו-JSDoc ב-`app.js`, ובדיקה עם `tsc --checkJs` | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | עובר עם `npx -p typescript@5.6.3 tsc --noEmit --allowJs --checkJs --strict --target es2022 --lib es2022,dom,dom.iterable app.js`. להריץ שוב אחרי כל שינוי |
 | D3 | בדיקות זרימה ב-Playwright וצילומי מסך באייפון ובדסקטופ, בבהיר ובכהה | ⬜ | | |
 | D4 | GitHub Action שמריץ את `validate.py` | ⬜ | | |
 
@@ -381,3 +381,15 @@
 - **בעיות:** אין.
 - **הצעד הבא:** B0, ואז A1 ו-B1.
 
+### 2026-11-13 · Claude Code desktop d43eabf6
+- **מה נעשה:**
+  - B0: בדיקת רשת. בסשן מקומי אין צורך ב-allowed hosts (פירוט בסעיף 1).
+  - A1–A5: `index.html`, `styles.css` ו-`app.js` (עם `// @ts-check`), מותאמים מ-arrow-to-the-knee. מסך השלב הנוכחי, V עם אנימציה, toast עם ביטול, קטע "בוצע בשלב הזה", באנר סיום ומעבר לשלב הבא.
+  - `data/guide.json` עם 7 השלבים (id, כותרת, רמות, אזור, מטרה) ו-`tasks: []`. `data/maps.json`, `monsters.json`, `npcs.json` ו-`items.json` כמערכים ריקים.
+  - `tests/fixtures/guide.json`: משימות בדיקה (לא תוכן אמיתי) בשביל בדיקות זרימה.
+  - בדיקה בדפדפן המובנה על ה-fixture, ברוחב 390px: V ← toast ← ביטול, החזרה מ"בוצע", באנר אחרי סגנון נשק אחד, מעבר שלב, טעינה מחדש נפתחת בשלב החדש. אין גלילה אופקית, וכהה עובד. D2 עובר.
+- **איפה עצרתי:** A1–A5 מוכנים. הכרטיסים עוד לא נפתחים בלחיצה (A7), ואין עדיין ציר שלבים (A6). אין תוכן אמיתי: כל השלבים עם `tasks: []`.
+- **בעיות:**
+  - Playwright ל-Python לא מותקן במחשב הזה, אז D3 עוד לא נעשה. הבדיקה הידנית רצה בדפדפן המובנה.
+  - `.claude/launch.json` (שרת מקומי לבדיקה) נמצא ב-`.gitignore`.
+- **הצעד הבא:** B1 (מחקר וכתיבה של `maple-island`) ו-A6–A7. אחריהם B2–B5, ואז לעצור ולהראות למשתמש.
