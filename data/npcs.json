@@ -103,5 +103,15 @@
     "id": "warrior-job-instructor",
     "nameEn": "Warrior Job Instructor",
     "mapId": "west-rocky-mountain-4"
+  },
+  {
+    "id": "mr-wetbottom",
+    "nameEn": "Mr. Wetbottom",
+    "mapId": "sleepywood"
+  },
+  {
+    "id": "shumi",
+    "nameEn": "Shumi",
+    "mapId": "kerning-city"
   }
 ]

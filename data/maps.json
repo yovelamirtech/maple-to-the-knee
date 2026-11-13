@@ -167,5 +167,20 @@
     "id": "the-blue-mushroom-forest",
     "nameEn": "The Blue Mushroom Forest",
     "regionId": "victoria-island"
+  },
+  {
+    "id": "line-2-area-1",
+    "nameEn": "Line 2 <Area 1>",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "line-1-area-2",
+    "nameEn": "Line 1 <Area 2>",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "the-burnt-land-5",
+    "nameEn": "The Burnt Land V",
+    "regionId": "victoria-island"
   }
 ]

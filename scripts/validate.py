@@ -35,6 +35,15 @@ def load(name: str):
     return None
 
 
+def check_time(where: str, t) -> None:
+    """Play-time estimates are minutes: {"min": int, "max": int, "overlap"?: bool}."""
+    if t is None:
+        return
+    ok = isinstance(t, dict) and isinstance(t.get("min"), (int, float)) and isinstance(t.get("max"), (int, float))
+    if not ok or t["min"] < 0 or t["min"] > t["max"] or t["max"] <= 0:
+        err(f"{where}: bad time {t!r} (needs 0 <= min <= max, in minutes)")
+
+
 def index(name: str) -> dict:
     rows = load(name)
     if rows is None:
@@ -93,8 +102,11 @@ def main() -> int:
             if stage.get("availability", "live") not in AVAILABILITY:
                 err(f"{where}: bad availability '{stage.get('availability')}'")
             prev = stage
+            check_time(where, stage.get("time"))
 
             tasks = stage.get("tasks", [])
+            if tasks and not stage.get("time"):
+                err(f"{where}: needs a play-time estimate (time)")
             if not tasks:
                 warnings.append(f"{where}: no tasks yet")
                 continue
@@ -128,6 +140,7 @@ def main() -> int:
                             required_by_style[style] += 1
                     if variant in required_variants:
                         required_variants[variant] += 1
+                check_time(tw, task.get("time"))
                 if not task.get("sources"):
                     err(f"{tw}: needs at least one source")
                 if not task.get("verified"):

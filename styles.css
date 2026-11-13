@@ -987,6 +987,12 @@ main {
   color: var(--text);
 }
 
+.stage-time {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .stage-progress {
   display: flex;
   align-items: center;
@@ -1008,6 +1014,7 @@ main {
 .badge-recommended { color: var(--med-fg); background: var(--med-bg); }
 .badge-optional { color: var(--low-fg); background: var(--low-bg); }
 .badge-variant { color: var(--lvl-fg); background: var(--lvl-bg); }
+.badge-time { color: var(--muted); background: transparent; border: 1px solid var(--border); }
 
 .card-open {
   grid-template-columns: 48px minmax(0, 1fr);

@@ -13,12 +13,13 @@
    *   summary?: string, why?: string, steps?: string[], npc?: string, route?: string[],
    *   maps?: string[], monsters?: string[], items?: string[], rewards?: Rewards,
    *   requirements?: { level?: number, str?: number, dex?: number },
-   *   notes?: string[], sources?: string[], verified?: boolean
+   *   notes?: string[], sources?: string[], verified?: boolean, time?: PlayTime
    * }} Task
+   * @typedef {{ min: number, max: number, overlap?: boolean }} PlayTime minutes of play; overlap = done while training
    * @typedef {{
    *   id: string, order: number, titleHe: string, levelFrom: number, levelTo: number,
    *   job: string, regionHe: string, goalHe: string, availability?: 'live'|'upcoming'|'not-in-game',
-   *   tasks: Task[]
+   *   time?: PlayTime, tasks: Task[]
    * }} Stage
    * @typedef {{ id: string, nameHe: string, nameEn: string, stages: Stage[], tips?: string[] }} Build
    * @typedef {{ id: string, nameEn: string, nameHe?: string, regionId?: string, levelRange?: string }} MapInfo
@@ -51,7 +52,7 @@
   const TYPE_ORDER = /** @type {TaskType[]} */ (Object.keys(TYPES));
   const VARIANTS = { 'one-handed': '🛡️ חד-ידנית', 'two-handed': '⚔️ דו-ידנית' };
   const PRIORITY_RANK = { high: 0, medium: 1, low: 2 };
-  const STAT_LABELS = { watk: 'W.ATK', matk: 'M.ATK', str: 'STR', dex: 'DEX', wdef: 'W.DEF', mdef: 'M.DEF', acc: 'ACC', avoid: 'Avoid', hp: 'HP', mp: 'MP' };
+  const STAT_LABELS = { watk: 'W.ATK', matk: 'M.ATK', str: 'STR', dex: 'DEX', int: 'INT', luk: 'LUK', wdef: 'W.DEF', mdef: 'M.DEF', acc: 'ACC', avoid: 'Avoid', hp: 'HP', mp: 'MP' };
 
   const ICON_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   const ICON_CLOSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
@@ -228,6 +229,28 @@
     return `<bdi dir="ltr">${escapeHtml(numFmt.format(n))}</bdi>`;
   }
 
+  /** @param {number} minutes */
+  function hoursText(minutes) {
+    const h = Math.round((minutes / 60) * 2) / 2;
+    return String(h);
+  }
+
+  /**
+   * Play time as Hebrew text: "15–25 דק׳", "45 דק׳–1.5 שעות", "7–9 שעות".
+   * @param {PlayTime|undefined} t
+   */
+  function timeText(t) {
+    if (!t || !(t.max > 0)) return '';
+    const min = Math.max(0, t.min || 0);
+    const max = Math.max(min, t.max);
+    if (max < 60) return min === max ? `${min} דק׳` : `${min}–${max} דק׳`;
+    const b = hoursText(max);
+    if (min < 60) return b === '1' ? `${min} דק׳–שעה` : `${min} דק׳–${b} שעות`;
+    const a = hoursText(min);
+    if (a === b) return a === '1' ? 'שעה' : `${a} שעות`;
+    return `${a}–${b} שעות`;
+  }
+
   /** @returns {Build} */
   function activeBuild() {
     return builds.find((b) => b.id === store.activeBuild) || builds[0];
@@ -379,6 +402,8 @@
     const lvl = task.requirements && task.requirements.level;
     if (lvl) html += `<span class="badge badge-level">רמה <bdi dir="ltr">${escapeHtml(lvl)}+</bdi></span>`;
     if (task.variant && VARIANTS[task.variant]) html += `<span class="badge badge-variant">${VARIANTS[task.variant]}</span>`;
+    const time = timeText(task.time);
+    if (time) html += `<span class="badge badge-time"><span aria-hidden="true">⏱</span> ${time}</span>`;
     return `<span class="badges">${html}</span>`;
   }
 
@@ -460,6 +485,7 @@
         ${arrow(next, '‹', 'לשלב הבא')}
       </div>
       <p class="stage-goal"><span class="stage-goal-label">🎯 מטרה:</span><span>${richText(stage.goalHe)}</span></p>
+      ${timeText(stage.time) ? `<p class="stage-time"><span aria-hidden="true">⏱</span> בערך ${timeText(stage.time)} משחק למשימות החובה (הערכה)</p>` : ''}
       ${p.total ? `<div class="stage-progress">
         <span class="progress-bar" aria-hidden="true"><span style="width:${pct.toFixed(1)}%"></span></span>
         <span class="progress-text">${p.done}/${p.total} משימות חובה</span>
@@ -620,6 +646,14 @@
   }
 
   /** @param {Task} task */
+  function playTimeHtml(task) {
+    const text = timeText(task.time);
+    if (!text) return '';
+    const overlap = task.time && task.time.overlap ? ' ברובו תוך כדי אימון, אז לא מוסיפים אותו לזמן של השלב.' : '';
+    return `<p>${text}.${overlap}</p><p class="cell-sub">הערכה גסה לפי טבלת ה-EXP ודיווחי קהילה, לא מדידה.</p>`;
+  }
+
+  /** @param {Task} task */
   function sourcesHtml(task) {
     const list = task.sources || [];
     if (!list.length) return '';
@@ -668,6 +702,7 @@
         ${section('ציוד', itemsHtml(task))}
         ${section('פרס', rewardsHtml(task))}
         ${section('דרישות', requirementsHtml(task))}
+        ${section('זמן משחק משוער', playTimeHtml(task))}
         ${section('הערות', listHtml(task.notes))}
         ${section('מקורות', sourcesHtml(task))}
       </div>
@@ -698,7 +733,7 @@
             <span class="timeline-mark" aria-hidden="true">${mark}</span>
             <span class="timeline-body">
               <span class="timeline-title">${escapeHtml(s.order)}. ${richText(s.titleHe)}</span>
-              <span class="timeline-meta">${levelsLabel(s)} · ${richText(s.regionHe)}</span>
+              <span class="timeline-meta">${levelsLabel(s)} · ${richText(s.regionHe)}${timeText(s.time) ? ` · ⏱ ${timeText(s.time)}` : ''}</span>
             </span>
             <span class="timeline-count"><span class="visually-hidden">${statusLabel}, </span>${count}</span>
           </button>

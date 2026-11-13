@@ -87,7 +87,7 @@
               "titleHe": "קווסטי הפתיחה ב-Mushroom Town",
               "titleEn": "Heena, Roger, Nina and Todd",
               "summary": "ארבעה קווסטים קצרים שמלמדים את הממשק, על הדרך מזרחה.",
-              "why": "כמעט בלי EXP, אבל הם בדרך, לוקחים דקות ספורות, ונותנים את הביצים הראשונות (פוטים).",
+              "why": "כמעט בלי EXP, אבל הם בדרך, לוקחים דקות ספורות, ונותנים את הביצים הראשונות (שיקויים).",
               "steps": [
                 "Heena ← Sera: Borrowing Sera's Mirror.",
                 "Roger: Roger's Apple (מלמד את טאב ה-Use).",
@@ -123,7 +123,11 @@
                 "https://mapleclassic.wiki/wiki/Maple_Island",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 10,
+                "max": 15
+              }
             },
             {
               "id": "mi-quest-sam-mai",
@@ -175,7 +179,11 @@
                 "https://mapleclassic.wiki/wiki/Sam's_Suggestion",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 15,
+                "max": 25
+              }
             },
             {
               "id": "mi-quest-lucas-letter",
@@ -218,7 +226,11 @@
                 "https://mapleclassic.wiki/wiki/Lucas'_Reply",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 5,
+                "max": 10
+              }
             },
             {
               "id": "mi-quest-pio",
@@ -229,7 +241,7 @@
               "titleHe": "הכיסא של Pio",
               "titleEn": "Pio's Collecting Recycled Goods",
               "summary": "לשבור קופסאות עץ ב-Amherst ולהביא ל-Pio ברגים ולוחות. הפרס: הכיסא The Green Relaxer.",
-              "why": "הכיסא מחזיר 30 HP נוספים כל 10 שניות בזמן ישיבה, וחוסך הרבה פוטים עד ג'וב 2. אי אפשר לחזור לאי, אז מי שמפספס כאן מפספס לתמיד. גם 150 מזו לסירה.",
+              "why": "הכיסא מחזיר 30 HP נוספים כל 10 שניות בזמן ישיבה, וחוסך הרבה שיקויים עד ג'וב 2. אי אפשר לחזור לאי, אז מי שמפספס כאן מפספס לתמיד. גם 150 מזו לסירה.",
               "steps": [
                 "לקבל את הקווסט מ-Pio ב-Amherst (רמה 5).",
                 "לשבור את קופסאות העץ בעיר עם התקפה רגילה.",
@@ -262,7 +274,11 @@
                 "https://ms-classic.com/guides/maple-island-to-victoria-island",
                 "https://ms-classic.com/guides/quests-worth-doing"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 5,
+                "max": 10
+              }
             },
             {
               "id": "mi-quest-biggs",
@@ -310,7 +326,12 @@
               "items": [
                 "razor",
                 "fruit-knife"
-              ]
+              ],
+              "time": {
+                "min": 5,
+                "max": 10,
+                "overlap": true
+              }
             },
             {
               "id": "mi-quest-rain",
@@ -347,7 +368,11 @@
                 "https://mapleclassic.wiki/wiki/Rain's_Maple_Quiz",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 5,
+                "max": 10
+              }
             },
             {
               "id": "mi-train-west-amherst",
@@ -383,7 +408,11 @@
               "sources": [
                 "https://mapleclassic.wiki/wiki/The_Field_West_of_Amherst"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 10,
+                "max": 20
+              }
             },
             {
               "id": "mi-train-east-amherst",
@@ -419,7 +448,11 @@
                 "https://mapleclassic.wiki/wiki/The_Field_East_of_Amherst",
                 "https://mapleclassic.wiki/wiki/Maple_Island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 15,
+                "max": 25
+              }
             },
             {
               "id": "mi-train-dangerous-forest",
@@ -453,7 +486,11 @@
               "sources": [
                 "https://mapleclassic.wiki/wiki/Dangerous_Forest"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 15,
+                "max": 25
+              }
             },
             {
               "id": "mi-sp-beginner",
@@ -464,7 +501,7 @@
               "titleHe": "סקילים של Beginner: Three Snails קודם",
               "titleEn": "Beginner skills: Three Snails, Recovery, Nimble Feet",
               "summary": "אם יש לך SP של Beginner: קודם Three Snails, אחר כך Recovery ו-Nimble Feet.",
-              "why": "Three Snails היא התקפה מרחוק, שימושית לפני שיש נשק. Recovery חוסכת פוטים.",
+              "why": "Three Snails היא התקפה מרחוק, שימושית לפני שיש נשק. Recovery חוסכת שיקויים.",
               "steps": [
                 "לפתוח את חלון הסקילים (K).",
                 "Three Snails עד 3, אחר כך Recovery עד 3, ואז Nimble Feet."
@@ -546,7 +583,11 @@
                 "https://mapleclassic.wiki/wiki/Shanks",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 2,
+                "max": 5
+              }
             },
             {
               "id": "mi-lith-phil",
@@ -557,7 +598,7 @@
               "titleHe": "Phil's Call",
               "titleEn": "Phil's Call",
               "summary": "Phil ב-Lith Harbor שולח אותך ל-Olaf ול-Teo. מקבלים ברמה 8 ומסיימים ברמה 10.",
-              "why": "188 EXP, 245 מזו ו-16 פוטים, רק על כך שהגעת לרמה 10.",
+              "why": "188 EXP, 245 מזו ו-16 שיקויים, רק על כך שהגעת לרמה 10.",
               "steps": [
                 "לדבר עם Phil ב-Lith Harbor ולקבל את הקווסט (רמה 8).",
                 "להתאמן עד רמה 10.",
@@ -589,7 +630,11 @@
                 "https://mapleclassic.wiki/wiki/Beginner",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 2,
+                "max": 5
+              }
             },
             {
               "id": "mi-lith-olaf",
@@ -600,7 +645,7 @@
               "titleHe": "שני האימונים של Olaf",
               "titleEn": "Olaf's First Training → Olaf's Second Training",
               "summary": "8 Stump ו-8 Slime, ואחר כך 8 Pig ו-8 Orange Mushroom. כולם ליד Lith Harbor.",
-              "why": "248 EXP, 554 מזו, 16 פוטים ו-3 Return Scroll, על מפלצות שהורגים בכל מקרה בדרך לרמה 10.",
+              "why": "248 EXP, 554 מזו, 16 שיקויים ו-3 Return Scroll, על מפלצות שהורגים בכל מקרה בדרך לרמה 10.",
               "steps": [
                 "לקבל מ-Olaf ב-Lith Harbor את האימון הראשון (רמה 8).",
                 "Slime ב-Thicket Around the Beach II, ו-Stump ב-Thicket Around the Beach III.",
@@ -644,7 +689,12 @@
                 "https://ms-classic.com/guides/mano-boss-guide",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 20,
+                "max": 30,
+                "overlap": true
+              }
             },
             {
               "id": "mi-train-thicket-2",
@@ -655,7 +705,7 @@
               "titleHe": "אימון עד רמה 10 ב-Thicket Around the Beach II",
               "titleEn": "Thicket Around the Beach II",
               "summary": "18 Pig, 12 Slime ו-9 Orange Mushroom, שלוש מפות מ-Lith Harbor. לרמות 8–10.",
-              "why": "כל המפלצות של Olaf במפה אחת, והן נותנות 12–15 EXP כל אחת. קרוב לעיר בשביל פוטים.",
+              "why": "כל המפלצות של Olaf במפה אחת, והן נותנות 12–15 EXP כל אחת. קרוב לעיר בשביל שיקויים.",
               "steps": [
                 "Lith Harbor ← Right Around Lith Harbor ← Thicket Around the Beach I ← Thicket Around the Beach II.",
                 "להתאמן עד רמה 10 ולסיים את Olaf תוך כדי.",
@@ -683,7 +733,11 @@
                 "https://mapleclassic.wiki/wiki/Thicket_Around_the_Beach_II",
                 "https://ms-classic.com/guides/warrior-guide-level-1-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 30,
+                "max": 45
+              }
             },
             {
               "id": "mi-lith-teo",
@@ -719,7 +773,11 @@
               "sources": [
                 "https://ms-classic.com/guides/maple-island-to-victoria-island"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 10,
+                "max": 20
+              }
             },
             {
               "id": "mi-tip-one-way",
@@ -733,7 +791,7 @@
               "why": "הכיסא של Pio והפרסים של הקווסטים אבודים אם יוצאים מוקדם מדי.",
               "steps": [
                 "לפני ההפלגה: Pio, Biggs, Mai ו-Lucas גמורים.",
-                "לא לזרוק ביצים ותפוחים: באי אין חנות פוטים."
+                "לא לזרוק ביצים ותפוחים: באי אין חנות שיקויים."
               ],
               "requirements": {
                 "level": 1
@@ -745,7 +803,11 @@
               ],
               "verified": true
             }
-          ]
+          ],
+          "time": {
+            "min": 90,
+            "max": 150
+          }
         },
         {
           "id": "job1-warrior",
@@ -793,7 +855,11 @@
                 "https://ms-classic.com/guides/what-to-do-at-level-10",
                 "https://ms-classic.com/guides/how-to-travel-victoria-island"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 5,
+                "max": 15
+              }
             },
             {
               "id": "j1-dances-with-balrog",
@@ -829,7 +895,11 @@
                 "https://ms-classic.com/guides/job-advancement-guide",
                 "https://ms-classic.com/guides/warrior-guide-level-1-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 5,
+                "max": 10
+              }
             },
             {
               "id": "j1-sp-power-strike",
@@ -884,7 +954,11 @@
               ],
               "verified": true
             }
-          ]
+          ],
+          "time": {
+            "min": 15,
+            "max": 30
+          }
         },
         {
           "id": "victoria-10-21",
@@ -933,7 +1007,11 @@
                 "https://mapleclassic.wiki/wiki/West_Street_Corner_of_Perion",
                 "https://mapleclassic.wiki/wiki/Dark_Stump"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 45,
+                "max": 75
+              }
             },
             {
               "id": "v1-quest-blackbull",
@@ -982,7 +1060,12 @@
                 "https://mapleclassic.wiki/wiki/Fixing_Blackbull's_House",
                 "https://ms-classic.com/guides/quests-worth-doing"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 20,
+                "max": 30,
+                "overlap": true
+              }
             },
             {
               "id": "v1-train-line-1",
@@ -993,7 +1076,7 @@
               "titleHe": "אימון ב-Line 1 <Area 1>",
               "titleEn": "Line 1 <Area 1>",
               "summary": "64 Bubbling (רמה 15, 259 HP, 28 EXP) ברכבת התחתית של קרנינג. לרמות 15–21.",
-              "why": "המפה הכי צפופה בטווח הזה, וכולה מפלצת אחת. Slash Blast פוגע בהרבה מהן בבת אחת, ו-Kerning City קרובה בשביל פוטים.",
+              "why": "המפה הכי צפופה בטווח הזה, וכולה מפלצת אחת. Slash Blast פוגע בהרבה מהן בבת אחת, ו-Kerning City קרובה בשביל שיקויים.",
               "steps": [
                 "לנסוע מפריון לקרנינג ב-Regular Cab.",
                 "להיכנס לרכבת התחתית של קרנינג ולרדת ל-Line 1 <Area 1>.",
@@ -1019,7 +1102,11 @@
                 "https://mapleclassic.wiki/wiki/Line_1_(Area_1)",
                 "https://ms-classic.com/guides/where-to-train-level-10-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 150,
+                "max": 210
+              }
             },
             {
               "id": "v1-train-tree-dungeon",
@@ -1053,7 +1140,11 @@
                 "https://mapleclassic.wiki/wiki/Tree_Dungeon,_Forest_Up_North_IV",
                 "https://ms-classic.com/guides/warrior-guide-level-1-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 150,
+                "max": 210
+              }
             },
             {
               "id": "v1-train-west-rocky-3",
@@ -1090,7 +1181,11 @@
                 "https://mapleclassic.wiki/wiki/West_Rocky_Mountain_III",
                 "https://ms-classic.com/guides/warrior-guide-level-1-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 150,
+                "max": 210
+              }
             },
             {
               "id": "v1-quest-nella",
@@ -1101,7 +1196,7 @@
               "titleHe": "Nella: Work Gloves",
               "titleEn": "Don Hwang's Request → Shumi's Request → Andre's Request",
               "summary": "שלושה קווסטים של Nella בקרנינג. בסוף: Work Gloves, הכפפות הראשונות.",
-              "why": "Work Gloves (רמה 10, 6 W.DEF, 1% קריטי, 5 סלוטים) הן הכפפות הראשונות של רוב השחקנים. כל קווסט נותן 188 EXP ו-351 מזו.",
+              "why": "הסיבה היא Work Gloves (רמה 10, 6 W.DEF, 1% קריטי, 5 סלוטים), הכפפות הראשונות. ה-EXP קטן (564 בסך הכל, כמה דקות של אימון).",
               "steps": [
                 "Don Hwang's Request: להרוג 20 Orange Mushroom ו-20 Ribbon Pig, ולהביא 10 Orange Mushroom Cap ו-10 Pig's Ribbon.",
                 "Shumi's Request: להרוג 25 Dark Stump ולהביא 15 Leaf.",
@@ -1144,18 +1239,22 @@
                 "https://ms-classic.com/guides/how-to-get-work-gloves",
                 "https://ms-classic.com/guides/quests-worth-doing"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 60,
+                "max": 90
+              }
             },
             {
               "id": "v1-quest-snail-legend",
               "type": "quest",
               "variant": null,
               "required": false,
-              "priority": "high",
+              "priority": "low",
               "titleHe": "Legend of the Snail (שלבים 1–4)",
               "titleEn": "Legend of the Snail",
               "summary": "שרשרת של Pia בהנסיס מרמה 20: 7,477 EXP, בערך 37% מרמה 20, ו-20 Blue Potion.",
-              "why": "הרבה EXP על איסוף של 60 קונכיות חלזונות קלים. רק שלב 5 (להרוג את Mano) לא שווה את זה.",
+              "why": "7,477 EXP נשמע הרבה, אבל ברמה 20 זה בערך 10 דקות של אימון, והשרשרת לוקחת 30–45 דקות של הליכה ואיסוף. שווה רק אם בא לך קווסטים או צריך את ה-2,434 מזו.",
               "steps": [
                 "Pia ב-Henesys Park (רמה 20) ← Mrs. Ming Ming ← Wing the Fairy באלינייה.",
                 "לאסוף 20 Snail Shell, 20 Blue Snail Shell ו-20 Red Snail Shell. בכולם יש ב-Thicket Around the Beach I ליד Lith Harbor.",
@@ -1181,7 +1280,11 @@
               "sources": [
                 "https://ms-classic.com/guides/legend-of-the-snail-quest-guide"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 30,
+                "max": 45
+              }
             },
             {
               "id": "v1-citizenship",
@@ -1209,7 +1312,11 @@
                 "https://ms-classic.com/guides/henesys-citizenship-guide",
                 "https://ms-classic.com/guides/npc-shops-guide"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 10,
+                "max": 15
+              }
             },
             {
               "id": "v1-gear-wooden-sword",
@@ -1504,7 +1611,11 @@
               ],
               "verified": true
             }
-          ]
+          ],
+          "time": {
+            "min": 210,
+            "max": 300
+          }
         },
         {
           "id": "victoria-21-30",
@@ -1554,7 +1665,11 @@
                 "https://ms-classic.com/guides/where-to-train-level-10-30",
                 "https://ms-classic.com/guides/warrior-guide-level-1-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 420,
+                "max": 540
+              }
             },
             {
               "id": "v2-train-damp-forest",
@@ -1589,18 +1704,22 @@
                 "https://mapleclassic.wiki/wiki/Damp_Forest",
                 "https://ms-classic.com/guides/where-to-train-level-10-30"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 25,
+                "max": 40
+              }
             },
             {
               "id": "v2-quest-maya",
               "type": "quest",
               "variant": null,
               "required": false,
-              "priority": "high",
+              "priority": "medium",
               "titleHe": "Maya: התרופה המוזרה",
               "titleEn": "Maya and the Weird Medicine (7 steps)",
               "summary": "שרשרת של 7 שלבים מרמה 21: 12,529 EXP (בערך חצי רמה), 4,602 מזו, 40 Blue Potion וה-Brown Bamboo Hat.",
-              "why": "Brown Bamboo Hat (רמה 25, 24 W.DEF, +1 דיוק, 7 סלוטים) הוא כובע מעולה בחינם. רוב העבודה היא 75 Zombie Mushroom, שהורגים בכל מקרה ב-Ant Tunnel III.",
+              "why": "הסיבה לעשות אותה היא ה-Brown Bamboo Hat (רמה 25, 24 W.DEF, +1 דיוק, 7 סלוטים), לא ה-EXP: 12,529 EXP הם בערך 20 דקות של אימון. רוב העבודה (75 Zombie Mushroom) נעשית ממילא ב-Ant Tunnel III, אבל יש הרבה הליכה בין ערים.",
               "steps": [
                 "Maya ב-Henesys ← Teo ב-Lith Harbor ← Sophia בפריון ← Manji בפריון.",
                 "Manji: להרוג 75 Zombie Mushroom ולהביא 40 Charm of the Undead.",
@@ -1640,7 +1759,12 @@
                 "https://ms-classic.com/guides/maya-and-the-weird-medicine-quest-guide",
                 "https://mapleclassic.wiki/wiki/Brown_Bamboo_Hat"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 120,
+                "max": 180,
+                "overlap": true
+              }
             },
             {
               "id": "v2-quest-jane",
@@ -1685,7 +1809,11 @@
                 "https://mapleclassic.wiki/wiki/Blue_Mushroom",
                 "https://ms-classic.com/guides/quests-worth-doing"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 40,
+                "max": 60
+              }
             },
             {
               "id": "v2-quest-stranger",
@@ -1731,7 +1859,11 @@
                 "https://ms-classic.com/guides/how-to-get-old-raggedy-cape",
                 "https://mapleclassic.wiki/wiki/Old_Raggedy_Cape"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 60,
+                "max": 90
+              }
             },
             {
               "id": "v2-pq-proof",
@@ -1799,7 +1931,11 @@
                 "https://ms-classic.com/guides/kpq-walkthrough",
                 "https://ms-classic.com/guides/kerning-city-party-quest-kpq"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 20,
+                "max": 40
+              }
             },
             {
               "id": "v2-gear-red-triangular",
@@ -2011,7 +2147,11 @@
               ],
               "verified": false
             }
-          ]
+          ],
+          "time": {
+            "min": 480,
+            "max": 600
+          }
         },
         {
           "id": "job2-fighter",
@@ -2032,7 +2172,7 @@
               "priority": "high",
               "titleHe": "לפני המבחן",
               "titleEn": "Before the 2nd job test",
-              "summary": "0 SP פנויים, כמה מקומות פנויים בטאב Use, ופוטים.",
+              "summary": "0 SP פנויים, כמה מקומות פנויים בטאב Use, ושיקויים.",
               "why": "SP של ג'וב 1 שלא נוצל עלול ללכת לאיבוד. לפני ההשקה, מלאי Use מלא היה מכשיל את המבחן.",
               "steps": [
                 "לבדוק שאין SP פנויים.",
@@ -2093,7 +2233,11 @@
                 "https://ms-classic.com/guides/second-job-advancement-quests",
                 "https://mapleclassic.wiki/wiki/West_Rocky_Mountain_IV"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 15,
+                "max": 25
+              }
             },
             {
               "id": "j2-test",
@@ -2130,7 +2274,11 @@
                 "https://mapleclassic.wiki/wiki/Fire_Boar",
                 "https://mapleclassic.wiki/wiki/Lupin"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 15,
+                "max": 30
+              }
             },
             {
               "id": "j2-choose-fighter",
@@ -2160,7 +2308,11 @@
                 "https://mapleclassic.wiki/wiki/Fighter",
                 "https://ms-classic.com/guides/fighter-guide"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 5,
+                "max": 10
+              }
             },
             {
               "id": "j2-sp-rush",
@@ -2214,7 +2366,11 @@
                 "https://mapleclassic.wiki/wiki/Aluminum_Baseball_Bat",
                 "https://ms-classic.com/guides/equipment-guide-by-level"
               ],
-              "verified": true
+              "verified": true,
+              "time": {
+                "min": 120,
+                "max": 240
+              }
             },
             {
               "id": "j2-gear-one-handed-30",
@@ -2252,8 +2408,8 @@
               "priority": "low",
               "titleHe": "רשות: האוספים של Maya",
               "titleEn": "Maya's First / Second Collection",
-              "summary": "ברמה 30: שני קווסטים של Maya, כל אחד 4,780 EXP ו-30 פוטים.",
-              "why": "פוטים ו-EXP, ופותחים את הקווסטים של Maya ברמה 47.",
+              "summary": "ברמה 30: שני קווסטים של Maya, כל אחד 4,780 EXP ו-30 שיקויים.",
+              "why": "שיקויים ו-EXP, ופותחים את הקווסטים של Maya ברמה 47.",
               "steps": [
                 "לדבר עם Maya בהנסיס ברמה 30.",
                 "להביא את מה שהיא מבקשת."
@@ -2277,9 +2433,17 @@
               "sources": [
                 "https://ms-classic.com/guides/quests-worth-doing"
               ],
-              "verified": false
+              "verified": false,
+              "time": {
+                "min": 20,
+                "max": 40
+              }
             }
-          ]
+          ],
+          "time": {
+            "min": 40,
+            "max": 70
+          }
         },
         {
           "id": "fighter-30-40",
@@ -2288,10 +2452,504 @@
           "levelFrom": 30,
           "levelTo": 40,
           "job": "fighter",
-          "regionHe": "ויקטוריה",
-          "goalHe": "להגיע לרמה 40 עם Sword Mastery מלא",
+          "regionHe": "Sleepywood וקרנינג",
+          "goalHe": "להגיע לרמה 40 עם Sword Mastery 20",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "f3-train-ant-tunnel",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "רמות 30–35: להישאר ב-Ant Tunnel III",
+              "titleEn": "Ant Tunnel III (30–35)",
+              "summary": "61 Zombie Mushroom ו-38 Horny Mushroom. אותה מפה כמו בשלב הקודם, עכשיו עם Rush ו-Rage.",
+              "why": "ברמה 30 יש לפייטר בערך 73 דיוק, מעט מדי ל-Jr. Wraith (צריך 82–95). כאן אין החטאות, והמפלצות מתות בשתי מכות. Zombie Mushroom נותן 45 EXP.",
+              "steps": [
+                "Rush כדי לאסוף מפלצות לקבוצה, ואז Slash Blast.",
+                "לחדש את Rage כל פעם שהוא נגמר.",
+                "ברמה 35, ואחרי שבדקת דיוק, לעבור ל-Line 2 <Area 1>."
+              ],
+              "route": [
+                "sleepywood",
+                "ant-tunnel-3"
+              ],
+              "maps": [
+                "ant-tunnel-3"
+              ],
+              "monsters": [
+                "zombie-mushroom",
+                "horny-mushroom"
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "time": {
+                "min": 390,
+                "max": 540
+              },
+              "notes": [
+                "מדריך הפייטר ממליץ לרמות 30–34 על Line 1 <Area 1> או Tree Dungeon, Forest Up North IV, ועל Ant Tunnel III ל-35–39. בחרתי ב-Ant Tunnel III כבר מ-30 כי היא בטוחה באותה מידה ונותנת יותר EXP למפלצת (45 מול 28 ב-Bubbling)."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-training-spots",
+                "https://mapleclassic.wiki/wiki/Ant_Tunnel_III"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-tip-accuracy",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "בדיקת דיוק לפני Line 2",
+              "titleEn": "Accuracy check before Jr. Wraiths",
+              "summary": "Jr. Wraith (רמה 34) צריך 82 דיוק בשביל 100% פגיעה כשאתה ברמה שלו, ובערך 95 כשאתה ברמה 30.",
+              "why": "כל החטאה עולה MP. Sword Mastery מלא מוסיף 20 דיוק, וזה בדרך כלל מה שסוגר את הפער.",
+              "steps": [
+                "לפתוח את חלון הסטטים ולבדוק ACC.",
+                "רמה 35 ומעלה עם 82+ דיוק: לעבור ל-Line 2.",
+                "אם חסר קצת: Sniper Potion (+5 ל-10 דקות) או להישאר עוד רמה ב-Ant Tunnel III."
+              ],
+              "requirements": {
+                "level": 34
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-training-spots",
+                "https://ms-classic.com/guides/where-to-train-level-30-50",
+                "https://mapleclassic.wiki/wiki/Jr._Wraith"
+              ],
+              "verified": false
+            },
+            {
+              "id": "f3-train-line-2",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "רמות 35–40: Line 2 <Area 1>",
+              "titleEn": "Line 2 <Area 1>",
+              "summary": "83 Jr. Wraith (רמה 34, 982 HP, 66 EXP) ו-14 Jr. Necki ברכבת התחתית של קרנינג.",
+              "why": "המפה הכי צפופה בטווח 30–40, ושני המקורות שמים אותה ראשונה. Jr. Wraith נותן 66 EXP, הרבה יותר מ-Zombie Mushroom.",
+              "steps": [
+                "Regular Cab לקרנינג.",
+                "Line 1 <Area 1> ← Transfer Area ← Line 2 <Area 1>.",
+                "לקנות הרבה שיקויים לפני: זה שלוש מפות מהעיר.",
+                "Rush, ואז Slash Blast על קבוצות. Final Attack דלוק כשיש 1–3 מפלצות מולך."
+              ],
+              "route": [
+                "kerning-city",
+                "line-1-area-1",
+                "transfer-area",
+                "line-2-area-1"
+              ],
+              "maps": [
+                "line-2-area-1"
+              ],
+              "monsters": [
+                "jr-wraith",
+                "jr-necki"
+              ],
+              "requirements": {
+                "level": 35
+              },
+              "time": {
+                "min": 480,
+                "max": 660
+              },
+              "notes": [
+                "כמה מפלצות חיות בבת אחת מוגבל ל-17–18 בכל קווי הרכבת (לפי ms-classic), אז ב-83 לא רואים את כולן יחד."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Line_2_(Area_1)",
+                "https://ms-classic.com/guides/where-to-train-level-30-50",
+                "https://ms-classic.com/guides/fighter-training-spots"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-train-burnt-land",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה ליד פריון: The Burnt Land V",
+              "titleEn": "The Burnt Land V",
+              "summary": "26 Fire Boar (רמה 32, 842 HP, 60 EXP), 12 Lupin ו-10 Dark Axe Stump.",
+              "why": "החלופה הכי טובה מחוץ לרכבת. לפי דיווחי קהילה, Fire Boar מפילים Arwen's Glass Shoe, ששווה 921 מזו ו-4,430 EXP בקווסט חוזר.",
+              "steps": [
+                "מפריון לכיוון The Burnt Land (3–5 מפות).",
+                "להיזהר מ-Lupin (רמה 37): יש להם גם התקפת קסם."
+              ],
+              "route": [
+                "perion",
+                "the-burnt-land-5"
+              ],
+              "maps": [
+                "the-burnt-land-5"
+              ],
+              "monsters": [
+                "fire-boar",
+                "lupin",
+                "dark-axe-stump"
+              ],
+              "requirements": {
+                "level": 32
+              },
+              "time": {
+                "min": 480,
+                "max": 660
+              },
+              "notes": [
+                "⚠ אין בנתוני המשחק טבלאות דרופ. ה-Glass Shoe מ-Fire Boar הוא דיווח קהילה."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/The_Burnt_Land_V",
+                "https://ms-classic.com/guides/where-to-train-level-30-50"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-train-line-1-area-2",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה שקטה: Line 1 <Area 2>",
+              "titleEn": "Line 1 <Area 2>",
+              "summary": "69 Jr. Wraith ו-21 Stirge. פחות צפופה מ-Line 2, ובדרך כלל פחות עמוסה.",
+              "why": "אם Line 2 מלאה בכל הערוצים.",
+              "steps": [
+                "מ-Line 1 <Area 1> להמשיך ל-Line 1 <Area 2>."
+              ],
+              "route": [
+                "kerning-city",
+                "line-1-area-1",
+                "line-1-area-2"
+              ],
+              "maps": [
+                "line-1-area-2"
+              ],
+              "monsters": [
+                "jr-wraith",
+                "stirge"
+              ],
+              "requirements": {
+                "level": 35
+              },
+              "time": {
+                "min": 480,
+                "max": 660
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/where-to-train-level-30-50"
+              ],
+              "verified": false
+            },
+            {
+              "id": "f3-quest-sauna",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "רשות: Sauna Robe",
+              "titleEn": "Mr. Wetbottom's Secret Book (9 steps)",
+              "summary": "שרשרת של 9 קווסטים מרמה 32, שמתחילה אצל Mr. Wetbottom ב-Sleepywood. הפרס: Sauna Robe (כחול לבנים, אדום לבנות).",
+              "why": "Overall עם 75 W.DEF, +1 לכל הסטטים ו-10 סלוטים. זה שדרוג הגנה גדול. ה-EXP (49,140) שווה בערך חצי שעה של אימון, והשרשרת ארוכה.",
+              "steps": [
+                "Mr. Wetbottom ב-VIP Sauna ב-Sleepywood ← Ronnie ב-The Tree Tunnel At the Forest Up North (צפונית לאלינייה).",
+                "Ronnie: להרוג 50 Lupin ולהביא 30 Lupin's Banana.",
+                "Rina בהנסיס: 50 Curse Eye Tail ו-10 Pig's Head.",
+                "Rowen the Fairy באלינייה: Diamond אחד.",
+                "חזרה ל-Ronnie, ואז Returned Secret Book ל-Mr. Wetbottom."
+              ],
+              "npc": "mr-wetbottom",
+              "maps": [
+                "sleepywood",
+                "ellinia",
+                "henesys"
+              ],
+              "monsters": [
+                "lupin",
+                "curse-eye"
+              ],
+              "items": [
+                "blue-sauna-robe",
+                "red-sauna-robe"
+              ],
+              "rewards": {
+                "exp": 49140,
+                "mesos": 8593,
+                "items": [
+                  "Blue Potion ×40",
+                  "Blue Sauna Robe או Red Sauna Robe"
+                ]
+              },
+              "requirements": {
+                "level": 32
+              },
+              "time": {
+                "min": 150,
+                "max": 240
+              },
+              "notes": [
+                "⚠ ה-Diamond הוא הבעיה: בלי מימון צריך לקנות אותו בשוק, ואין לי מחיר. דרך אחרת היא הקווסט של Luke ברמה 19, עם סיכוי של 1 ל-8.",
+                "Sleepy Dungeon V מכיל Lupin ו-Curse Eye יחד, אבל יש בו גם Dark Stone Golem ברמה 58. Hunting Ground in the Deep Forest II בטוח יותר."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/how-to-get-sauna-robe",
+                "https://mapleclassic.wiki/wiki/Returned_Secret_Book",
+                "https://mapleclassic.wiki/wiki/Blue_Sauna_Robe"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-quest-shumi",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "רשות: קווסטי הקפיצה של Shumi",
+              "titleEn": "Shumi's subway jump quests",
+              "summary": "שלושה קווסטי קפיצה מרמה 35 ב-Construction Site של הרכבת בקרנינג.",
+              "why": "12,222 מזו (כולל 10,000 בקווסט השלישי, הכי הרבה מזו מקווסט אחד במשחק), 20,160 EXP, 30 Blue Potion ו-30 Mana Elixir. בלי מימון, זה כסף משמעותי.",
+              "steps": [
+                "לדבר עם Shumi בקרנינג (רמה 35).",
+                "לעבור את הקפיצות בקומות B1, B2 ו-B3 ולמצוא את המטבע, הגליל ואת שק הכסף.",
+                "לחזור ל-Shumi אחרי כל קומה."
+              ],
+              "npc": "shumi",
+              "maps": [
+                "kerning-city"
+              ],
+              "rewards": {
+                "exp": 20160,
+                "mesos": 12222,
+                "items": [
+                  "Return Scrolls",
+                  "Blue Potion ×30",
+                  "Mana Elixir ×30"
+                ]
+              },
+              "requirements": {
+                "level": 35
+              },
+              "time": {
+                "min": 30,
+                "max": 90
+              },
+              "notes": [
+                "הזמן תלוי בכמה אתה טוב בקפיצות. אין מגבלת זמן קשוחה (99 דקות לכל קומה, לפי הקהילה)."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/jump-quests-guide",
+                "https://ms-classic.com/guides/what-to-do-at-level-30"
+              ],
+              "verified": false
+            },
+            {
+              "id": "f3-sp-31-33",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 31–33",
+              "titleEn": "SP 31–33: Rage 1, Sword Mastery 6, Booster 1, Final Attack 1",
+              "summary": "Rage 1, ו-Sword Mastery עד 5 כדי לפתוח את Sword Booster.",
+              "why": "Rage ברמה 1 כבר מוסיף 10 Attack Power. Sword Booster ברמה 1 כבר נותן את כל תוספת המהירות, ושאר הנקודות בו רק מאריכות את הזמן ומוזילות.",
+              "steps": [
+                "רמה 31: Rage +1, Sword Mastery +2.",
+                "רמה 32: Sword Mastery +3 (ל-5, פותח את Sword Booster).",
+                "רמה 33: Sword Booster +1, Final Attack: Sword +1, Sword Mastery +1 (ל-6)."
+              ],
+              "requirements": {
+                "level": 31
+              },
+              "notes": [
+                "Sword ולא Axe: Mastery, Booster ו-Final Attack עובדים רק עם סוג הנשק שלהם."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide",
+                "https://mapleclassic.wiki/wiki/Sword_Mastery",
+                "https://mapleclassic.wiki/wiki/Sword_Booster",
+                "https://mapleclassic.wiki/wiki/Final_Attack:_Sword"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-sp-34-38",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 34–38: Sword Mastery 20",
+              "titleEn": "SP 34–38: max Sword Mastery",
+              "summary": "כל הנקודות ל-Sword Mastery עד 20.",
+              "why": "Sword Mastery מלא מוסיף 20 דיוק ומייצב את הנזק. זה מה שמאפשר לעבור ל-Jr. Wraith בלי החטאות.",
+              "steps": [
+                "רמות 34–37: Sword Mastery +12 (ל-18).",
+                "רמה 38: Sword Mastery +2 (ל-20), Final Attack: Sword +1 (ל-2)."
+              ],
+              "requirements": {
+                "level": 34
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide",
+                "https://mapleclassic.wiki/wiki/Sword_Mastery"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-sp-39-40",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 39–40: Rage",
+              "titleEn": "SP 39–40: Rage",
+              "summary": "מתחילים להעלות את Rage. ברמה 40: Rage 7.",
+              "why": "Rage מלא (30) מוסיף 40 Attack Power לכל הפרטי. היעד: Rage 30 בערך ברמה 48.",
+              "steps": [
+                "רמות 39–40: Rage +6 (ל-7)."
+              ],
+              "requirements": {
+                "level": 39
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide",
+                "https://mapleclassic.wiki/wiki/Rage"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-ap",
+              "type": "ap",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "AP: 4 STR ו-1 DEX",
+              "titleEn": "AP 31–40: 4 STR / 1 DEX",
+              "summary": "בכל רמה 4 STR ו-1 DEX. ברמה 40: בחד-ידנית בערך 173 STR ו-35 DEX, ובדו-ידנית בערך 171 STR ו-37 DEX.",
+              "why": "DEX מוסיף דיוק, וזה מה שחסר לפייטר אחרי 30. הנשקים של רמה 40 דורשים גם הם יותר DEX.",
+              "steps": [
+                "אחרי כל עליית רמה: 4 ל-STR, 1 ל-DEX."
+              ],
+              "requirements": {
+                "level": 31
+              },
+              "notes": [
+                "הדוגמה של הקהילה שמה 3 STR ו-2 DEX ברמות 31–36, כי הנשקים שלה צריכים יותר DEX. בלי נשק חדש, 4/1 מספיק."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "f3-tip-final-attack",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "Final Attack: מתי להדליק",
+              "titleEn": "Final Attack on or off",
+              "summary": "Final Attack של פייטר פוגע בעד 3 מפלצות, ועולה 20 HP ו-18 MP בכל פעם שהוא מופעל.",
+              "why": "לפי חישובי הקהילה: עם Slash Blast על 1–3 מפלצות הוא מוסיף בערך 12% נזק. על מפלצת אחת עם Power Strike הוא מוריד 3%.",
+              "steps": [
+                "לדלק כשמכים קבוצות קטנות.",
+                "לכבות מול בוס או מפלצת בודדת, או כשה-MP נגמר."
+              ],
+              "requirements": {
+                "level": 33
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide",
+                "https://mapleclassic.wiki/wiki/Final_Attack:_Sword"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-tip-buffs",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "לחדש Rage ו-Booster יחד",
+              "titleEn": "Refresh Rage and Booster together",
+              "summary": "ברמה המלאה שניהם נמשכים 300 שניות. Sword Booster ברמה 1 נמשך רק 100 שניות.",
+              "why": "קל יותר לזכור לחדש את שניהם באותו רגע, וככה לא מתאמנים בלי Booster בלי לשים לב.",
+              "steps": [
+                "לשים את שני הבאפים על מקשים צמודים.",
+                "לחדש כשהאייקון מתחיל להבהב."
+              ],
+              "requirements": {
+                "level": 33
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide",
+                "https://mapleclassic.wiki/wiki/Rage"
+              ],
+              "verified": true
+            },
+            {
+              "id": "f3-tip-gear",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "אין שדרוג נשק עד 40 בלי שוק",
+              "titleEn": "No weapon upgrade before 40 without trading",
+              "summary": "הנשקים של רמה 40 (Traus בחד-ידנית, Zard בדו-ידנית) לא נמכרים ולא מגיעים מקווסט.",
+              "why": "אין סיבה לבזבז מזו על נשק ביניים. עדיף לשמור מזו לשיקויים ול-Diamond של ה-Sauna Robe.",
+              "steps": [
+                "להמשיך עם הנשק של רמה 25 (או Aluminum Baseball Bat בדו-ידנית)."
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "f3-tip-cursed-dolls",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "לשמור Cursed Doll",
+              "titleEn": "Keep your Cursed Dolls",
+              "summary": "השרשרת של Rowen the Fairy ברמה 36 דורשת 570 Cursed Doll ו-570 Zombie Lupin. Zombie Lupin הם רמה 41, אז זה לשלב הבא.",
+              "why": "השלבים שלה נותנים Diamond Ore, סקרול Gloves Attack ובסוף כובע. מי שזורק את ה-Doll עכשיו יצטרך לאסוף שוב.",
+              "steps": [
+                "לא למכור Cursed Doll.",
+                "לפנות להם מקום ב-Etc."
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://ms-classic.com/guides/how-to-get-sauna-robe"
+              ],
+              "verified": false
+            }
+          ],
+          "time": {
+            "min": 900,
+            "max": 1200
+          }
         },
         {
           "id": "fighter-40-50",

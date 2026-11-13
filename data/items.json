@@ -258,5 +258,47 @@
     "sources": [
       "Delivering the Weird Medicine (Maya)"
     ]
+  },
+  {
+    "id": "blue-sauna-robe",
+    "nameEn": "Blue Sauna Robe",
+    "slot": "overall",
+    "reqLevel": 30,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 75,
+      "str": 1,
+      "dex": 1,
+      "int": 1,
+      "luk": 1,
+      "hp": 10,
+      "mp": 10
+    },
+    "slots": 10,
+    "sources": [
+      "Returned Secret Book (Mr. Wetbottom)"
+    ]
+  },
+  {
+    "id": "red-sauna-robe",
+    "nameEn": "Red Sauna Robe",
+    "slot": "overall",
+    "reqLevel": 30,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 75,
+      "str": 1,
+      "dex": 1,
+      "int": 1,
+      "luk": 1,
+      "hp": 10,
+      "mp": 10
+    },
+    "slots": 10,
+    "sources": [
+      "Returned Secret Book (Mr. Wetbottom)"
+    ]
   }
 ]

@@ -187,5 +187,49 @@
     "drops": [
       "Dark Marble"
     ]
+  },
+  {
+    "id": "dark-axe-stump",
+    "nameEn": "Dark Axe Stump",
+    "level": 23,
+    "hp": 547,
+    "exp": 43,
+    "drops": []
+  },
+  {
+    "id": "fire-boar",
+    "nameEn": "Fire Boar",
+    "level": 32,
+    "hp": 842,
+    "exp": 60,
+    "drops": []
+  },
+  {
+    "id": "curse-eye",
+    "nameEn": "Curse Eye",
+    "level": 33,
+    "hp": 1001,
+    "exp": 63,
+    "drops": [
+      "Curse Eye Tail"
+    ]
+  },
+  {
+    "id": "jr-wraith",
+    "nameEn": "Jr. Wraith",
+    "level": 34,
+    "hp": 982,
+    "exp": 66,
+    "drops": []
+  },
+  {
+    "id": "lupin",
+    "nameEn": "Lupin",
+    "level": 37,
+    "hp": 1336,
+    "exp": 75,
+    "drops": [
+      "Lupin's Banana"
+    ]
   }
 ]
