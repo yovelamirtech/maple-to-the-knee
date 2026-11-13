@@ -13,8 +13,11 @@
    *   summary?: string, why?: string, steps?: string[], npc?: string, route?: string[],
    *   maps?: string[], monsters?: string[], items?: string[], rewards?: Rewards,
    *   requirements?: { level?: number, str?: number, dex?: number },
-   *   notes?: string[], sources?: string[], verified?: boolean, time?: PlayTime
+   *   notes?: string[], sources?: string[], verified?: boolean, time?: PlayTime, hunt?: Hunt[]
    * }} Task
+   * @typedef {'kill'|'drop'|'find'|'buy'} HuntKind
+   * @typedef {{ step: number, kind: HuntKind, what: string, monsters?: string[],
+   *   where?: { map: string, count?: number }[], note?: string }} Hunt where to kill or collect, tied to a 1-based step
    * @typedef {{ min: number, max: number, overlap?: boolean }} PlayTime minutes of play; overlap = done while training
    * @typedef {{
    *   id: string, order: number, titleHe: string, levelFrom: number, levelTo: number,
@@ -575,6 +578,43 @@
     return `<${tag}>${list.map((s) => `<li>${richText(s)}</li>`).join('')}</${tag}>`;
   }
 
+  /** @type {Record<HuntKind, string>} */
+  const HUNT_LABELS = { kill: '🎯 להרוג', drop: '🎒 לאסוף', find: '🔍 למצוא', buy: '🛒 לקנות' };
+
+  /** @param {Hunt} h */
+  function huntHtml(h) {
+    const from =
+      h.kind !== 'kill' && h.monsters && h.monsters.length
+        ? ` · נופל מ-${h.monsters.map((id) => `<bdi>${escapeHtml(world.monsters[id] ? world.monsters[id].nameEn : id)}</bdi>`).join(' או ')}`
+        : '';
+    // Each map is one LTR unit, so the spawn count stays after the name and the name wraps as a whole.
+    const where = (h.where || [])
+      .map((w) => `<bdi class="hunt-map" dir="ltr">${escapeHtml(mapName(w.map))}${w.count ? ` (${num(w.count)})` : ''}</bdi>`)
+      .join('');
+    return `<div class="hunt">
+      <span class="hunt-what">${HUNT_LABELS[h.kind] || ''}: ${richText(h.what)}${from}</span>
+      ${where ? `<span class="hunt-where">📍 ${where}</span>` : ''}
+      ${h.note ? `<span class="cell-sub">${richText(h.note)}</span>` : ''}
+    </div>`;
+  }
+
+  /** Steps, each followed by where to kill or collect what it asks for. @param {Task} task */
+  function stepsHtml(task) {
+    const steps = task.steps || [];
+    if (!steps.length) return '';
+    const hunt = task.hunt || [];
+    const items = steps
+      .map((s, i) => {
+        const here = hunt.filter((h) => h.step === i + 1);
+        return `<li>${richText(s)}${here.map(huntHtml).join('')}</li>`;
+      })
+      .join('');
+    const legend = hunt.some((h) => (h.where || []).some((w) => w.count))
+      ? '<p class="cell-sub hunt-legend">📍 המפה הראשונה היא ההמלצה. המספר בסוגריים: כמה מהמפלצת יש במפה, לפי הוויקי של Classic.</p>'
+      : '';
+    return `<ol>${items}</ol>${legend}`;
+  }
+
   /** @param {Task} task */
   function npcHtml(task) {
     if (!task.npc) return '';
@@ -695,7 +735,7 @@
         </div>
         ${section('מה זה', task.summary ? `<p>${richText(task.summary)}</p>` : '')}
         ${section('למה זה מקדם אותך', task.why ? `<p>${richText(task.why)}</p>` : '')}
-        ${section('צעדים', listHtml(task.steps, true))}
+        ${section('צעדים', stepsHtml(task))}
         ${section('NPC', npcHtml(task))}
         ${section('איך מגיעים', routeHtml(task))}
         ${section('מפלצות', monstersHtml(task))}

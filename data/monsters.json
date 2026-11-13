@@ -53,7 +53,10 @@
     "level": 6,
     "hp": 115,
     "exp": 12,
-    "drops": []
+    "drops": [
+      "Squishy Liquid",
+      "Slime Bubble"
+    ]
   },
   {
     "id": "pig",
@@ -61,7 +64,20 @@
     "level": 7,
     "hp": 128,
     "exp": 13,
-    "drops": []
+    "drops": [
+      "Pig's Head"
+    ]
+  },
+  {
+    "id": "ribbon-pig",
+    "nameEn": "Ribbon Pig",
+    "level": 10,
+    "hp": 172,
+    "exp": 19,
+    "drops": [
+      "Pig's Ribbon",
+      "Pig's Head"
+    ]
   },
   {
     "id": "orange-mushroom",
@@ -79,7 +95,9 @@
     "level": 5,
     "hp": 133,
     "exp": 10,
-    "drops": []
+    "drops": [
+      "Tree Branch"
+    ]
   },
   {
     "id": "dark-stump",
@@ -108,7 +126,9 @@
     "level": 14,
     "hp": 233,
     "exp": 26,
-    "drops": []
+    "drops": [
+      "Green Mushroom Cap"
+    ]
   },
   {
     "id": "bubbling",
@@ -202,7 +222,9 @@
     "level": 32,
     "hp": 842,
     "exp": 60,
-    "drops": []
+    "drops": [
+      "Fire Boar's Tooth (במשחק הישן)"
+    ]
   },
   {
     "id": "curse-eye",
@@ -211,7 +233,7 @@
     "hp": 1001,
     "exp": 63,
     "drops": [
-      "Curse Eye Tail"
+      "Curse Eye Tail (במשחק הישן)"
     ]
   },
   {
@@ -220,7 +242,9 @@
     "level": 34,
     "hp": 982,
     "exp": 66,
-    "drops": []
+    "drops": [
+      "Tablecloth (במשחק הישן)"
+    ]
   },
   {
     "id": "lupin",
@@ -229,7 +253,7 @@
     "hp": 1336,
     "exp": 75,
     "drops": [
-      "Lupin's Banana"
+      "Lupin's Banana (במשחק הישן)"
     ]
   }
 ]
