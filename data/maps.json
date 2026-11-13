@@ -74,5 +74,98 @@
     "id": "thicket-around-the-beach-3",
     "nameEn": "Thicket Around the Beach III",
     "regionId": "victoria-island"
+  },
+  {
+    "id": "perion",
+    "nameEn": "Perion",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-street-corner-of-perion",
+    "nameEn": "West Street Corner of Perion",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-rocky-mountain-1",
+    "nameEn": "West Rocky Mountain I",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-rocky-mountain-2",
+    "nameEn": "West Rocky Mountain II",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-rocky-mountain-3",
+    "nameEn": "West Rocky Mountain III",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-rocky-mountain-4",
+    "nameEn": "West Rocky Mountain IV",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "warriors-rocky-mountain",
+    "nameEn": "Warrior's Rocky Mountain",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "henesys",
+    "nameEn": "Henesys",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "ellinia",
+    "nameEn": "Ellinia",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "kerning-city",
+    "nameEn": "Kerning City",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "sleepywood",
+    "nameEn": "Sleepywood",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "line-1-area-1",
+    "nameEn": "Line 1 <Area 1>",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "transfer-area",
+    "nameEn": "Transfer Area",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "construction-site-north-of-kerning-city",
+    "nameEn": "Construction Site North of Kerning City",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "tree-dungeon-forest-up-north-4",
+    "nameEn": "Tree Dungeon, Forest Up North IV",
+    "regionId": "victoria-island",
+    "levelRange": "14–29"
+  },
+  {
+    "id": "ant-tunnel-3",
+    "nameEn": "Ant Tunnel III",
+    "regionId": "victoria-island",
+    "levelRange": "22–24"
+  },
+  {
+    "id": "damp-forest",
+    "nameEn": "Damp Forest",
+    "regionId": "victoria-island",
+    "levelRange": "22–24"
+  },
+  {
+    "id": "the-blue-mushroom-forest",
+    "nameEn": "The Blue Mushroom Forest",
+    "regionId": "victoria-island"
   }
 ]

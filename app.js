@@ -200,8 +200,9 @@
 
   // Runs of Latin text get wrapped in <bdi> so punctuation around them stays in the right place.
   // A colon stays inside only when Latin text follows it ("Final Attack: Sword"), not before Hebrew ("Biggs: נשק").
-  const LATIN_WORD = String.raw`(?:[A-Za-z0-9'’\-]|\.(?=[A-Za-z0-9])|:(?= [A-Za-z]))*`;
-  const LATIN_RUN = new RegExp(String.raw`[A-Za-z]${LATIN_WORD}(?: +[A-Za-z0-9]${LATIN_WORD})*`, 'g');
+  // A comma stays inside before a capitalised word ("Tree Dungeon, Forest Up North IV"), and so do <...> parts ("Line 1 <Area 1>").
+  const LATIN_WORD = String.raw`(?:[A-Za-z0-9'’\->]|\.(?=[A-Za-z0-9])|[:,](?= <?[A-Z]))*`;
+  const LATIN_RUN = new RegExp(String.raw`[A-Za-z]${LATIN_WORD}(?: +<?[A-Za-z0-9]${LATIN_WORD})*`, 'g');
 
   /** @param {unknown} str */
   function richText(str) {

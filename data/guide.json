@@ -755,9 +755,136 @@
           "levelTo": 10,
           "job": "beginner",
           "regionHe": "פריון",
-          "goalHe": "לעבור ל-Warrior אצל Dances with Balrog בפריון ולשים SP ראשון ב-Power Strike",
+          "goalHe": "להפוך ל-Warrior אצל Dances with Balrog ולשים SP ראשון ב-Power Strike",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "j1-travel-perion",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "להגיע לפריון",
+              "titleEn": "Lith Harbor → Perion",
+              "summary": "בסיום Phil's Call ברמה 10, Phil יכול לשלוח אותך ישר לעיר של הג'וב. אחרת הולכים ברגל דרך הנסיס.",
+              "why": "Dances with Balrog, המורה של Warrior, נמצא בפריון. גם חנות הנשק של Warrior (River) שם.",
+              "steps": [
+                "ברמה 10 לחזור ל-Phil ב-Lith Harbor ולסיים את Phil's Call.",
+                "לבחור בפריון אם Phil מציע נסיעה.",
+                "אם לא: ללכת מזרחה דרך הנסיס, או לקחת Regular Cab מהנסיס לפריון."
+              ],
+              "npc": "phil",
+              "route": [
+                "lith-harbor",
+                "perion"
+              ],
+              "maps": [
+                "lith-harbor",
+                "perion"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "⚠ מחיר הנסיעה לא ברור. מקור קהילה אחד: 400–600 מזו לרמות 10–19. מקור אחר: Regular Cab ב-90% הנחה ל-Beginner, אז כדאי לנסוע לפני שמקבלים ג'וב."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Beginner",
+                "https://ms-classic.com/guides/what-to-do-at-level-10",
+                "https://ms-classic.com/guides/how-to-travel-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j1-dances-with-balrog",
+              "type": "job",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Dances with Balrog: להפוך ל-Warrior",
+              "titleEn": "1st job: Warrior",
+              "summary": "ב-Warriors' Sanctuary, בראש פריון. ברמה 10 מדברים איתו ומאשרים.",
+              "why": "Warrior הוא הבסיס של Fighter. בלי ג'וב אין SP לסקילים, ואין גישה לנשקים של Warrior.",
+              "steps": [
+                "לטפס לראש פריון, ל-Warriors' Sanctuary.",
+                "לדבר עם Dances with Balrog ולאשר את המעבר.",
+                "אם הוא שולח אותך לאזור מבחן קצר: להרוג את המפלצות שם ולחזור אליו עם ההוכחה."
+              ],
+              "npc": "dances-with-balrog",
+              "route": [
+                "perion"
+              ],
+              "maps": [
+                "perion"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "⚠ המקורות חלוקים: לפי הוויקי צריך 35 STR ויש מבחן קצר. לפי ms-classic אין דרישת סטטים. עם 57 STR עוברים בכל מקרה.",
+                "המעבר הוא לתמיד. אפשר לבחור בין Fighter, Page ו-Spearman רק ברמה 30."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Dances_with_Balrog",
+                "https://ms-classic.com/guides/job-advancement-guide",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j1-sp-power-strike",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Power Strike 1",
+              "titleEn": "Power Strike Lv 1",
+              "summary": "הנקודה הראשונה של Warrior הולכת ל-Power Strike.",
+              "why": "מכה אחת חזקה (160% ב-4 MP). היא גם פותחת את Slash Blast.",
+              "steps": [
+                "לפתוח את חלון הסקילים (K), טאב Warrior.",
+                "לשים נקודה אחת ב-Power Strike.",
+                "לשים את הסקיל על מקש נוח."
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Warrior",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j1-tip-save-mesos",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "לשמור מזו לנשק הראשון",
+              "titleEn": "Save mesos for your first sword",
+              "summary": "ברמה 10 יש בדרך כלל 1,000–2,000 מזו. Wooden Sword עולה 5,000 ו-Sabre עולה 5,000.",
+              "why": "ה-Fruit Knife או ה-Razor (23 W.ATK) מספיקים לרמות הראשונות. עדיף לא לקנות נשק זול כמו Long Sword (27), שמוסיף רק 4 W.ATK.",
+              "steps": [
+                "לא לקנות שריון או נשק ביניים.",
+                "למכור Etc שלא צריך לקווסטים.",
+                "הנשק הראשון: בשלב הבא."
+              ],
+              "items": [
+                "long-sword"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/npc-shops-guide",
+                "https://ms-classic.com/guides/best-early-weapons-by-class"
+              ],
+              "verified": true
+            }
+          ]
         },
         {
           "id": "victoria-10-21",
@@ -766,10 +893,618 @@
           "levelFrom": 10,
           "levelTo": 21,
           "job": "warrior",
-          "regionHe": "פריון והנסיס",
-          "goalHe": "להגיע לרמה 21 עם נשק ראשון מחנות בפריון",
+          "regionHe": "פריון וקרנינג",
+          "goalHe": "להגיע לרמה 21 עם Power Strike 20 ונשק של רמה 20",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "v1-train-west-street-corner",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון ב-West Street Corner of Perion",
+              "titleEn": "West Street Corner of Perion",
+              "summary": "המפה שמחוץ לפריון: 24 Stump ו-14 Dark Stump. לרמות 10–14.",
+              "why": "צמוד לעיר ולחנויות, ובדיוק המפלצות של הקווסט של Blackbull. Dark Stump (רמה 11) נותן 21 EXP.",
+              "steps": [
+                "לצאת מפריון מערבה.",
+                "להתאמן עד 14 בערך, ולאסוף Tree Branch ו-Leaf ל-Blackbull תוך כדי.",
+                "ברמה 15: לעבור ל-Line 1."
+              ],
+              "route": [
+                "perion",
+                "west-street-corner-of-perion"
+              ],
+              "maps": [
+                "west-street-corner-of-perion"
+              ],
+              "monsters": [
+                "stump",
+                "dark-stump"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "הבחירה במפה הזו היא שלי, לפי מספרי המפלצות בוויקי. ms-classic ממליץ לרמות האלה על Thicket Around the Beach II ועל A Hill West of Henesys."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/West_Street_Corner_of_Perion",
+                "https://mapleclassic.wiki/wiki/Dark_Stump"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v1-quest-blackbull",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Blackbull: לתקן את הבית",
+              "titleEn": "Fixing Blackbull's House",
+              "summary": "20 Stump, 20 Dark Stump, 10 Tree Branch ו-10 Leaf. הפרס: מגן (Wooden Buckler או Steel Shield) ו-252 EXP.",
+              "why": "מגן בחינם לחד-ידנית (Wooden Buckler עולה 4,000 בחנות). גם בדו-ידנית שווה בשביל ה-EXP וה-380 מזו, ואפשר למכור את המגן.",
+              "steps": [
+                "לקבל את הקווסט מ-Blackbull בפריון (רמה 11).",
+                "להרוג 20 Stump ו-20 Dark Stump ב-West Street Corner of Perion.",
+                "לאסוף 10 Tree Branch ו-10 Leaf (נופלים מ-Dark Stump).",
+                "לחזור ל-Blackbull."
+              ],
+              "npc": "blackbull",
+              "route": [
+                "perion",
+                "west-street-corner-of-perion"
+              ],
+              "maps": [
+                "west-street-corner-of-perion"
+              ],
+              "monsters": [
+                "stump",
+                "dark-stump"
+              ],
+              "items": [
+                "wooden-buckler",
+                "steel-shield"
+              ],
+              "rewards": {
+                "exp": 252,
+                "mesos": 380,
+                "items": [
+                  "Wooden Buckler (90%) או Steel Shield (10%)"
+                ]
+              },
+              "requirements": {
+                "level": 11
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Fixing_Blackbull's_House",
+                "https://ms-classic.com/guides/quests-worth-doing"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-train-line-1",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון ב-Line 1 <Area 1>",
+              "titleEn": "Line 1 <Area 1>",
+              "summary": "64 Bubbling (רמה 15, 259 HP, 28 EXP) ברכבת התחתית של קרנינג. לרמות 15–21.",
+              "why": "המפה הכי צפופה בטווח הזה, וכולה מפלצת אחת. Slash Blast פוגע בהרבה מהן בבת אחת, ו-Kerning City קרובה בשביל פוטים.",
+              "steps": [
+                "לנסוע מפריון לקרנינג ב-Regular Cab.",
+                "להיכנס לרכבת התחתית של קרנינג ולרדת ל-Line 1 <Area 1>.",
+                "Slash Blast כשיש 3 Bubbling ומעלה בטווח, Power Strike על בודדות."
+              ],
+              "route": [
+                "kerning-city",
+                "line-1-area-1"
+              ],
+              "maps": [
+                "line-1-area-1"
+              ],
+              "monsters": [
+                "bubbling"
+              ],
+              "requirements": {
+                "level": 15
+              },
+              "notes": [
+                "⚠ בוויקי כתוב שב-21/10 הורידו את קצב ההופעה של המפלצות במפה (מ-0.9 ל-0.8)."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Line_1_(Area_1)",
+                "https://ms-classic.com/guides/where-to-train-level-10-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-train-tree-dungeon",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה: Tree Dungeon, Forest Up North IV",
+              "titleEn": "Tree Dungeon, Forest Up North IV",
+              "summary": "31 Green Mushroom ו-13 Slime, ליד אלינייה. חלופה ל-Line 1 אם היא עמוסה.",
+              "why": "Green Mushroom (רמה 14, 26 EXP) במפה בלי מפלצות חזקות.",
+              "steps": [
+                "Regular Cab לאלינייה.",
+                "צפונה ל-Tree Dungeon, Forest Up North IV."
+              ],
+              "route": [
+                "ellinia",
+                "tree-dungeon-forest-up-north-4"
+              ],
+              "maps": [
+                "tree-dungeon-forest-up-north-4"
+              ],
+              "monsters": [
+                "green-mushroom"
+              ],
+              "requirements": {
+                "level": 14
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Tree_Dungeon,_Forest_Up_North_IV",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-train-west-rocky-3",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה ליד פריון: West Rocky Mountain III",
+              "titleEn": "West Rocky Mountain III",
+              "summary": "32 Green Mushroom, שלוש מפות מפריון. יש גם 9 Dark Axe Stump ברמה 23.",
+              "why": "הכי הרבה Green Mushroom ליד פריון, בלי לנסוע.",
+              "steps": [
+                "Perion ← West Street Corner of Perion ← West Rocky Mountain I ← II ← III.",
+                "להיזהר מ-Dark Axe Stump עד רמה 18 בערך."
+              ],
+              "route": [
+                "perion",
+                "west-street-corner-of-perion",
+                "west-rocky-mountain-1",
+                "west-rocky-mountain-2",
+                "west-rocky-mountain-3"
+              ],
+              "maps": [
+                "west-rocky-mountain-3"
+              ],
+              "monsters": [
+                "green-mushroom"
+              ],
+              "requirements": {
+                "level": 14
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/West_Rocky_Mountain_III",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-quest-nella",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "Nella: Work Gloves",
+              "titleEn": "Don Hwang's Request → Shumi's Request → Andre's Request",
+              "summary": "שלושה קווסטים של Nella בקרנינג. בסוף: Work Gloves, הכפפות הראשונות.",
+              "why": "Work Gloves (רמה 10, 6 W.DEF, 1% קריטי, 5 סלוטים) הן הכפפות הראשונות של רוב השחקנים. כל קווסט נותן 188 EXP ו-351 מזו.",
+              "steps": [
+                "Don Hwang's Request: להרוג 20 Orange Mushroom ו-20 Ribbon Pig, ולהביא 10 Orange Mushroom Cap ו-10 Pig's Ribbon.",
+                "Shumi's Request: להרוג 25 Dark Stump ולהביא 15 Leaf.",
+                "Andre's Request: להרוג 30 Octopus, ולהביא 20 Octopus Leg ו-Pure Water אחד.",
+                "Construction Site North of Kerning City מכסה את רוב המפלצות."
+              ],
+              "npc": "nella",
+              "route": [
+                "kerning-city",
+                "construction-site-north-of-kerning-city"
+              ],
+              "maps": [
+                "construction-site-north-of-kerning-city"
+              ],
+              "monsters": [
+                "dark-stump",
+                "octopus"
+              ],
+              "items": [
+                "work-gloves"
+              ],
+              "rewards": {
+                "exp": 564,
+                "mesos": 1053,
+                "items": [
+                  "15 Lemon",
+                  "20 Cake",
+                  "Work Gloves"
+                ]
+              },
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "Pure Water עולה 1,120 מזו ונמכר ב-Sleepywood. זו הסיבה שזה לא חובה.",
+                "⚠ לפי טקסט הקווסט, Nella לוקחת עמלה של 1,000 מזו כדי להתחיל את השרשרת."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Andre's_Request",
+                "https://ms-classic.com/guides/how-to-get-work-gloves",
+                "https://ms-classic.com/guides/quests-worth-doing"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-quest-snail-legend",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "Legend of the Snail (שלבים 1–4)",
+              "titleEn": "Legend of the Snail",
+              "summary": "שרשרת של Pia בהנסיס מרמה 20: 7,477 EXP, בערך 37% מרמה 20, ו-20 Blue Potion.",
+              "why": "הרבה EXP על איסוף של 60 קונכיות חלזונות קלים. רק שלב 5 (להרוג את Mano) לא שווה את זה.",
+              "steps": [
+                "Pia ב-Henesys Park (רמה 20) ← Mrs. Ming Ming ← Wing the Fairy באלינייה.",
+                "לאסוף 20 Snail Shell, 20 Blue Snail Shell ו-20 Red Snail Shell. בכולם יש ב-Thicket Around the Beach I ליד Lith Harbor.",
+                "למסור ל-Wing, ואז לחזור ל-Pia.",
+                "לדלג על שלב 5 (Mano) אם הוא לא בדיוק שם."
+              ],
+              "npc": "pia",
+              "maps": [
+                "henesys",
+                "thicket-around-the-beach-1"
+              ],
+              "rewards": {
+                "exp": 7477,
+                "mesos": 2434,
+                "items": [
+                  "Blue Potion ×20"
+                ]
+              },
+              "requirements": {
+                "level": 20
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/legend-of-the-snail-quest-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v1-citizenship",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "אזרחות בהנסיס (רשות)",
+              "titleEn": "Henesys citizenship",
+              "summary": "מרמה 12: נרשמים אצל Arthur בבניין העירייה של הנסיס.",
+              "why": "בחנות של העירייה יש Supreme Sniper Potion (+7 דיוק ל-15 דקות), והנחה ב-Regular Cab ובחנויות של העיר.",
+              "steps": [
+                "רמה 12: לסיים את To Henesys, the Prairie Town.",
+                "להירשם אצל Arthur ב-Henesys Town Hall.",
+                "משימה יומית אחת בלוח הקהילה."
+              ],
+              "maps": [
+                "henesys"
+              ],
+              "requirements": {
+                "level": 12
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/henesys-citizenship-guide",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v1-gear-wooden-sword",
+              "type": "gear",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Wooden Sword (דו-ידנית)",
+              "titleEn": "Wooden Sword",
+              "summary": "חרב דו-ידנית של רמה 10: 30 W.ATK, דורשת 25 STR. 5,000 מזו אצל River בפריון.",
+              "why": "הנשק הדו-ידני הראשון, ומחזיק עד רמה 20. נופל גם מ-Red Snail, אז אולי כבר יש לך אחד.",
+              "steps": [
+                "לבדוק במלאי אם נפל Wooden Sword מ-Red Snail.",
+                "אחרת: לקנות אצל River בפריון ברגע שיש 5,000 מזו."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "wooden-sword"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Wooden_Sword",
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-gear-sabre",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Sabre (חד-ידנית)",
+              "titleEn": "Sabre",
+              "summary": "חרב חד-ידנית של רמה 15: 32 W.ATK, דורשת 30 STR ו-10 DEX. 5,000 מזו אצל River.",
+              "why": "קפיצה של 9 W.ATK מה-Fruit Knife, ומתאימה למגן.",
+              "steps": [
+                "ברמה 15: לקנות Sabre אצל River בפריון.",
+                "לוודא שיש 10 DEX (לפי חלוקת ה-AP של השלב)."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "sabre"
+              ],
+              "requirements": {
+                "level": 15
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Sabre",
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-gear-buckler",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Wooden Buckler (חד-ידנית)",
+              "titleEn": "Wooden Buckler",
+              "summary": "מגן של רמה 10: 70 W.DEF, דורש 10 STR. מגיע מ-Blackbull, או 4,000 מזו אצל River.",
+              "why": "המגן מוסיף הרבה הגנה ונותן סיכוי לחסום מכות. זה היתרון של חד-ידנית.",
+              "steps": [
+                "לקבל מהקווסט של Blackbull, או לקנות אצל River.",
+                "ללבוש ביד השנייה."
+              ],
+              "npc": "blackbull",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "wooden-buckler"
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "אם יצא Steel Shield מ-Blackbull (סיכוי של 10%), הוא טוב יותר: 80 W.DEF מרמה 15."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Wooden_Buckler",
+                "https://mapleclassic.wiki/wiki/Fixing_Blackbull's_House",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-gear-viking-sword",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Viking Sword (חד-ידנית)",
+              "titleEn": "Viking Sword",
+              "summary": "חרב חד-ידנית של רמה 20: 37 W.ATK, דורשת 40 STR ו-15 DEX. 10,500 מזו אצל River.",
+              "why": "החרב החד-ידנית האחרונה בחנות. אין חרב חד-ידנית של רמה 25 בחנויות, אז היא מחזיקה עד 30.",
+              "steps": [
+                "ברמה 20: לקנות אצל River בפריון.",
+                "לוודא 15 DEX."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "viking-sword"
+              ],
+              "requirements": {
+                "level": 20
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Viking_Sword",
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-gear-two-handed-sword",
+              "type": "gear",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Two-Handed Sword (דו-ידנית)",
+              "titleEn": "Two-Handed Sword",
+              "summary": "חרב דו-ידנית של רמה 20: 40 W.ATK, דורשת 45 STR ו-20 DEX. 13,500 מזו אצל River.",
+              "why": "10 W.ATK יותר מ-Wooden Sword. מחזיקה עד Broadsword ברמה 25.",
+              "steps": [
+                "ברמה 20: לקנות אצל River בפריון.",
+                "לוודא 20 DEX."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "two-handed-sword"
+              ],
+              "requirements": {
+                "level": 20
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Two-Handed_Sword",
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-ap-one-handed",
+              "type": "ap",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "AP בחד-ידנית: 4 STR ו-1 DEX",
+              "titleEn": "AP (one-handed): 4 STR / 1 DEX",
+              "summary": "מרמה 10 עד 21: בכל רמה 4 STR ו-1 DEX. ברמה 21: בערך 101 STR ו-16 DEX.",
+              "why": "מספיק DEX בדיוק בזמן: 10 ל-Sabre ברמה 15, ו-15 ל-Viking Sword ברמה 20. כל השאר ל-STR.",
+              "steps": [
+                "אחרי כל עליית רמה: 4 ל-STR, 1 ל-DEX.",
+                "רמה 15: 10 DEX. רמה 20: 15 DEX."
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "החישוב שלי לפי דרישות הנשקים מהוויקי. הקהילה ממליצה באופן כללי על 4 STR ו-1 DEX."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Sabre",
+                "https://mapleclassic.wiki/wiki/Viking_Sword"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v1-ap-two-handed",
+              "type": "ap",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "AP בדו-ידנית: 3 STR ו-2 DEX",
+              "titleEn": "AP (two-handed): 3 STR / 2 DEX",
+              "summary": "מרמה 10 עד 21: בכל רמה 3 STR ו-2 DEX. ברמה 20: 87 STR ו-25 DEX.",
+              "why": "החרבות הדו-ידניות דורשות יותר DEX: 20 ל-Two-Handed Sword ברמה 20, ו-25 ל-Broadsword ברמה 25. ככה מגיעים לשתיהן בזמן, ואחרי 21 הכל הולך ל-STR.",
+              "steps": [
+                "אחרי כל עליית רמה: 3 ל-STR, 2 ל-DEX.",
+                "רמה 20: לבדוק שיש 20 DEX לפחות."
+              ],
+              "requirements": {
+                "level": 10
+              },
+              "notes": [
+                "החישוב שלי לפי דרישות הנשקים מהוויקי. ברמה 30 יוצא כמו בדוגמת הקהילה: בערך 135 STR ו-27 DEX."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Two-Handed_Sword",
+                "https://mapleclassic.wiki/wiki/Broadsword"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v1-sp-11-14",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 11–14",
+              "titleEn": "SP 11–14: Power Strike 4, Slash Blast 4, Precise Strikes 5",
+              "summary": "קצת מכל סקיל התקפה, ו-Precise Strikes לדיוק.",
+              "why": "Slash Blast מוקדם עוזר במפות צפופות, ו-Precise Strikes מונע החטאות (כל החטאה עולה MP).",
+              "steps": [
+                "רמה 11: Power Strike +2, Slash Blast +1.",
+                "רמה 12: Power Strike +1, Slash Blast +2.",
+                "רמה 13: Slash Blast +1, Precise Strikes +2.",
+                "רמה 14: Precise Strikes +3.",
+                "סה\"כ: Power Strike 4, Slash Blast 4, Precise Strikes 5."
+              ],
+              "requirements": {
+                "level": 11
+              },
+              "notes": [
+                "סדר מומלץ מהקהילה, לא חובה מדויקת. העיקר לא להשאיר נקודות לא מנוצלות."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Warrior"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-sp-15-20",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 15–20: Power Strike 20",
+              "titleEn": "SP 15–20: max Power Strike",
+              "summary": "כל הנקודות ל-Power Strike עד שהוא מלא ברמה 20.",
+              "why": "Power Strike מלא (260%) הוא ההתקפה העיקרית שלך עד ג'וב 2.",
+              "steps": [
+                "רמות 15–19: Power Strike +15 (ל-19).",
+                "רמה 20: Power Strike +1 (ל-20), Slash Blast +2 (ל-6)."
+              ],
+              "requirements": {
+                "level": 15
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Warrior"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v1-tip-slash-blast",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "מתי Slash Blast ומתי Power Strike",
+              "titleEn": "Slash Blast vs Power Strike",
+              "summary": "Slash Blast פוגע בעד 6 מפלצות, אבל עולה גם HP וגם MP. Power Strike למפלצת אחת.",
+              "why": "הכלל: Slash Blast כשהוא יפגע ב-3 מפלצות ומעלה. אחרת Power Strike.",
+              "steps": [
+                "לשים את שני הסקילים על מקשים קרובים.",
+                "לשים לב ל-HP כשמשתמשים הרבה ב-Slash Blast."
+              ],
+              "requirements": {
+                "level": 11
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Warrior"
+              ],
+              "verified": true
+            }
+          ]
         },
         {
           "id": "victoria-21-30",
@@ -778,10 +1513,505 @@
           "levelFrom": 21,
           "levelTo": 30,
           "job": "warrior",
-          "regionHe": "קרנינג וויקטוריה",
-          "goalHe": "להגיע לרמה 30 עם חרב ברמה 30 ו-Power Strike מלא",
+          "regionHe": "Sleepywood וקרנינג",
+          "goalHe": "להגיע לרמה 30 עם Slash Blast 19, Precise Strikes 15 וציוד של רמה 25",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "v2-train-ant-tunnel-3",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון ב-Ant Tunnel III",
+              "titleEn": "Ant Tunnel III",
+              "summary": "61 Zombie Mushroom ו-38 Horny Mushroom מתחת ל-Sleepywood. לרמות 22–30.",
+              "why": "המפה הכי צפופה בטווח, בלי מפלצות חזקות. Zombie Mushroom נותן 45 EXP, ושם גם אוספים ל-Maya ול-Stranger.",
+              "steps": [
+                "Regular Cab ל-Sleepywood.",
+                "להיכנס למנהרות הנמלים ולהמשיך ל-Ant Tunnel III.",
+                "להתאמן כאן עד 30."
+              ],
+              "route": [
+                "sleepywood",
+                "ant-tunnel-3"
+              ],
+              "maps": [
+                "ant-tunnel-3"
+              ],
+              "monsters": [
+                "zombie-mushroom",
+                "horny-mushroom"
+              ],
+              "requirements": {
+                "level": 22
+              },
+              "notes": [
+                "אם מחטיאים הרבה ב-22–24, להישאר עוד רמה או שתיים ב-Line 1 או ב-Damp Forest."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Ant_Tunnel_III",
+                "https://ms-classic.com/guides/where-to-train-level-10-30",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-train-damp-forest",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה לרמות 21–22: Damp Forest",
+              "titleEn": "Damp Forest",
+              "summary": "11 Jr. Necki ו-15 Octopus, בלי מפלצות מסוכנות.",
+              "why": "Jr. Necki (רמה 21) נותן הכי הרבה EXP ל-HP בטווח 10–30. גם Octopus Leg ל-Maya נופל כאן.",
+              "steps": [
+                "Regular Cab ל-Sleepywood, ומשם ל-Damp Forest.",
+                "להתאמן עד 22, ואז ל-Ant Tunnel III."
+              ],
+              "route": [
+                "sleepywood",
+                "damp-forest"
+              ],
+              "maps": [
+                "damp-forest"
+              ],
+              "monsters": [
+                "jr-necki",
+                "octopus"
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Damp_Forest",
+                "https://ms-classic.com/guides/where-to-train-level-10-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-quest-maya",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "Maya: התרופה המוזרה",
+              "titleEn": "Maya and the Weird Medicine (7 steps)",
+              "summary": "שרשרת של 7 שלבים מרמה 21: 12,529 EXP (בערך חצי רמה), 4,602 מזו, 40 Blue Potion וה-Brown Bamboo Hat.",
+              "why": "Brown Bamboo Hat (רמה 25, 24 W.DEF, +1 דיוק, 7 סלוטים) הוא כובע מעולה בחינם. רוב העבודה היא 75 Zombie Mushroom, שהורגים בכל מקרה ב-Ant Tunnel III.",
+              "steps": [
+                "Maya ב-Henesys ← Teo ב-Lith Harbor ← Sophia בפריון ← Manji בפריון.",
+                "Manji: להרוג 75 Zombie Mushroom ולהביא 40 Charm of the Undead.",
+                "Sophia: 30 Squishy Liquid (Slime), 30 Leaf (Dark Stump) ו-30 Octopus Leg (Octopus).",
+                "Sophia ← Teo ← Maya, ומקבלים את הכובע."
+              ],
+              "npc": "maya",
+              "maps": [
+                "henesys",
+                "ant-tunnel-3"
+              ],
+              "monsters": [
+                "zombie-mushroom",
+                "dark-stump",
+                "octopus"
+              ],
+              "items": [
+                "brown-bamboo-hat"
+              ],
+              "rewards": {
+                "exp": 12529,
+                "mesos": 4602,
+                "items": [
+                  "Meat ×15",
+                  "Blue Potion ×40",
+                  "Brown Bamboo Hat"
+                ]
+              },
+              "requirements": {
+                "level": 21
+              },
+              "notes": [
+                "לשמור Leaf מ-Blackbull ו-Octopus Leg מ-Nella אם נשארו.",
+                "⚠ אין בנתוני המשחק מקור ל-Charm of the Undead. ההנחה היא שהוא נופל מ-Zombie Mushroom."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/maya-and-the-weird-medicine-quest-guide",
+                "https://mapleclassic.wiki/wiki/Brown_Bamboo_Hat"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-quest-jane",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "Jane and the Mushroom",
+              "titleEn": "Jane and the Mushroom",
+              "summary": "30 Blue Mushroom ו-30 Horny Mushroom, ו-15 כובעים מכל סוג. הפרס: 1,610 EXP וסקרול נשק Intermediate אקראי.",
+              "why": "פותח את הקווסטים של Jane ברמה 44, שנותנים Elixir. ה-Horny Mushroom ממילא ב-Ant Tunnel III.",
+              "steps": [
+                "לקבל מ-Jane ב-Lith Harbor (רמה 20).",
+                "30 Blue Mushroom ב-The Blue Mushroom Forest.",
+                "30 Horny Mushroom ב-Ant Tunnel III.",
+                "להחזיר ל-Jane."
+              ],
+              "npc": "jane",
+              "maps": [
+                "the-blue-mushroom-forest",
+                "ant-tunnel-3"
+              ],
+              "monsters": [
+                "blue-mushroom",
+                "horny-mushroom"
+              ],
+              "rewards": {
+                "exp": 1610,
+                "mesos": 658,
+                "items": [
+                  "סקרול נשק Intermediate אקראי (1 מ-14)"
+                ]
+              },
+              "requirements": {
+                "level": 20
+              },
+              "notes": [
+                "הסקרול אקראי, ולרוב לא לנשק שלך. לא למכור לחנות: שחקנים משלמים עליו הרבה יותר."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/jane-and-the-mushroom-quest-guide",
+                "https://mapleclassic.wiki/wiki/Blue_Mushroom",
+                "https://ms-classic.com/guides/quests-worth-doing"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-quest-stranger",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "Jane Doe: Old Raggedy Cape",
+              "titleEn": "Stranger's Request → Stranger's Identity",
+              "summary": "שני קווסטים ב-Niora Hospital בקרנינג מרמה 23. הפרס: Old Raggedy Cape (רמה 25, 5 סלוטים).",
+              "why": "הגלימה הראשונה, עם +1 דיוק. 4,860 EXP בסך הכל. החלק של Zombie Mushroom נעשה תוך כדי Maya.",
+              "steps": [
+                "Stranger's Request: להרוג 40 Stirge ולהביא 20 Broken Mirror Glass.",
+                "Stranger's Identity: להרוג 50 Zombie Mushroom ולהביא 25 Charm of the Undead."
+              ],
+              "npc": "jane-doe",
+              "maps": [
+                "transfer-area",
+                "ant-tunnel-3"
+              ],
+              "monsters": [
+                "stirge",
+                "zombie-mushroom"
+              ],
+              "items": [
+                "old-raggedy-cape"
+              ],
+              "rewards": {
+                "exp": 4860,
+                "mesos": 1490,
+                "items": [
+                  "Blue Potion ×20",
+                  "Old Raggedy Cape"
+                ]
+              },
+              "requirements": {
+                "level": 23
+              },
+              "notes": [
+                "Stirge עפות, וזה לא נוח ל-Warrior. אפשר לעשות את החלק הזה כשיש בדיוק כמה ב-Transfer Area."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/how-to-get-old-raggedy-cape",
+                "https://mapleclassic.wiki/wiki/Old_Raggedy_Cape"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-pq-proof",
+              "type": "pq",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "לקחת את Proof of Companionship לפני KPQ",
+              "titleEn": "Proof of Companionship",
+              "summary": "קווסט חד-פעמי מ-Lakelis בקרנינג. מסתיים כשהורגים את King Slime ב-KPQ.",
+              "why": "1,870 EXP, 687 מזו וסקרול Intermediate אקראי לעגיל. צריך לקחת אותו לפני הריצה הראשונה.",
+              "steps": [
+                "לדבר עם Lakelis בקרנינג (רמה 21) ולקבל את הקווסט.",
+                "לסיים KPQ אחד עם King Slime."
+              ],
+              "npc": "lakelis",
+              "maps": [
+                "kerning-city"
+              ],
+              "rewards": {
+                "exp": 1870,
+                "mesos": 687,
+                "items": [
+                  "Earring scroll Intermediate אקראי (STR/DEX/INT/LUK)"
+                ]
+              },
+              "requirements": {
+                "level": 21
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Proof_of_Companionship",
+                "https://ms-classic.com/guides/kpq-walkthrough"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-pq-kpq",
+              "type": "pq",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "KPQ: Kerning City Party Quest",
+              "titleEn": "First Time Together (KPQ)",
+              "summary": "פרטי של בדיוק 4 שחקנים מרמה 21, אצל Lakelis בקרנינג, בערוצים 3–12. חמישה שלבים ו-King Slime בסוף.",
+              "why": "EXP טוב ונעים עם אנשים. אבל אפשר להגיע ל-30 גם בלעדיו, אז זה רק רשות.",
+              "steps": [
+                "למצוא פרטי של 4 (רמה 21+).",
+                "שלב 1: לאסוף את מספר הקופונים מ-Ligator שהשאלה של Cloto אומרת.",
+                "שלבים 2–4: שלושה שחקנים עומדים על חבלים, פלטפורמות או חביות, ומנסים צירופים.",
+                "שלב 5: 3 Curse Eye, 6 Jr. Necki ו-King Slime. כל אחד מפיל pass.",
+                "יוצאים דרך Nella."
+              ],
+              "npc": "lakelis",
+              "maps": [
+                "kerning-city"
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [
+                "⚠ מגבלת 30 הדקות והשאלות של שלב 1 מגיעות מדיווחי קהילה מגרסאות הבדיקה."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/kpq-walkthrough",
+                "https://ms-classic.com/guides/kerning-city-party-quest-kpq"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-gear-red-triangular",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Red Triangular Shield (חד-ידנית)",
+              "titleEn": "Red Triangular Shield",
+              "summary": "מגן של רמה 25: 100 W.DEF, דורש 40 STR ו-15 DEX. 15,000 מזו אצל River.",
+              "why": "המגן הכי טוב בחנויות. בחד-ידנית אין חרב חדשה ברמה 25, אז זה השדרוג של הרמה הזו.",
+              "steps": [
+                "ברמה 25: לקנות אצל River בפריון.",
+                "להמשיך עם Viking Sword עד 30."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "red-triangular-shield"
+              ],
+              "requirements": {
+                "level": 25
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Red_Triangular_Shield",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-gear-broadsword",
+              "type": "gear",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "Broadsword (דו-ידנית)",
+              "titleEn": "Broadsword",
+              "summary": "חרב דו-ידנית של רמה 25: 45 W.ATK, דורשת 55 STR ו-25 DEX. 16,500 מזו אצל River.",
+              "why": "הנשק הדו-ידני הכי חזק בחנויות. מחזיק עד 30 ואחרי.",
+              "steps": [
+                "ברמה 25: לקנות אצל River בפריון.",
+                "לוודא 25 DEX."
+              ],
+              "npc": "river",
+              "maps": [
+                "perion"
+              ],
+              "items": [
+                "broadsword"
+              ],
+              "requirements": {
+                "level": 25
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Broadsword",
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://ms-classic.com/guides/npc-shops-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-ap-one-handed",
+              "type": "ap",
+              "variant": "one-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "AP בחד-ידנית: 4 STR ו-1 DEX",
+              "titleEn": "AP (one-handed): 4 STR / 1 DEX",
+              "summary": "ממשיכים 4 STR ו-1 DEX עד 30. ברמה 30: בערך 137 STR ו-25 DEX.",
+              "why": "ה-DEX הנוסף שומר על דיוק מול Zombie Mushroom ומוכן לנשקים של רמה 30, שדורשים 25–30 DEX.",
+              "steps": [
+                "אחרי כל עליית רמה: 4 ל-STR, 1 ל-DEX."
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v2-ap-two-handed",
+              "type": "ap",
+              "variant": "two-handed",
+              "required": true,
+              "priority": "high",
+              "titleHe": "AP בדו-ידנית: הכל ל-STR",
+              "titleEn": "AP (two-handed): all STR",
+              "summary": "יש כבר 27 DEX, מספיק ל-Broadsword. מרמה 21 עד 30 כל ה-AP ל-STR. ברמה 30: בערך 135 STR ו-27 DEX.",
+              "why": "STR מוכפל בנוסחת הנזק, ו-DEX כבר עומד בדרישות.",
+              "steps": [
+                "אחרי כל עליית רמה: 5 ל-STR."
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [
+                "אם מחטיאים הרבה ב-Ant Tunnel III, להוסיף נקודת DEX ברמה."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "v2-sp-21-24",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 21–24: Slash Blast 18",
+              "titleEn": "SP 21–24: Slash Blast",
+              "summary": "כל הנקודות ל-Slash Blast.",
+              "why": "ב-Ant Tunnel III המפלצות צפופות, ו-Slash Blast חזק יותר מוציא יותר EXP לדקה.",
+              "steps": [
+                "רמות 21–24: Slash Blast +12 (ל-18)."
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Warrior"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-sp-25-28",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 25–28: Precise Strikes 15",
+              "titleEn": "SP 25–28: Precise Strikes",
+              "summary": "Slash Blast 19 ו-Precise Strikes מלא.",
+              "why": "Precise Strikes מלא נותן +20 דיוק ו-5% קריטי. הדיוק הוא הבעיה הגדולה אחרי 30.",
+              "steps": [
+                "רמה 25: Slash Blast +1, Precise Strikes +1, Improved HP Recovery +1.",
+                "רמות 26–28: Precise Strikes +9 (ל-15)."
+              ],
+              "requirements": {
+                "level": 25
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Warrior"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-sp-29-30",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ברמות 29–30 ולא להשאיר נקודות",
+              "titleEn": "SP 29–30: HP skills, Iron Body",
+              "summary": "Improved HP Recovery 3, Max HP Increase 3 ו-Iron Body 1. אחרי זה צריכות להישאר 0 נקודות.",
+              "why": "Max HP Increase ב-Classic World הוא אחוז (12% ברמה 3), אז אין הפסד בלקחת אותו מאוחר.",
+              "steps": [
+                "רמה 29: Improved HP Recovery +2, Max HP Increase +1.",
+                "רמה 30 (לפני ג'וב 2): Max HP Increase +2, Iron Body +1.",
+                "לבדוק שיש 0 SP פנויים לפני שמדברים עם Dances with Balrog."
+              ],
+              "requirements": {
+                "level": 29
+              },
+              "notes": [
+                "⚠ המקורות חלוקים אם אפשר לשים SP של ג'וב 2 בסקילים של ג'וב 1 (הוויקי אומר שכן, ms-classic שלא). בכל מקרה, לא להשאיר נקודות."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/warrior-guide-level-1-30",
+                "https://mapleclassic.wiki/wiki/Skill_points",
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "v2-tip-accuracy",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "דיוק לפני שעולים מפה",
+              "titleEn": "Check accuracy before moving up",
+              "summary": "ברמה 20 צריך בערך 37 דיוק כדי לא להחטיא ב-Blue Mushroom, ו-47 ב-Horny Mushroom.",
+              "why": "כל החטאה עולה MP. מפה שקשה ברמה 22 נהיית קלה ברמה 24.",
+              "steps": [
+                "לבדוק את הדיוק בחלון הסטטים.",
+                "אם מחטיאים הרבה: להישאר עוד רמה במפה הקודמת."
+              ],
+              "requirements": {
+                "level": 21
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/jane-and-the-mushroom-quest-guide",
+                "https://ms-classic.com/guides/where-to-train-level-10-30"
+              ],
+              "verified": false
+            }
+          ]
         },
         {
           "id": "job2-fighter",
@@ -793,7 +2023,263 @@
           "regionHe": "פריון",
           "goalHe": "לעבור את המבחן ב-West Rocky Mountain IV ולהפוך ל-Fighter",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "j2-prepare",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "לפני המבחן",
+              "titleEn": "Before the 2nd job test",
+              "summary": "0 SP פנויים, כמה מקומות פנויים בטאב Use, ופוטים.",
+              "why": "SP של ג'וב 1 שלא נוצל עלול ללכת לאיבוד. לפני ההשקה, מלאי Use מלא היה מכשיל את המבחן.",
+              "steps": [
+                "לבדוק שאין SP פנויים.",
+                "לפנות 3–4 מקומות ב-Use.",
+                "לקנות Red Potion ו-Blue Potion."
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/what-to-do-at-level-30",
+                "https://mapleclassic.wiki/wiki/Skill_points"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j2-next-journey",
+              "type": "job",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "מכתב ל-Warrior Job Instructor",
+              "titleEn": "The Warrior's Next Journey → Finding the Instructor",
+              "summary": "ברמה 30: לדבר עם Dances with Balrog, ולקחת את המכתב שלו ל-Warrior Job Instructor ב-West Rocky Mountain IV.",
+              "why": "שני הקווסטים נותנים 4,780 EXP כל אחד (בערך 10% מרמה 30), ופותחים את המבחן.",
+              "steps": [
+                "לדבר עם Dances with Balrog ב-Warriors' Sanctuary (The Warrior's Next Journey).",
+                "לקבל את Finding the Instructor. המכתב ניתן אוטומטית.",
+                "ללכת ל-West Rocky Mountain IV ולמסור את המכתב."
+              ],
+              "npc": "dances-with-balrog",
+              "route": [
+                "perion",
+                "west-street-corner-of-perion",
+                "west-rocky-mountain-1",
+                "west-rocky-mountain-2",
+                "west-rocky-mountain-3",
+                "west-rocky-mountain-4"
+              ],
+              "maps": [
+                "perion",
+                "west-rocky-mountain-4"
+              ],
+              "rewards": {
+                "exp": 9560,
+                "mesos": 0,
+                "items": []
+              },
+              "requirements": {
+                "level": 30
+              },
+              "notes": [
+                "ב-West Rocky Mountain IV יש Wild Boar (25), Dark Axe Stump (23) ו-Lupin (37). להיזהר בדרך."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/The_Warrior's_Next_Journey",
+                "https://ms-classic.com/guides/second-job-advancement-quests",
+                "https://mapleclassic.wiki/wiki/West_Rocky_Mountain_IV"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j2-test",
+              "type": "job",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "המבחן: 30 Dark Marble",
+              "titleEn": "Test of Qualification",
+              "summary": "ה-Warrior Job Instructor שולח אותך למפה נסתרת עם Fire Boar ו-Lupin מיוחדים. צריך לאסוף 30 Dark Marble.",
+              "why": "זה המבחן של ג'וב 2. המפלצות ברמה 30 עם 718 HP, אז הן מתות מהר.",
+              "steps": [
+                "לקבל את Test of Qualification מה-Warrior Job Instructor.",
+                "להיכנס למפה (Warrior's Rocky Mountain).",
+                "להרוג Fire Boar ו-Lupin עד שיש 30 Dark Marble.",
+                "במפה יש עד 11 מפלצות בבת אחת. לחכות להופעה מחדש כשנגמרות."
+              ],
+              "npc": "warrior-job-instructor",
+              "maps": [
+                "warriors-rocky-mountain"
+              ],
+              "monsters": [
+                "fire-boar-test",
+                "lupin-test"
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [
+                "⚠ אין בנתונים מגבלת זמן, דמי כניסה או כמה Dark Marble נופלים מכל מפלצת."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/second-job-advancement-quests",
+                "https://mapleclassic.wiki/wiki/Fire_Boar",
+                "https://mapleclassic.wiki/wiki/Lupin"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j2-choose-fighter",
+              "type": "job",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "לבחור Fighter",
+              "titleEn": "Proof of Qualification → Fighter",
+              "summary": "ה-Instructor נותן את The Proof of a Hero. מחזירים אותו ל-Dances with Balrog ובוחרים Fighter.",
+              "why": "Fighter משתמש בחרבות ובגרזנים, חד-ידניות ודו-ידניות. Rage מוסיף נזק לכל הפרטי.",
+              "steps": [
+                "לקבל את Proof of Qualification ואת The Proof of a Hero.",
+                "לחזור לפריון ל-Dances with Balrog.",
+                "לבחור Fighter. הבחירה היא לתמיד."
+              ],
+              "npc": "dances-with-balrog",
+              "maps": [
+                "perion"
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/second-job-advancement-quests",
+                "https://mapleclassic.wiki/wiki/Fighter",
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j2-sp-rush",
+              "type": "sp",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "SP ראשון של Fighter: Rush 1",
+              "titleEn": "Rush Lv 1",
+              "summary": "ברמה 30 נקודה אחת ל-Rush. מרמה 31: Rage 1 ו-Sword Mastery.",
+              "why": "Rush אוסף מפלצות לקבוצה (עד 6), וזה עוזר ל-Slash Blast. נקודה אחת מספיקה עכשיו, כי ברמה 1 הוא עולה 35 MP.",
+              "steps": [
+                "לפתוח את טאב Fighter בחלון הסקילים.",
+                "Rush +1.",
+                "לשים את שאר הנקודות לפי השלב הבא (Sword Mastery קודם)."
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [
+                "חשוב: Sword Mastery ולא Axe Mastery. Mastery, Booster ו-Final Attack עובדים רק עם סוג הנשק שלהם."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/fighter-guide"
+              ],
+              "verified": false
+            },
+            {
+              "id": "j2-gear-bat",
+              "type": "gear",
+              "variant": "two-handed",
+              "required": false,
+              "priority": "low",
+              "titleHe": "רשות: Aluminum Baseball Bat (דו-ידנית)",
+              "titleEn": "Aluminum Baseball Bat",
+              "summary": "חרב דו-ידנית של רמה 30: 50 W.ATK, דורשת רק 55 STR. אין בחנויות, רק ב-Weaponcrafting 6.",
+              "why": "הנשק היחיד של רמה 30 שאפשר להשיג בלי שוק. החומרים והעמלה עולים בערך 9,000 מזו, אבל צריך להעלות Weaponcrafting ל-6 (ו-Smithing ל-2).",
+              "steps": [
+                "להעלות Weaponcrafting ל-6 (אפשרי רק מרמה 30).",
+                "3 Iron Ingot, 3 Mithril Ingot, 18 Screw ועמלה של 6,500.",
+                "אם זה יותר מדי עבודה: להישאר עם Broadsword."
+              ],
+              "items": [
+                "aluminum-baseball-bat"
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Aluminum_Baseball_Bat",
+                "https://ms-classic.com/guides/equipment-guide-by-level"
+              ],
+              "verified": true
+            },
+            {
+              "id": "j2-gear-one-handed-30",
+              "type": "gear",
+              "variant": "one-handed",
+              "required": false,
+              "priority": "low",
+              "titleHe": "חד-ידנית ברמה 30: להישאר עם Viking Sword",
+              "titleEn": "One-handed at 30: keep the Viking Sword",
+              "summary": "החרב החד-ידנית של רמה 30 (Gladius, 47 W.ATK) לא נמכרת ולא מגיעה מקווסט. רק בשוק.",
+              "why": "בלי מימון אין סיבה לרדוף אחריה. Viking Sword ו-Red Triangular Shield מחזיקים עד שתמצא חלופה.",
+              "steps": [
+                "להמשיך עם Viking Sword ו-Red Triangular Shield.",
+                "אם Gladius מופיע בשוק במחיר נמוך: הוא דורש 65 STR ו-30 DEX."
+              ],
+              "items": [
+                "viking-sword",
+                "gladius"
+              ],
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Gladius",
+                "https://ms-classic.com/guides/equipment-guide-by-level"
+              ],
+              "verified": false
+            },
+            {
+              "id": "j2-quest-maya-collections",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "רשות: האוספים של Maya",
+              "titleEn": "Maya's First / Second Collection",
+              "summary": "ברמה 30: שני קווסטים של Maya, כל אחד 4,780 EXP ו-30 פוטים.",
+              "why": "פוטים ו-EXP, ופותחים את הקווסטים של Maya ברמה 47.",
+              "steps": [
+                "לדבר עם Maya בהנסיס ברמה 30.",
+                "להביא את מה שהיא מבקשת."
+              ],
+              "npc": "maya",
+              "maps": [
+                "henesys"
+              ],
+              "rewards": {
+                "exp": 9560,
+                "mesos": 1930,
+                "items": [
+                  "Orange Potion ×30",
+                  "Blue Potion ×30"
+                ]
+              },
+              "requirements": {
+                "level": 30
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/quests-worth-doing"
+              ],
+              "verified": false
+            }
+          ]
         },
         {
           "id": "fighter-30-40",

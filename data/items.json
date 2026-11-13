@@ -31,5 +31,232 @@
     "sources": [
       "Biggs's Collection of Items (אקראי)"
     ]
+  },
+  {
+    "id": "long-sword",
+    "nameEn": "Long Sword",
+    "slot": "weapon",
+    "weaponType": "one-handed-sword",
+    "reqLevel": 10,
+    "reqStr": 20,
+    "reqDex": 0,
+    "stats": {
+      "watk": 27
+    },
+    "slots": 7,
+    "sources": [
+      "Silver, Lith Harbor: 3,000 מזו",
+      "Cutthroat Manny, Kerning City"
+    ]
+  },
+  {
+    "id": "wooden-sword",
+    "nameEn": "Wooden Sword",
+    "slot": "weapon",
+    "weaponType": "two-handed-sword",
+    "reqLevel": 10,
+    "reqStr": 25,
+    "reqDex": 0,
+    "stats": {
+      "watk": 30
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 5,000 מזו",
+      "דרופ: Red Snail"
+    ]
+  },
+  {
+    "id": "sabre",
+    "nameEn": "Sabre",
+    "slot": "weapon",
+    "weaponType": "one-handed-sword",
+    "reqLevel": 15,
+    "reqStr": 30,
+    "reqDex": 10,
+    "stats": {
+      "watk": 32
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 5,000 מזו"
+    ]
+  },
+  {
+    "id": "viking-sword",
+    "nameEn": "Viking Sword",
+    "slot": "weapon",
+    "weaponType": "one-handed-sword",
+    "reqLevel": 20,
+    "reqStr": 40,
+    "reqDex": 15,
+    "stats": {
+      "watk": 37
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 10,500 מזו"
+    ]
+  },
+  {
+    "id": "two-handed-sword",
+    "nameEn": "Two-Handed Sword",
+    "slot": "weapon",
+    "weaponType": "two-handed-sword",
+    "reqLevel": 20,
+    "reqStr": 45,
+    "reqDex": 20,
+    "stats": {
+      "watk": 40
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 13,500 מזו"
+    ]
+  },
+  {
+    "id": "broadsword",
+    "nameEn": "Broadsword",
+    "slot": "weapon",
+    "weaponType": "two-handed-sword",
+    "reqLevel": 25,
+    "reqStr": 55,
+    "reqDex": 25,
+    "stats": {
+      "watk": 45
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 16,500 מזו"
+    ]
+  },
+  {
+    "id": "aluminum-baseball-bat",
+    "nameEn": "Aluminum Baseball Bat",
+    "slot": "weapon",
+    "weaponType": "two-handed-sword",
+    "reqLevel": 30,
+    "reqStr": 55,
+    "reqDex": 0,
+    "stats": {
+      "watk": 50
+    },
+    "slots": 7,
+    "sources": [
+      "Weaponcrafting 6: בערך 9,020 מזו בחומרים ועמלה"
+    ]
+  },
+  {
+    "id": "gladius",
+    "nameEn": "Gladius",
+    "slot": "weapon",
+    "weaponType": "one-handed-sword",
+    "reqLevel": 30,
+    "reqStr": 65,
+    "reqDex": 30,
+    "stats": {
+      "watk": 47
+    },
+    "slots": 7,
+    "sources": [
+      "רק בשוק (אין בחנות, במתכון או בקווסט)"
+    ]
+  },
+  {
+    "id": "wooden-buckler",
+    "nameEn": "Wooden Buckler",
+    "slot": "shield",
+    "reqLevel": 10,
+    "reqStr": 10,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 70
+    },
+    "slots": 7,
+    "sources": [
+      "Fixing Blackbull's House (90%)",
+      "River, Perion: 4,000 מזו"
+    ]
+  },
+  {
+    "id": "steel-shield",
+    "nameEn": "Steel Shield",
+    "slot": "shield",
+    "reqLevel": 15,
+    "reqStr": 20,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 80
+    },
+    "slots": 7,
+    "sources": [
+      "Fixing Blackbull's House (10%)",
+      "River, Perion: 6,000 מזו"
+    ]
+  },
+  {
+    "id": "red-triangular-shield",
+    "nameEn": "Red Triangular Shield",
+    "slot": "shield",
+    "reqLevel": 25,
+    "reqStr": 40,
+    "reqDex": 15,
+    "stats": {
+      "wdef": 100
+    },
+    "slots": 7,
+    "sources": [
+      "River, Perion: 15,000 מזו"
+    ]
+  },
+  {
+    "id": "work-gloves",
+    "nameEn": "Work Gloves",
+    "slot": "gloves",
+    "reqLevel": 10,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 6
+    },
+    "slots": 5,
+    "sources": [
+      "Andre's Request (Nella)",
+      "Tailoring 2"
+    ]
+  },
+  {
+    "id": "old-raggedy-cape",
+    "nameEn": "Old Raggedy Cape",
+    "slot": "cape",
+    "reqLevel": 25,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "wdef": 12,
+      "mdef": 5,
+      "acc": 1
+    },
+    "slots": 5,
+    "sources": [
+      "Stranger's Identity (Jane Doe)"
+    ]
+  },
+  {
+    "id": "brown-bamboo-hat",
+    "nameEn": "Brown Bamboo Hat",
+    "slot": "hat",
+    "reqLevel": 25,
+    "reqStr": 0,
+    "reqDex": 10,
+    "stats": {
+      "wdef": 24,
+      "hp": 10,
+      "acc": 1
+    },
+    "slots": 7,
+    "sources": [
+      "Delivering the Weird Medicine (Maya)"
+    ]
   }
 ]

@@ -72,5 +72,120 @@
     "drops": [
       "Orange Mushroom Cap"
     ]
+  },
+  {
+    "id": "stump",
+    "nameEn": "Stump",
+    "level": 5,
+    "hp": 133,
+    "exp": 10,
+    "drops": []
+  },
+  {
+    "id": "dark-stump",
+    "nameEn": "Dark Stump",
+    "level": 11,
+    "hp": 236,
+    "exp": 21,
+    "drops": [
+      "Leaf",
+      "Tree Branch"
+    ]
+  },
+  {
+    "id": "octopus",
+    "nameEn": "Octopus",
+    "level": 12,
+    "hp": 191,
+    "exp": 23,
+    "drops": [
+      "Octopus Leg"
+    ]
+  },
+  {
+    "id": "green-mushroom",
+    "nameEn": "Green Mushroom",
+    "level": 14,
+    "hp": 233,
+    "exp": 26,
+    "drops": []
+  },
+  {
+    "id": "bubbling",
+    "nameEn": "Bubbling",
+    "level": 15,
+    "hp": 259,
+    "exp": 28,
+    "drops": [
+      "Bubbling's Huge Bubble"
+    ]
+  },
+  {
+    "id": "blue-mushroom",
+    "nameEn": "Blue Mushroom",
+    "level": 19,
+    "hp": 342,
+    "exp": 35,
+    "drops": [
+      "Blue Mushroom Cap"
+    ]
+  },
+  {
+    "id": "stirge",
+    "nameEn": "Stirge",
+    "level": 20,
+    "hp": 296,
+    "exp": 37,
+    "drops": [
+      "Broken Mirror Glass"
+    ]
+  },
+  {
+    "id": "jr-necki",
+    "nameEn": "Jr. Necki",
+    "level": 21,
+    "hp": 272,
+    "exp": 39,
+    "drops": []
+  },
+  {
+    "id": "horny-mushroom",
+    "nameEn": "Horny Mushroom",
+    "level": 22,
+    "hp": 403,
+    "exp": 41,
+    "drops": [
+      "Horny Mushroom Cap"
+    ]
+  },
+  {
+    "id": "zombie-mushroom",
+    "nameEn": "Zombie Mushroom",
+    "level": 24,
+    "hp": 436,
+    "exp": 45,
+    "drops": [
+      "Charm of the Undead"
+    ]
+  },
+  {
+    "id": "fire-boar-test",
+    "nameEn": "Fire Boar (מבחן)",
+    "level": 30,
+    "hp": 718,
+    "exp": 56,
+    "drops": [
+      "Dark Marble"
+    ]
+  },
+  {
+    "id": "lupin-test",
+    "nameEn": "Lupin (מבחן)",
+    "level": 30,
+    "hp": 718,
+    "exp": 56,
+    "drops": [
+      "Dark Marble"
+    ]
   }
 ]

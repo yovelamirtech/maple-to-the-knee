@@ -29,7 +29,12 @@
 - **AP לפי מדריכי קהילה:** בערך 4 STR ו-1 DEX לכל רמה. יעד לרמה 30: בערך 135 STR ו-27 DEX בבסיס, ו-DEX 30 בערך עם ציוד. דוגמה לפייטר ברמה 70: 337 STR, 70 DEX, 105 W.ATK.
 - **SP של Warrior (רמות 10–30, בערך 61 נקודות):** Power Strike קודם, אחר כך Slash Blast, Max HP Increase ו-Precise Strikes. נקודות ג'וב 2 נפרדות, ואי אפשר להשתמש בהן לסקילים של ג'וב 1.
 - **Fighter:** 8 סקילים, 190 SP כדי למקסם הכל. **Rush כבר בג'וב 2** (מקסימום 20, פוגע בעד 6 מפלצות). Rage (מקסימום 30, מוסיף ATK ומוריד WDEF). Sword Mastery (מקסימום 20, מוסיף +20 דיוק). Final Attack ו-Booster לכל סוג נשק. סדר נפוץ: Rush 1 ברמה 30, Rage 1 ו-Mastery 2 ברמה 31, Mastery 20 עד רמה 34–38. המדריכים חלוקים על השאר.
-- **נשקים ברמות 20–30 (חרב):** Viking Sword או Two-Handed Sword (רמה 20) ← Broadsword (25) ← Gladius או Scimitar (30).
+- **נשקים ברמות 10–30 (חרב), אומת ב-2026-11-13 מול הוויקי ו-ms-classic:** הכל אצל River בפריון.
+  - **חד-ידנית:** Sabre (15) ← Viking Sword (20). אין חרב חד-ידנית של רמה 25 בחנויות. מגן: Wooden Buckler (10, גם מהקווסט של Blackbull) ← Red Triangular Shield (25).
+  - **דו-ידנית:** Wooden Sword (10) ← Two-Handed Sword (20) ← Broadsword (25). Broadsword הוא דו-ידני.
+  - **רמה 30:** Gladius ו-Scimitar **לא נמכרים** ולא מגיעים מקווסט או ממתכון, רק מהשוק. בדו-ידנית אפשר Aluminum Baseball Bat (50 W.ATK) דרך Weaponcrafting 6.
+- **ג'וב 1:** ⚠ לפי הוויקי צריך 35 STR ויש מבחן קצר. לפי ms-classic אין דרישת סטטים.
+- **SP בין ג'ובים:** ⚠ לפי הוויקי אפשר לשים SP של ג'וב 2 בסקילים של ג'וב 1. לפי ms-classic אי אפשר. בכל מקרה לא משאירים נקודות לפני ג'וב 2.
 
 ### מקורות שנמצאו
 - [meowdb.com/msclassic](https://meowdb.com/msclassic): מסד נתונים ומדריכים. הדפים הרלוונטיים: `classes/fighter`, `guides/fighter-class-guide`, `guides/warrior-class-guide`, `guides/kerning-city-party-quest-kpq-guide`, `guides/beginners-guide-first-steps-in-maple-world`.
@@ -310,10 +315,10 @@
 | --- | --- | --- | --- | --- | --- |
 | B0 | בקשה להוסיף hosts לרשת (meowdb.com, maplestorywiki.net, ms-classic.com, maplestory.quest, nexon.com) | ✅ | | | 2026-11-13: לא נדרש בסשן מקומי. meowdb (403) ו-maplestory.quest (503) דרך הדפדפן המובנה. ראו ההערה בסעיף 1 |
 | B1 | `maple-island` (1–10) | ✅ | ✅ | 🟡 | 19 משימות (14 חובה). 14 מאומתות (ms-classic + mapleclassic.wiki). לא מאומתות: AP (שתיים), Rain, SP של Beginner, Teo. השלב כולל גם את Lith Harbor עד רמה 10 (Phil, Olaf), והמטרה עודכנה בהתאם |
-| B2 | `job1-warrior` (10) | ⬜ | ⬜ | ⬜ | |
-| B3 | `victoria-10-21` | ⬜ | ⬜ | ⬜ | |
-| B4 | `victoria-21-30` + KPQ (רשות) | ⬜ | ⬜ | ⬜ | |
-| B5 | `job2-fighter` (30) | ⬜ | ⬜ | ⬜ | לכתוב את שני הסגנונות (Q1 נענה) |
+| B2 | `job1-warrior` (10) | ✅ | ✅ | ✅ | 4 משימות, כולן מאומתות. הנשק הראשון עבר ל-B3 כי ברמה 10 אין מספיק מזו |
+| B3 | `victoria-10-21` | ✅ | ✅ | 🟡 | 18 משימות, 13 מאומתות. AP נפרד לכל סגנון נשק (חד-ידנית 4/1, דו-ידנית 3/2) לפי דרישות ה-DEX של הנשקים. מפת האימון של 10–14 (West Street Corner of Perion) היא בחירה שלי |
+| B4 | `victoria-21-30` + KPQ (רשות) | ✅ | ✅ | 🟡 | 15 משימות, 12 מאומתות. Ant Tunnel III כחובה, Maya (Brown Bamboo Hat) ו-Jane Doe (Old Raggedy Cape) כמומלץ, KPQ כרשות |
+| B5 | `job2-fighter` (30) | ✅ | ✅ | 🟡 | 8 משימות, 5 מאומתות. ציוד לשני הסגנונות. SP של Fighter אחרי Rush 1 ייכתב ב-B6 |
 | B6 | `fighter-30-40` | ⬜ | ⬜ | ⬜ | |
 | B7 | `fighter-40-50` (Forgotten Hollow, Excavation Site) | ⬜ | ⬜ | ⬜ | Forgotten Hollow נפתח ב-18/11. השלב האחרון בהיקף |
 | B8 | `fighter-50-70` | ⏭️ | ⏭️ | ⏭️ | נדחה: המשתמש ביקש רק עד רמה 50 |
@@ -321,7 +326,7 @@
 | B10 | `job3-crusader` (placeholder) | ⏭️ | ⏭️ | ⏭️ | נדחה, עוד לא במשחק |
 | B11 | `apPlan` ו-`skillPlan` מלאים ומאומתים | ⬜ | ⬜ | ⬜ | |
 | B12 | `gearPath` ו-`data/items.json` | ⬜ | ⬜ | ⬜ | שני הסגנונות: חד-ידנית ומגן, ודו-ידנית |
-| B13 | `maps.json`, `monsters.json`, `npcs.json` | 🟡 | 🟡 | 🟡 | ממלאים תוך כדי B1–B7. אחרי B1: 15 מפות, 8 מפלצות, 11 NPC, 2 פריטים. חסר Stump (מופיע ב-Olaf) |
+| B13 | `maps.json`, `monsters.json`, `npcs.json` | 🟡 | 🟡 | 🟡 | ממלאים תוך כדי B1–B7. אחרי B5: 33 מפות, 20 מפלצות, 21 NPC, 16 פריטים |
 | B14 | טיפים כלליים | ⬜ | ⬜ | ⬜ | |
 
 > סדר מומלץ: A1–A7 יחד עם B1–B5, ואז **לעצור ולהראות למשתמש** שהפורמט ורמת הפירוט נכונים. אחר כך B6–B14 ו-A8–A14.
@@ -336,10 +341,10 @@
 ### D. בדיקות
 | id | משימה | סטטוס | מי ומתי | הערות |
 | --- | --- | --- | --- | --- |
-| D1 | `scripts/validate.py` (4.5) | ⬜ | | |
+| D1 | `scripts/validate.py` (4.5) | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | כל הכללים מ-4.5. נבדק גם על עותק שבור בכוונה. `python scripts/validate.py [data-dir]` |
 | D2 | `// @ts-check` ו-JSDoc ב-`app.js`, ובדיקה עם `tsc --checkJs` | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | עובר עם `npx -p typescript@5.6.3 tsc --noEmit --allowJs --checkJs --strict --target es2022 --lib es2022,dom,dom.iterable app.js`. להריץ שוב אחרי כל שינוי |
 | D3 | בדיקות זרימה ב-Playwright וצילומי מסך באייפון ובדסקטופ, בבהיר ובכהה | ⬜ | | |
-| D4 | GitHub Action שמריץ את `validate.py` | ⬜ | | |
+| D4 | GitHub Action שמריץ את `validate.py` | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | `.github/workflows/validate.yml`, מריץ גם את `tsc`. לבדוק שהריצה הראשונה עברה |
 
 ### E. פרסום
 | id | משימה | סטטוס | מי ומתי | הערות |
@@ -413,3 +418,17 @@
   - **סתירה ב-Rain's Maple Quiz:** בוויקי 245 EXP ו-5 Orange, וב-ms-classic 490 EXP ו-10 Orange.
   - לא ברור איך מקבלים SP של Beginner ב-Classic World.
 - **הצעד הבא:** B2 (`job1-warrior`): לבדוק אם יש דרישת STR 35, וגם את מה ש-Phil's Call עושה ברמה 10. אחר כך B3–B5, ואז לעצור ולהראות למשתמש (סעיף 7).
+
+### 2026-11-13 · Claude Code desktop d43eabf6 (המשך 2)
+- **מה נעשה:**
+  - B2–B5: מחקר וכתיבה של `job1-warrior`, `victoria-10-21`, `victoria-21-30` ו-`job2-fighter`. 45 משימות, 34 מאומתות. מקורות: ms-classic.com ו-mapleclassic.wiki.
+  - שני סגנונות הנשק כתובים עם `variant`: ציוד ו-AP נפרדים.
+  - D1: `scripts/validate.py`. D4: GitHub Action שמריץ אותו ואת `tsc`.
+  - תיקון RTL: שמות כמו "Line 1 <Area 1>" ו-"Tree Dungeon, Forest Up North IV" לא מתפרקים יותר.
+  - נבדק בדפדפן: כל ארבעת השלבים נטענים, בלי גלילה אופקית, בלי שגיאות בחלון הפרטים.
+- **איפה עצרתי:** **נקודת עצירה מסעיף 7:** A1–A7 ו-B1–B5 מוכנים. צריך להראות למשתמש ולקבל אישור על הפורמט ורמת הפירוט לפני B6–B14 ו-A8–A15.
+- **בעיות:**
+  - בלי בורר סגנון נשק (A15), משימות של שני הסגנונות מוצגות יחד. פס ההתקדמות כבר סופר רק סגנון אחד.
+  - 16 משימות עם `verified: false`, בעיקר המלצות AP ומפות שיש להן מקור אחד בלבד.
+  - `gearPath`, `apPlan` ו-`skillPlan` עדיין ריקים (B11, B12). המידע קיים במשימות, וצריך להעתיק אותו לטבלאות של טאב הבילד (A8).
+- **הצעד הבא:** לחכות למשוב של המשתמש. אחר כך A15 (בורר סגנון) ו-B6.

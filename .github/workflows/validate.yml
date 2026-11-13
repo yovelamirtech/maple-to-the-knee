@@ -1,0 +1,21 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate data
+        run: python scripts/validate.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Type-check app.js
+        run: npx -y -p typescript@5.6.3 tsc --noEmit --allowJs --checkJs --strict --target es2022 --lib es2022,dom,dom.iterable app.js
