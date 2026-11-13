@@ -1289,6 +1289,44 @@ main {
   color: var(--muted);
 }
 
+/* Where to kill or collect what a step asks for */
+.hunt {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.hunt-what,
+.hunt-where {
+  display: block;
+}
+
+.hunt-what {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hunt-where {
+  color: var(--text-2);
+}
+
+.hunt-map {
+  display: inline-block;
+  margin-block: 2px;
+  margin-inline-end: 6px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+}
+
+.hunt-legend {
+  margin-top: 8px;
+}
+
 .sheet-section .item-list,
 .sheet-section .source-list {
   list-style: none;

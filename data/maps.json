@@ -182,5 +182,55 @@
     "id": "the-burnt-land-5",
     "nameEn": "The Burnt Land V",
     "regionId": "victoria-island"
+  },
+  {
+    "id": "l-forest-1",
+    "nameEn": "L Forest I",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "west-domain-of-perion",
+    "nameEn": "West Domain of Perion",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "henesys-hunting-ground-3",
+    "nameEn": "Henesys Hunting Ground III",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "mushroom-garden-victoria",
+    "nameEn": "Mushroom Garden",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "ant-tunnel-4",
+    "nameEn": "Ant Tunnel IV",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "hunting-ground-in-the-deep-forest-2",
+    "nameEn": "Hunting Ground in the Deep Forest II",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "monkey-swamp-1",
+    "nameEn": "Monkey Swamp I",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "a-hill-west-of-henesys",
+    "nameEn": "A Hill West of Henesys",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "the-burnt-land-3",
+    "nameEn": "The Burnt Land III",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "subway-ticketing-booth",
+    "nameEn": "Subway Ticketing Booth",
+    "regionId": "victoria-island"
   }
 ]

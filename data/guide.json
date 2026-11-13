@@ -121,13 +121,42 @@
               "notes": [],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Maple_Island",
-                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://mapleclassic.wiki/wiki/Todd's_How-to-Hunt",
+                "https://mapleclassic.wiki/wiki/Tutorial_Jr._Sentinel"
               ],
               "verified": true,
               "time": {
                 "min": 10,
                 "max": 15
-              }
+              },
+              "hunt": [
+                {
+                  "step": 4,
+                  "kind": "kill",
+                  "what": "3 Tutorial Jr. Sentinel",
+                  "where": [
+                    {
+                      "map": "east-entrance-to-mushroom-town",
+                      "count": 6
+                    }
+                  ]
+                },
+                {
+                  "step": 4,
+                  "kind": "drop",
+                  "what": "3 Jr. Sentinel Shellpiece",
+                  "monsters": [
+                    "tutorial-jr-sentinel"
+                  ],
+                  "where": [
+                    {
+                      "map": "east-entrance-to-mushroom-town",
+                      "count": 6
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "mi-quest-sam-mai",
@@ -152,7 +181,8 @@
               "maps": [
                 "snail-hunting-ground-1",
                 "a-split-road",
-                "the-field-west-of-amherst"
+                "the-field-west-of-amherst",
+                "the-field-east-of-amherst"
               ],
               "monsters": [
                 "snail",
@@ -177,13 +207,90 @@
               "sources": [
                 "https://mapleclassic.wiki/wiki/Mai's_Final_Training",
                 "https://mapleclassic.wiki/wiki/Sam's_Suggestion",
-                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://mapleclassic.wiki/wiki/Mai's_Training",
+                "https://mapleclassic.wiki/wiki/Orange_Mushroom"
               ],
               "verified": true,
               "time": {
                 "min": 15,
                 "max": 25
-              }
+              },
+              "hunt": [
+                {
+                  "step": 1,
+                  "kind": "kill",
+                  "what": "10 Snail",
+                  "where": [
+                    {
+                      "map": "snail-hunting-ground-1",
+                      "count": 40
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "10 Blue Snail",
+                  "where": [
+                    {
+                      "map": "a-split-road",
+                      "count": 17
+                    },
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 13
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "10 Shroom",
+                  "where": [
+                    {
+                      "map": "a-split-road",
+                      "count": 14
+                    },
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 17
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "5 Red Snail",
+                  "where": [
+                    {
+                      "map": "a-split-road",
+                      "count": 11
+                    },
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 24
+                    }
+                  ],
+                  "note": "שלושתם נמצאים ב-A Split Road, איפה ש-Mai עומדת."
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "Orange Mushroom אחד",
+                  "where": [
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 5
+                    },
+                    {
+                      "map": "the-field-east-of-amherst",
+                      "count": 12
+                    }
+                  ],
+                  "note": "ב-A Split Road אין Orange Mushroom. המפה הקרובה היא The Field West of Amherst, בדרך ל-Amherst."
+                }
+              ]
             },
             {
               "id": "mi-quest-lucas-letter",
@@ -279,7 +386,21 @@
               "time": {
                 "min": 5,
                 "max": 10
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "find",
+                  "what": "Rusty Screw ו-Old Wooden Board",
+                  "where": [
+                    {
+                      "map": "amherst"
+                    }
+                  ],
+                  "note": "נופלים מקופסאות העץ שפזורות בעיר, לא ממפלצות."
+                }
+              ],
+              "monsters": []
             },
             {
               "id": "mi-quest-biggs",
@@ -300,7 +421,11 @@
                 "southperry"
               ],
               "maps": [
-                "southperry"
+                "southperry",
+                "a-split-road",
+                "the-field-west-of-amherst",
+                "the-field-east-of-amherst",
+                "dangerous-forest"
               ],
               "monsters": [
                 "blue-snail",
@@ -321,7 +446,9 @@
                 "https://mapleclassic.wiki/wiki/Biggs's_Collection_of_Items",
                 "https://mapleclassic.wiki/wiki/Fruit_Knife",
                 "https://mapleclassic.wiki/wiki/Razor",
-                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://mapleclassic.wiki/wiki/Blue_Snail",
+                "https://mapleclassic.wiki/wiki/Orange_Mushroom"
               ],
               "verified": true,
               "items": [
@@ -332,7 +459,50 @@
                 "min": 5,
                 "max": 10,
                 "overlap": true
-              }
+              },
+              "hunt": [
+                {
+                  "step": 1,
+                  "kind": "drop",
+                  "what": "10 Blue Snail Shell",
+                  "monsters": [
+                    "blue-snail"
+                  ],
+                  "where": [
+                    {
+                      "map": "a-split-road",
+                      "count": 17
+                    },
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 13
+                    }
+                  ],
+                  "note": "נופל בערך 1 ל-2, אז צריך בערך 20 הריגות. רובם מגיעים ממילא ב-Mai's Training."
+                },
+                {
+                  "step": 1,
+                  "kind": "drop",
+                  "what": "Orange Mushroom Cap אחד",
+                  "monsters": [
+                    "orange-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "the-field-east-of-amherst",
+                      "count": 12
+                    },
+                    {
+                      "map": "dangerous-forest",
+                      "count": 12
+                    },
+                    {
+                      "map": "the-field-west-of-amherst",
+                      "count": 5
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "mi-quest-rain",
@@ -649,8 +819,8 @@
               "why": "248 EXP, 554 מזו, 16 שיקויים ו-3 Return Scroll, על מפלצות שהורגים בכל מקרה בדרך לרמה 10.",
               "steps": [
                 "לקבל מ-Olaf ב-Lith Harbor את האימון הראשון (רמה 8).",
-                "Slime ב-Thicket Around the Beach II, ו-Stump ב-Thicket Around the Beach III.",
-                "לחזור ל-Olaf ולקבל את האימון השני: Pig ו-Orange Mushroom, שניהם ב-Thicket Around the Beach II.",
+                "Olaf's First Training: להרוג 8 Stump ו-8 Slime.",
+                "לחזור ל-Olaf ולקבל את האימון השני: להרוג 8 Pig ו-8 Orange Mushroom.",
                 "לחזור ל-Olaf."
               ],
               "npc": "olaf",
@@ -662,7 +832,9 @@
               ],
               "maps": [
                 "thicket-around-the-beach-2",
-                "thicket-around-the-beach-3"
+                "thicket-around-the-beach-3",
+                "thicket-around-the-beach-1",
+                "right-around-lith-harbor"
               ],
               "monsters": [
                 "stump",
@@ -682,21 +854,85 @@
               "requirements": {
                 "level": 8
               },
-              "notes": [
-                "Stump נמצאים ב-Thicket Around the Beach III (10 לפי מדריך Mano)."
-              ],
+              "notes": [],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Olaf's_First_Training",
                 "https://mapleclassic.wiki/wiki/Olaf's_Second_Training",
                 "https://ms-classic.com/guides/mano-boss-guide",
-                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://mapleclassic.wiki/wiki/Stump",
+                "https://mapleclassic.wiki/wiki/Slime",
+                "https://mapleclassic.wiki/wiki/Pig"
               ],
               "verified": true,
               "time": {
                 "min": 20,
                 "max": 30,
                 "overlap": true
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "8 Stump",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 11
+                    },
+                    {
+                      "map": "thicket-around-the-beach-3",
+                      "count": 10
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "8 Slime",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 11
+                    },
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 12
+                    },
+                    {
+                      "map": "right-around-lith-harbor",
+                      "count": 11
+                    }
+                  ],
+                  "note": "ב-Thicket Around the Beach I יש גם Stump וגם Slime, אז האימון הראשון נגמר במפה אחת."
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "8 Pig",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 18
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "8 Orange Mushroom",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 9
+                    },
+                    {
+                      "map": "thicket-around-the-beach-3",
+                      "count": 8
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "mi-train-thicket-2",
@@ -748,16 +984,20 @@
               "required": false,
               "priority": "low",
               "titleHe": "התחביבים של Teo",
-              "titleEn": "Teo's Weird Hobby → Even Weirder Hobby",
-              "summary": "שני קווסטי איסוף קטנים ב-Lith Harbor.",
+              "titleEn": "Teo's Weird Hobby → Teo's Even Weirder Hobby",
+              "summary": "שני קווסטי ציד קטנים ב-Lith Harbor, באותן מפות כמו של Olaf.",
               "why": "EXP ומזו נוספים ו-Sniper Potion, אבל לא הכרחי. לעשות רק אם החומרים כבר אצלך.",
               "steps": [
                 "לדבר עם Teo ב-Lith Harbor (רמה 8).",
-                "להביא את מה שהוא מבקש (רשום ביומן הקווסטים)."
+                "Teo's Weird Hobby: להרוג 10 Slime ולהביא Slime Bubble אחד.",
+                "Teo's Even Weirder Hobby: להרוג 10 Pig ולהביא Pig's Head אחד.",
+                "לחזור ל-Teo אחרי כל אחד."
               ],
               "npc": "teo",
               "maps": [
-                "lith-harbor"
+                "thicket-around-the-beach-2",
+                "thicket-around-the-beach-1",
+                "right-around-lith-harbor"
               ],
               "rewards": {
                 "exp": 248,
@@ -771,15 +1011,91 @@
               "requirements": {
                 "level": 8
               },
-              "notes": [],
+              "notes": [
+                "לקחת יחד עם Olaf: Slime ו-Pig נמצאים באותן מפות, אז שני הקווסטים נגמרים באותו ציד."
+              ],
               "sources": [
-                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://mapleclassic.wiki/wiki/Teo's_Weird_Hobby",
+                "https://mapleclassic.wiki/wiki/Teo's_Even_Weirder_Hobby",
+                "https://mapleclassic.wiki/wiki/Slime_Bubble",
+                "https://mapleclassic.wiki/wiki/Pig's_Head"
               ],
               "verified": false,
               "time": {
                 "min": 10,
                 "max": 20
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "10 Slime",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 12
+                    },
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 11
+                    },
+                    {
+                      "map": "right-around-lith-harbor",
+                      "count": 11
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "Slime Bubble אחד",
+                  "monsters": [
+                    "slime"
+                  ],
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 12
+                    },
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 11
+                    }
+                  ],
+                  "note": "נופל בערך 1 ל-20, אז אולי צריך יותר מ-10 הריגות."
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "10 Pig",
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 18
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "Pig's Head אחד",
+                  "monsters": [
+                    "pig"
+                  ],
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 18
+                    }
+                  ],
+                  "note": "נופל בערך 1 ל-16."
+                }
+              ],
+              "monsters": [
+                "slime",
+                "pig"
+              ]
             },
             {
               "id": "mi-tip-one-way",
@@ -1037,7 +1353,8 @@
                 "west-street-corner-of-perion"
               ],
               "maps": [
-                "west-street-corner-of-perion"
+                "west-street-corner-of-perion",
+                "west-domain-of-perion"
               ],
               "monsters": [
                 "stump",
@@ -1060,14 +1377,79 @@
               "notes": [],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Fixing_Blackbull's_House",
-                "https://ms-classic.com/guides/quests-worth-doing"
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://mapleclassic.wiki/wiki/Dark_Stump",
+                "https://mapleclassic.wiki/wiki/Tree_Branch"
               ],
               "verified": true,
               "time": {
                 "min": 20,
                 "max": 30,
                 "overlap": true
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "20 Stump",
+                  "where": [
+                    {
+                      "map": "west-street-corner-of-perion",
+                      "count": 24
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "20 Dark Stump",
+                  "where": [
+                    {
+                      "map": "west-street-corner-of-perion",
+                      "count": 14
+                    },
+                    {
+                      "map": "west-domain-of-perion",
+                      "count": 21
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "10 Tree Branch",
+                  "monsters": [
+                    "stump",
+                    "dark-stump"
+                  ],
+                  "where": [
+                    {
+                      "map": "west-street-corner-of-perion",
+                      "count": 24
+                    }
+                  ],
+                  "note": "נופל מ-Stump בערך 1 ל-2, ומ-Dark Stump בערך 1 ל-5."
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "10 Leaf",
+                  "monsters": [
+                    "dark-stump"
+                  ],
+                  "where": [
+                    {
+                      "map": "west-street-corner-of-perion",
+                      "count": 14
+                    },
+                    {
+                      "map": "west-domain-of-perion",
+                      "count": 21
+                    }
+                  ],
+                  "note": "נופל בערך 1 ל-2."
+                }
+              ]
             },
             {
               "id": "v1-train-line-1",
@@ -1203,7 +1585,7 @@
                 "Don Hwang's Request: להרוג 20 Orange Mushroom ו-20 Ribbon Pig, ולהביא 10 Orange Mushroom Cap ו-10 Pig's Ribbon.",
                 "Shumi's Request: להרוג 25 Dark Stump ולהביא 15 Leaf.",
                 "Andre's Request: להרוג 30 Octopus, ולהביא 20 Octopus Leg ו-Pure Water אחד.",
-                "Construction Site North of Kerning City מכסה את רוב המפלצות."
+                "Construction Site North of Kerning City מכסה את Orange Mushroom, Dark Stump ו-Octopus. ל-Ribbon Pig צריך את L Forest I."
               ],
               "npc": "nella",
               "route": [
@@ -1211,11 +1593,17 @@
                 "construction-site-north-of-kerning-city"
               ],
               "maps": [
-                "construction-site-north-of-kerning-city"
+                "construction-site-north-of-kerning-city",
+                "l-forest-1",
+                "west-domain-of-perion",
+                "damp-forest",
+                "sleepywood"
               ],
               "monsters": [
                 "dark-stump",
-                "octopus"
+                "octopus",
+                "orange-mushroom",
+                "ribbon-pig"
               ],
               "items": [
                 "work-gloves"
@@ -1239,13 +1627,155 @@
               "sources": [
                 "https://mapleclassic.wiki/wiki/Andre's_Request",
                 "https://ms-classic.com/guides/how-to-get-work-gloves",
-                "https://ms-classic.com/guides/quests-worth-doing"
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://mapleclassic.wiki/wiki/Don_Hwang's_Request",
+                "https://mapleclassic.wiki/wiki/Shumi's_Request",
+                "https://mapleclassic.wiki/wiki/Ribbon_Pig",
+                "https://mapleclassic.wiki/wiki/Pure_Water"
               ],
               "verified": true,
               "time": {
                 "min": 60,
                 "max": 90
-              }
+              },
+              "hunt": [
+                {
+                  "step": 1,
+                  "kind": "kill",
+                  "what": "20 Orange Mushroom",
+                  "where": [
+                    {
+                      "map": "l-forest-1",
+                      "count": 7
+                    },
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 9
+                    }
+                  ]
+                },
+                {
+                  "step": 1,
+                  "kind": "drop",
+                  "what": "10 Orange Mushroom Cap",
+                  "monsters": [
+                    "orange-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "l-forest-1",
+                      "count": 7
+                    },
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 9
+                    }
+                  ]
+                },
+                {
+                  "step": 1,
+                  "kind": "kill",
+                  "what": "20 Ribbon Pig",
+                  "where": [
+                    {
+                      "map": "l-forest-1",
+                      "count": 21
+                    }
+                  ]
+                },
+                {
+                  "step": 1,
+                  "kind": "drop",
+                  "what": "10 Pig's Ribbon",
+                  "monsters": [
+                    "ribbon-pig"
+                  ],
+                  "where": [
+                    {
+                      "map": "l-forest-1",
+                      "count": 21
+                    }
+                  ],
+                  "note": "ב-L Forest I (ליד קרנינג) יש גם Ribbon Pig וגם Orange Mushroom, אז כל השלב הזה נעשה שם."
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "25 Dark Stump",
+                  "where": [
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 11
+                    },
+                    {
+                      "map": "west-domain-of-perion",
+                      "count": 21
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "15 Leaf",
+                  "monsters": [
+                    "dark-stump"
+                  ],
+                  "where": [
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 11
+                    },
+                    {
+                      "map": "west-domain-of-perion",
+                      "count": 21
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "30 Octopus",
+                  "where": [
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 8
+                    },
+                    {
+                      "map": "damp-forest",
+                      "count": 15
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "20 Octopus Leg",
+                  "monsters": [
+                    "octopus"
+                  ],
+                  "where": [
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 8
+                    },
+                    {
+                      "map": "damp-forest",
+                      "count": 15
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "buy",
+                  "what": "Pure Water אחד, 1,120 מזו",
+                  "where": [
+                    {
+                      "map": "sleepywood"
+                    }
+                  ],
+                  "note": "אצל Mr. Sweatbottom ב-Regular Sauna, או בחנות שב-Ant Tunnel Park."
+                }
+              ]
             },
             {
               "id": "v1-quest-snail-legend",
@@ -1266,7 +1796,8 @@
               "npc": "pia",
               "maps": [
                 "henesys",
-                "thicket-around-the-beach-1"
+                "thicket-around-the-beach-1",
+                "right-around-lith-harbor"
               ],
               "rewards": {
                 "exp": 7477,
@@ -1280,13 +1811,68 @@
               },
               "notes": [],
               "sources": [
-                "https://ms-classic.com/guides/legend-of-the-snail-quest-guide"
+                "https://ms-classic.com/guides/legend-of-the-snail-quest-guide",
+                "https://mapleclassic.wiki/wiki/Snail_Hunt"
               ],
               "verified": false,
               "time": {
                 "min": 30,
                 "max": 45
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Snail Shell",
+                  "monsters": [
+                    "snail"
+                  ],
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 20
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Blue Snail Shell",
+                  "monsters": [
+                    "blue-snail"
+                  ],
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 12
+                    },
+                    {
+                      "map": "right-around-lith-harbor",
+                      "count": 20
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Red Snail Shell",
+                  "monsters": [
+                    "red-snail"
+                  ],
+                  "where": [
+                    {
+                      "map": "thicket-around-the-beach-1",
+                      "count": 13
+                    }
+                  ],
+                  "note": "אי אפשר לחזור ל-Maple Island, אז רק במפות של Victoria."
+                }
+              ],
+              "monsters": [
+                "snail",
+                "blue-snail",
+                "red-snail"
+              ]
             },
             {
               "id": "v1-citizenship",
@@ -1731,12 +2317,19 @@
               "npc": "maya",
               "maps": [
                 "henesys",
-                "ant-tunnel-3"
+                "ant-tunnel-3",
+                "tree-dungeon-forest-up-north-4",
+                "henesys-hunting-ground-3",
+                "west-domain-of-perion",
+                "west-street-corner-of-perion",
+                "damp-forest",
+                "construction-site-north-of-kerning-city"
               ],
               "monsters": [
                 "zombie-mushroom",
                 "dark-stump",
-                "octopus"
+                "octopus",
+                "slime"
               ],
               "items": [
                 "brown-bamboo-hat"
@@ -1761,14 +2354,99 @@
                 "https://ms-classic.com/guides/maya-and-the-weird-medicine-quest-guide",
                 "https://mapleclassic.wiki/wiki/Brown_Bamboo_Hat",
                 "https://mapleclassic.wiki/wiki/Zombie_Mushroom",
-                "https://royals-library.netlify.app/"
+                "https://royals-library.netlify.app/",
+                "https://mapleclassic.wiki/wiki/Arcon's_Blood%3F",
+                "https://mapleclassic.wiki/wiki/Getting_Arcon's_Blood",
+                "https://mapleclassic.wiki/wiki/Squishy_Liquid"
               ],
               "verified": true,
               "time": {
                 "min": 120,
                 "max": 180,
                 "overlap": true
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "75 Zombie Mushroom",
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 61
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "40 Charm of the Undead",
+                  "monsters": [
+                    "zombie-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 61
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "30 Squishy Liquid",
+                  "monsters": [
+                    "slime"
+                  ],
+                  "where": [
+                    {
+                      "map": "tree-dungeon-forest-up-north-4",
+                      "count": 13
+                    },
+                    {
+                      "map": "henesys-hunting-ground-3",
+                      "count": 17
+                    }
+                  ],
+                  "note": "נופל בערך 1 ל-2."
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "30 Leaf",
+                  "monsters": [
+                    "dark-stump"
+                  ],
+                  "where": [
+                    {
+                      "map": "west-domain-of-perion",
+                      "count": 21
+                    },
+                    {
+                      "map": "west-street-corner-of-perion",
+                      "count": 14
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "30 Octopus Leg",
+                  "monsters": [
+                    "octopus"
+                  ],
+                  "where": [
+                    {
+                      "map": "damp-forest",
+                      "count": 15
+                    },
+                    {
+                      "map": "construction-site-north-of-kerning-city",
+                      "count": 8
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "v2-quest-jane",
@@ -1789,7 +2467,8 @@
               "npc": "jane",
               "maps": [
                 "the-blue-mushroom-forest",
-                "ant-tunnel-3"
+                "ant-tunnel-3",
+                "ant-tunnel-4"
               ],
               "monsters": [
                 "blue-mushroom",
@@ -1811,13 +2490,43 @@
               "sources": [
                 "https://ms-classic.com/guides/jane-and-the-mushroom-quest-guide",
                 "https://mapleclassic.wiki/wiki/Blue_Mushroom",
-                "https://ms-classic.com/guides/quests-worth-doing"
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://mapleclassic.wiki/wiki/Jane_and_the_Mushroom",
+                "https://mapleclassic.wiki/wiki/Horny_Mushroom"
               ],
               "verified": true,
               "time": {
                 "min": 40,
                 "max": 60
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "30 Blue Mushroom",
+                  "where": [
+                    {
+                      "map": "the-blue-mushroom-forest",
+                      "count": 16
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "kill",
+                  "what": "30 Horny Mushroom",
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 38
+                    },
+                    {
+                      "map": "ant-tunnel-4",
+                      "count": 41
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "v2-quest-stranger",
@@ -1863,13 +2572,69 @@
               "sources": [
                 "https://ms-classic.com/guides/how-to-get-old-raggedy-cape",
                 "https://mapleclassic.wiki/wiki/Old_Raggedy_Cape",
-                "https://mapleclassic.wiki/wiki/Broken_Mirror_Glass"
+                "https://mapleclassic.wiki/wiki/Broken_Mirror_Glass",
+                "https://mapleclassic.wiki/wiki/Stranger's_Request",
+                "https://mapleclassic.wiki/wiki/Stranger's_Identity",
+                "https://mapleclassic.wiki/wiki/Stirge"
               ],
               "verified": true,
               "time": {
                 "min": 60,
                 "max": 90
-              }
+              },
+              "hunt": [
+                {
+                  "step": 1,
+                  "kind": "kill",
+                  "what": "40 Stirge",
+                  "where": [
+                    {
+                      "map": "transfer-area",
+                      "count": 38
+                    }
+                  ]
+                },
+                {
+                  "step": 1,
+                  "kind": "drop",
+                  "what": "20 Broken Mirror Glass",
+                  "monsters": [
+                    "stirge"
+                  ],
+                  "where": [
+                    {
+                      "map": "transfer-area",
+                      "count": 38
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "50 Zombie Mushroom",
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 61
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "25 Charm of the Undead",
+                  "monsters": [
+                    "zombie-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 61
+                    }
+                  ],
+                  "note": "אפשר לאסוף יחד עם ה-40 של Maya: אותה מפה."
+                }
+              ]
             },
             {
               "id": "v2-pq-proof",
@@ -2286,7 +3051,25 @@
               "time": {
                 "min": 15,
                 "max": 30
-              }
+              },
+              "hunt": [
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "30 Dark Marble",
+                  "monsters": [
+                    "fire-boar-test",
+                    "lupin-test"
+                  ],
+                  "where": [
+                    {
+                      "map": "warriors-rocky-mountain",
+                      "count": 30
+                    }
+                  ],
+                  "note": "15 Fire Boar ו-15 Lupin במפה."
+                }
+              ]
             },
             {
               "id": "j2-choose-fighter",
@@ -2422,12 +3205,26 @@
               "summary": "ברמה 30: שני קווסטים של Maya, כל אחד 4,780 EXP ו-30 שיקויים.",
               "why": "שיקויים ו-EXP, ופותחים את הקווסטים של Maya ברמה 47.",
               "steps": [
-                "לדבר עם Maya בהנסיס ברמה 30.",
-                "להביא את מה שהיא מבקשת."
+                "לדבר עם Maya בהנסיס ברמה 30 (אחרי Maya and the Weird Medicine).",
+                "Maya's First Collection: 20 Orange Mushroom Cap, 20 Green Mushroom Cap, 20 Blue Mushroom Cap ו-20 Horny Mushroom Cap.",
+                "Maya's Second Collection: 20 Pig's Ribbon, 20 Bubbling's Huge Bubble, 20 Fire Boar's Tooth ו-20 Tablecloth.",
+                "לחזור ל-Maya אחרי כל אחד."
               ],
               "npc": "maya",
               "maps": [
-                "henesys"
+                "henesys",
+                "mushroom-garden-victoria",
+                "henesys-hunting-ground-3",
+                "west-rocky-mountain-3",
+                "tree-dungeon-forest-up-north-4",
+                "the-blue-mushroom-forest",
+                "ant-tunnel-3",
+                "l-forest-1",
+                "line-1-area-1",
+                "the-burnt-land-5",
+                "the-burnt-land-3",
+                "line-2-area-1",
+                "line-1-area-2"
               ],
               "rewards": {
                 "exp": 9560,
@@ -2440,15 +3237,165 @@
               "requirements": {
                 "level": 30
               },
-              "notes": [],
+              "notes": [
+                "רוב הפריטים נופלים במפות האימון של שלבים 4–6. לשמור אותם תוך כדי אימון במקום לחזור במיוחד."
+              ],
               "sources": [
-                "https://ms-classic.com/guides/quests-worth-doing"
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://mapleclassic.wiki/wiki/Maya's_First_Collection",
+                "https://mapleclassic.wiki/wiki/Maya's_Second_Collection",
+                "https://mapleclassic.wiki/wiki/Ribbon_Pig",
+                "https://mapleclassic.wiki/wiki/Bubbling",
+                "https://royals-library.netlify.app/"
               ],
               "verified": false,
               "time": {
                 "min": 20,
                 "max": 40
-              }
+              },
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Orange Mushroom Cap",
+                  "monsters": [
+                    "orange-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "mushroom-garden-victoria",
+                      "count": 15
+                    },
+                    {
+                      "map": "henesys-hunting-ground-3",
+                      "count": 11
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Green Mushroom Cap",
+                  "monsters": [
+                    "green-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "west-rocky-mountain-3",
+                      "count": 32
+                    },
+                    {
+                      "map": "tree-dungeon-forest-up-north-4",
+                      "count": 31
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Blue Mushroom Cap",
+                  "monsters": [
+                    "blue-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "the-blue-mushroom-forest",
+                      "count": 16
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "20 Horny Mushroom Cap",
+                  "monsters": [
+                    "horny-mushroom"
+                  ],
+                  "where": [
+                    {
+                      "map": "ant-tunnel-3",
+                      "count": 38
+                    }
+                  ],
+                  "note": "ב-Ant Tunnel III, איפה שמתאמנים ברמות 30–35."
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "20 Pig's Ribbon",
+                  "monsters": [
+                    "ribbon-pig"
+                  ],
+                  "where": [
+                    {
+                      "map": "l-forest-1",
+                      "count": 21
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "20 Bubbling's Huge Bubble",
+                  "monsters": [
+                    "bubbling"
+                  ],
+                  "where": [
+                    {
+                      "map": "line-1-area-1",
+                      "count": 64
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "20 Fire Boar's Tooth",
+                  "monsters": [
+                    "fire-boar"
+                  ],
+                  "where": [
+                    {
+                      "map": "the-burnt-land-5",
+                      "count": 26
+                    },
+                    {
+                      "map": "the-burnt-land-3",
+                      "count": 24
+                    }
+                  ],
+                  "note": "⚠ ב-Classic עוד לא נבדק מי מפיל. במשחק הישן: Fire Boar."
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "20 Tablecloth",
+                  "monsters": [
+                    "jr-wraith"
+                  ],
+                  "where": [
+                    {
+                      "map": "line-2-area-1",
+                      "count": 83
+                    },
+                    {
+                      "map": "line-1-area-2",
+                      "count": 69
+                    }
+                  ],
+                  "note": "⚠ ב-Classic עוד לא נבדק מי מפיל. במשחק הישן: Jr. Wraith (לפי תיאור הפריט). אלה מפות האימון של 35–40, אז לאסוף תוך כדי."
+                }
+              ],
+              "monsters": [
+                "orange-mushroom",
+                "green-mushroom",
+                "blue-mushroom",
+                "horny-mushroom",
+                "ribbon-pig",
+                "bubbling",
+                "fire-boar",
+                "jr-wraith"
+              ]
             }
           ],
           "time": {
@@ -2686,11 +3633,18 @@
               "maps": [
                 "sleepywood",
                 "ellinia",
-                "henesys"
+                "henesys",
+                "hunting-ground-in-the-deep-forest-2",
+                "monkey-swamp-1",
+                "the-burnt-land-5",
+                "a-hill-west-of-henesys",
+                "thicket-around-the-beach-2"
               ],
               "monsters": [
                 "lupin",
-                "curse-eye"
+                "curse-eye",
+                "pig",
+                "ribbon-pig"
               ],
               "items": [
                 "blue-sauna-robe",
@@ -2723,9 +3677,93 @@
                 "https://mapleclassic.wiki/wiki/Blue_Sauna_Robe",
                 "https://mapleclassic.wiki/wiki/Diamond",
                 "https://mapleclassic.wiki/wiki/Pig",
-                "https://royals-library.netlify.app/"
+                "https://royals-library.netlify.app/",
+                "https://mapleclassic.wiki/wiki/Hungry_Ronnie",
+                "https://mapleclassic.wiki/wiki/Secret_to_Unagi_Special",
+                "https://mapleclassic.wiki/wiki/Lupin",
+                "https://mapleclassic.wiki/wiki/Curse_Eye"
               ],
-              "verified": true
+              "verified": true,
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "kill",
+                  "what": "50 Lupin",
+                  "where": [
+                    {
+                      "map": "hunting-ground-in-the-deep-forest-2",
+                      "count": 15
+                    },
+                    {
+                      "map": "monkey-swamp-1",
+                      "count": 28
+                    },
+                    {
+                      "map": "the-burnt-land-5",
+                      "count": 12
+                    }
+                  ]
+                },
+                {
+                  "step": 2,
+                  "kind": "drop",
+                  "what": "30 Lupin's Banana",
+                  "monsters": [
+                    "lupin"
+                  ],
+                  "where": [
+                    {
+                      "map": "hunting-ground-in-the-deep-forest-2",
+                      "count": 15
+                    },
+                    {
+                      "map": "monkey-swamp-1",
+                      "count": 28
+                    }
+                  ],
+                  "note": "ב-Hunting Ground in the Deep Forest II יש גם Curse Eye, אז שלבים 2 ו-3 נעשים יחד."
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "50 Curse Eye Tail",
+                  "monsters": [
+                    "curse-eye"
+                  ],
+                  "where": [
+                    {
+                      "map": "hunting-ground-in-the-deep-forest-2",
+                      "count": 20
+                    }
+                  ]
+                },
+                {
+                  "step": 3,
+                  "kind": "drop",
+                  "what": "10 Pig's Head",
+                  "monsters": [
+                    "pig",
+                    "ribbon-pig"
+                  ],
+                  "where": [
+                    {
+                      "map": "a-hill-west-of-henesys",
+                      "count": 26
+                    },
+                    {
+                      "map": "thicket-around-the-beach-2",
+                      "count": 18
+                    }
+                  ],
+                  "note": "נופל מ-Pig בערך 1 ל-16, וגם מ-Ribbon Pig. ב-A Hill West of Henesys יש 16 Pig ו-10 Ribbon Pig."
+                },
+                {
+                  "step": 4,
+                  "kind": "find",
+                  "what": "Diamond אחד",
+                  "note": "אין מפלצת או חנות של NPC שנותנים אותו. האפשרויות כתובות בהערות."
+                }
+              ]
             },
             {
               "id": "f3-quest-shumi",
@@ -2744,7 +3782,8 @@
               ],
               "npc": "shumi",
               "maps": [
-                "kerning-city"
+                "kerning-city",
+                "subway-ticketing-booth"
               ],
               "rewards": {
                 "exp": 20160,
@@ -2767,9 +3806,24 @@
               ],
               "sources": [
                 "https://ms-classic.com/guides/jump-quests-guide",
-                "https://ms-classic.com/guides/what-to-do-at-level-30"
+                "https://ms-classic.com/guides/what-to-do-at-level-30",
+                "https://mapleclassic.wiki/wiki/Shumi's_Lost_Coin"
               ],
-              "verified": false
+              "verified": false,
+              "hunt": [
+                {
+                  "step": 2,
+                  "kind": "find",
+                  "what": "Shumi's Coin, Shumi's Roll of Cash ו-Shumi's Sack of Cash",
+                  "where": [
+                    {
+                      "map": "subway-ticketing-booth"
+                    }
+                  ],
+                  "note": "נכנסים דרך The Ticket Gate ב-Subway Ticketing Booth בקרנינג. כל פריט נמצא בסוף קומה אחרת (B1, B2, B3), ב-Subway Depot. לפי הקהילה כל קומה צריכה כרטיס משלה."
+                }
+              ],
+              "monsters": []
             },
             {
               "id": "f3-sp-31-33",

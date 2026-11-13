@@ -44,6 +44,44 @@ def check_time(where: str, t) -> None:
         err(f"{where}: bad time {t!r} (needs 0 <= min <= max, in minutes)")
 
 
+HUNT_KINDS = {"kill", "drop", "find", "buy"}
+
+
+def check_hunt(where: str, task: dict, maps: dict, monsters: dict) -> None:
+    """hunt: where to kill or collect things, one entry per target, tied to a step (1-based)."""
+    hunt = task.get("hunt")
+    if hunt is None:
+        return
+    if not isinstance(hunt, list):
+        err(f"{where}: hunt must be a list")
+        return
+    steps = len(task.get("steps") or [])
+    for i, h in enumerate(hunt):
+        hw = f"{where}/hunt[{i}]"
+        if not isinstance(h, dict):
+            err(f"{hw}: must be an object")
+            continue
+        step = h.get("step")
+        if not isinstance(step, int) or not 1 <= step <= steps:
+            err(f"{hw}: step {step!r} is not one of the task's {steps} steps")
+        if h.get("kind") not in HUNT_KINDS:
+            err(f"{hw}: bad kind '{h.get('kind')}'")
+        if not h.get("what"):
+            err(f"{hw}: missing what")
+        if h.get("kind") == "drop" and not h.get("monsters"):
+            err(f"{hw}: a drop needs the monsters that drop it")
+        for ref in h.get("monsters", []) or []:
+            if ref not in monsters:
+                err(f"{hw}: unknown monster '{ref}'")
+        for w in h.get("where", []) or []:
+            if not isinstance(w, dict) or w.get("map") not in maps:
+                err(f"{hw}: unknown map in where: {w!r}")
+            elif "count" in w and (not isinstance(w["count"], int) or w["count"] <= 0):
+                err(f"{hw}: bad count {w['count']!r}")
+        if not h.get("where") and not h.get("note"):
+            err(f"{hw}: needs where or a note that explains where")
+
+
 def index(name: str) -> dict:
     rows = load(name)
     if rows is None:
@@ -152,6 +190,7 @@ def main() -> int:
                     for ref in task.get(field, []) or []:
                         if ref not in table:
                             err(f"{tw}: unknown {label} '{ref}' in {field}")
+                check_hunt(tw, task, maps, monsters)
             for style, n in required_by_style.items():
                 if n == 0:
                     err(f"{where}: no required task for the {style} style")
