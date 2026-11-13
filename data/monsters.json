@@ -1,0 +1,235 @@
+[
+  {
+    "id": "tutorial-jr-sentinel",
+    "nameEn": "Tutorial Jr. Sentinel",
+    "level": 1,
+    "hp": 30,
+    "exp": 1,
+    "drops": [
+      "Jr. Sentinel Shellpiece"
+    ]
+  },
+  {
+    "id": "snail",
+    "nameEn": "Snail",
+    "level": 1,
+    "hp": 45,
+    "exp": 2,
+    "drops": [
+      "Snail Shell"
+    ]
+  },
+  {
+    "id": "blue-snail",
+    "nameEn": "Blue Snail",
+    "level": 2,
+    "hp": 51,
+    "exp": 4,
+    "drops": [
+      "Blue Snail Shell"
+    ]
+  },
+  {
+    "id": "shroom",
+    "nameEn": "Shroom",
+    "level": 3,
+    "hp": 62,
+    "exp": 6,
+    "drops": []
+  },
+  {
+    "id": "red-snail",
+    "nameEn": "Red Snail",
+    "level": 4,
+    "hp": 68,
+    "exp": 8,
+    "drops": [
+      "Red Snail Shell"
+    ]
+  },
+  {
+    "id": "slime",
+    "nameEn": "Slime",
+    "level": 6,
+    "hp": 115,
+    "exp": 12,
+    "drops": []
+  },
+  {
+    "id": "pig",
+    "nameEn": "Pig",
+    "level": 7,
+    "hp": 128,
+    "exp": 13,
+    "drops": []
+  },
+  {
+    "id": "orange-mushroom",
+    "nameEn": "Orange Mushroom",
+    "level": 8,
+    "hp": 142,
+    "exp": 15,
+    "drops": [
+      "Orange Mushroom Cap"
+    ]
+  },
+  {
+    "id": "stump",
+    "nameEn": "Stump",
+    "level": 5,
+    "hp": 133,
+    "exp": 10,
+    "drops": []
+  },
+  {
+    "id": "dark-stump",
+    "nameEn": "Dark Stump",
+    "level": 11,
+    "hp": 236,
+    "exp": 21,
+    "drops": [
+      "Leaf",
+      "Tree Branch"
+    ]
+  },
+  {
+    "id": "octopus",
+    "nameEn": "Octopus",
+    "level": 12,
+    "hp": 191,
+    "exp": 23,
+    "drops": [
+      "Octopus Leg"
+    ]
+  },
+  {
+    "id": "green-mushroom",
+    "nameEn": "Green Mushroom",
+    "level": 14,
+    "hp": 233,
+    "exp": 26,
+    "drops": []
+  },
+  {
+    "id": "bubbling",
+    "nameEn": "Bubbling",
+    "level": 15,
+    "hp": 259,
+    "exp": 28,
+    "drops": [
+      "Bubbling's Huge Bubble"
+    ]
+  },
+  {
+    "id": "blue-mushroom",
+    "nameEn": "Blue Mushroom",
+    "level": 19,
+    "hp": 342,
+    "exp": 35,
+    "drops": [
+      "Blue Mushroom Cap"
+    ]
+  },
+  {
+    "id": "stirge",
+    "nameEn": "Stirge",
+    "level": 20,
+    "hp": 296,
+    "exp": 37,
+    "drops": [
+      "Broken Mirror Glass"
+    ]
+  },
+  {
+    "id": "jr-necki",
+    "nameEn": "Jr. Necki",
+    "level": 21,
+    "hp": 272,
+    "exp": 39,
+    "drops": []
+  },
+  {
+    "id": "horny-mushroom",
+    "nameEn": "Horny Mushroom",
+    "level": 22,
+    "hp": 403,
+    "exp": 41,
+    "drops": [
+      "Horny Mushroom Cap"
+    ]
+  },
+  {
+    "id": "zombie-mushroom",
+    "nameEn": "Zombie Mushroom",
+    "level": 24,
+    "hp": 436,
+    "exp": 45,
+    "drops": [
+      "Charm of the Undead"
+    ]
+  },
+  {
+    "id": "fire-boar-test",
+    "nameEn": "Fire Boar (מבחן)",
+    "level": 30,
+    "hp": 718,
+    "exp": 56,
+    "drops": [
+      "Dark Marble"
+    ]
+  },
+  {
+    "id": "lupin-test",
+    "nameEn": "Lupin (מבחן)",
+    "level": 30,
+    "hp": 718,
+    "exp": 56,
+    "drops": [
+      "Dark Marble"
+    ]
+  },
+  {
+    "id": "dark-axe-stump",
+    "nameEn": "Dark Axe Stump",
+    "level": 23,
+    "hp": 547,
+    "exp": 43,
+    "drops": []
+  },
+  {
+    "id": "fire-boar",
+    "nameEn": "Fire Boar",
+    "level": 32,
+    "hp": 842,
+    "exp": 60,
+    "drops": []
+  },
+  {
+    "id": "curse-eye",
+    "nameEn": "Curse Eye",
+    "level": 33,
+    "hp": 1001,
+    "exp": 63,
+    "drops": [
+      "Curse Eye Tail"
+    ]
+  },
+  {
+    "id": "jr-wraith",
+    "nameEn": "Jr. Wraith",
+    "level": 34,
+    "hp": 982,
+    "exp": 66,
+    "drops": []
+  },
+  {
+    "id": "lupin",
+    "nameEn": "Lupin",
+    "level": 37,
+    "hp": 1336,
+    "exp": 75,
+    "drops": [
+      "Lupin's Banana"
+    ]
+  }
+]

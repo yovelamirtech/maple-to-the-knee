@@ -1,0 +1,117 @@
+[
+  {
+    "id": "heena",
+    "nameEn": "Heena",
+    "mapId": "mushroom-town-west-entrance"
+  },
+  {
+    "id": "mai",
+    "nameEn": "Mai",
+    "mapId": "a-split-road"
+  },
+  {
+    "id": "maria",
+    "nameEn": "Maria",
+    "mapId": "a-split-road"
+  },
+  {
+    "id": "pio",
+    "nameEn": "Pio",
+    "mapId": "amherst"
+  },
+  {
+    "id": "rain",
+    "nameEn": "Rain",
+    "mapId": "amherst"
+  },
+  {
+    "id": "lucas",
+    "nameEn": "Lucas",
+    "mapId": "amherst"
+  },
+  {
+    "id": "biggs",
+    "nameEn": "Biggs",
+    "mapId": "southperry"
+  },
+  {
+    "id": "shanks",
+    "nameEn": "Shanks",
+    "mapId": "southperry"
+  },
+  {
+    "id": "phil",
+    "nameEn": "Phil",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "olaf",
+    "nameEn": "Olaf",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "teo",
+    "nameEn": "Teo",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "dances-with-balrog",
+    "nameEn": "Dances with Balrog",
+    "mapId": "perion"
+  },
+  {
+    "id": "blackbull",
+    "nameEn": "Blackbull",
+    "mapId": "perion"
+  },
+  {
+    "id": "river",
+    "nameEn": "River",
+    "mapId": "perion"
+  },
+  {
+    "id": "nella",
+    "nameEn": "Nella",
+    "mapId": "kerning-city"
+  },
+  {
+    "id": "lakelis",
+    "nameEn": "Lakelis",
+    "mapId": "kerning-city"
+  },
+  {
+    "id": "jane-doe",
+    "nameEn": "Jane Doe",
+    "mapId": "kerning-city"
+  },
+  {
+    "id": "jane",
+    "nameEn": "Jane",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "maya",
+    "nameEn": "Maya",
+    "mapId": "henesys"
+  },
+  {
+    "id": "pia",
+    "nameEn": "Pia",
+    "mapId": "henesys"
+  },
+  {
+    "id": "warrior-job-instructor",
+    "nameEn": "Warrior Job Instructor",
+    "mapId": "west-rocky-mountain-4"
+  },
+  {
+    "id": "mr-wetbottom",
+    "nameEn": "Mr. Wetbottom",
+    "mapId": "sleepywood"
+  },
+  {
+    "id": "shumi",
+    "nameEn": "Shumi",
+    "mapId": "kerning-city"
+  }
+]
