@@ -37,6 +37,8 @@
 - [maplestory.quest/guides/training](https://maplestory.quest/guides/training), [metammo.com/maplestory-classic-guide](https://metammo.com/maplestory-classic-guide), [henesys.gg/guides](https://henesys.gg/guides).
 - [Grand Launch Release Notes (Nexon)](https://www.nexon.com/maplestory/news/general/46506/grand-launch-release-notes): המקור הרשמי. **עדיף על פני כל מקור אחר.**
 - [maplestorywiki.net/w/Classic_World](https://maplestorywiki.net/w/Classic_World).
+- [mapleclassic.wiki](https://mapleclassic.wiki): ויקי של Classic World עם תיבות מידע לקווסטים, למפות (כולל מספר המפלצות בכל מפה) ולפריטים. כל דף מציין "Data verified: 1.0.0" או "pre-launch". ms-classic מצטט אותו ואת meowdb.
+- **ms-classic.com** מפרסם מדריכים עם תאריך, גרסה ומקורות. נראה אמין יחסית, אבל יש בו גם דפים על תוכן שלא קיים (למשל Orbis), אז לאמת מולו ומול הוויקי.
 
 > ⚠️ **רשת:** בסשן הראשון (בענן) WebFetch נחסם ל-`meowdb.com` ול-`maplestorywiki.net` (ENOTFOUND). **עדכון 2026-11-13 (B0):** בסשן שרץ על המחשב של המשתמש יש רשת פתוחה. `nexon.com`, `maplestorywiki.net`, `ms-classic.com` ו-`maplestory.io` עונים 200. `meowdb.com` מחזיר 403 לבקשות סקריפט (הגנת בוטים) ו-`maplestory.quest` מחזיר 503, אז אותם לנסות לקרוא דרך הדפדפן המובנה. בסשן ענן ייתכן שעדיין צריך לבקש allowed hosts.
 
@@ -163,7 +165,8 @@
         "requirements": { "level": 1, "str": 0, "dex": 0 },
         "notes": ["..."],
         "sources": ["https://..."],     // חובה: מאיפה המידע
-        "verified": false               // true רק אחרי אימות מול מקור של Classic World
+        "items": ["razor"],             // ids מ-data/items.json (ציוד שהמשימה נותנת או ממליצה)
+        "verified": false               // true רק כששני מקורות של Classic World מסכימים
       }]
     }]
   }]
@@ -173,7 +176,8 @@
   - `data/maps.json`: `{ id, nameEn, nameHe?, regionId, levelRange?, mapleId?, image? }`
   - `data/monsters.json`: `{ id, nameEn, nameHe?, level, hp, exp, drops[], mapleId? }`
   - `data/npcs.json`: `{ id, nameEn, nameHe?, mapId }`
-  - `data/items.json` (ציוד): `{ id, nameEn, nameHe?, slot, reqLevel, reqStr, reqDex, stats, sources[] }`
+  - `data/items.json` (ציוד): `{ id, nameEn, nameHe?, slot, weaponType?, reqLevel, reqStr, reqDex, stats, slots?, sources[] }`. `stats` לפי מפתחות כמו `watk`, `str`, `dex`.
+  - `rewards.items` הוא טקסט חופשי ("Egg ×3"). הפניה לפריט מ-`items.json` נכתבת בשדה `items` של המשימה.
 - `data/images.json`: נוצר על ידי הסקריפט ומחבר כל ישות לקובץ ב-`assets/img/`.
 
 ### 4.3 שמירה
@@ -288,8 +292,8 @@
 | A3 | מסך השלב הנוכחי: כותרת, מטרה, פס התקדמות, קבוצות לפי סוג, תגיות חובה/מומלץ/רשות | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | תגית: `required` ← חובה, `priority: low` או `pq` ← רשות, אחרת מומלץ. שלב בלי משימות מציג "התוכן לשלב הזה עוד בכתיבה". הכרטיס עוד לא נפתח בלחיצה (A7) |
 | A4 | V עם אנימציה, toast עם ביטול, וקטע "בוצע בשלב הזה" עם אפשרות להחזיר | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | `toggleTask`, `showToast`, `<details id="done-section">` |
 | A5 | באנר סיום שלב ומעבר ל-`currentStage` הבא | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | בלי סגנון נשק נבחר, השלב נחשב גמור כשמשימות החובה המשותפות ומשימות החובה של **אחד** הסגנונות סומנו (`stageProgress`). בשלב האחרון: "הגעת לרמה N, התוכן הבא בדרך" |
-| A6 | ציר השלבים, חצים, ופס "צופה בשלב אחר" | ⬜ | | |
-| A7 | חלון פרטי משימה (3.4): צעדים, NPC, מסלול, מפלצות, פרס, דרישות, מקורות | ⬜ | | |
+| A6 | ציר השלבים, חצים, ופס "צופה בשלב אחר" | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | כפתור "כל השלבים" בכותרת פותח את הציר ב-sheet. `viewStage` מתאפס בכל טעינה, כך שהאפליקציה תמיד נפתחת ב-`currentStage`. באנר הסיום מופיע רק בשלב הנוכחי |
+| A7 | חלון פרטי משימה (3.4): צעדים, NPC, מסלול, מפלצות, פרס, דרישות, מקורות | ✅ | 2026-11-13, Claude Code desktop d43eabf6 | גם טבלת ציוד מ-`items.json` ותגית "⚠ עוד לא אומת" למשימה עם `verified: false`. סגירה עם חזרה אחורה בדפדפן, כמו בסקיירים |
 | A8 | טאב הבילד: טבלאות AP, SP והתקדמות נשק | ⬜ | | |
 | A9 | חיפוש בכל השלבים | ⬜ | | |
 | A10 | טאב טיפים | ⬜ | | |
@@ -305,7 +309,7 @@
 | id | שלב | R מחקר | W כתיבה | V אימות | הערות |
 | --- | --- | --- | --- | --- | --- |
 | B0 | בקשה להוסיף hosts לרשת (meowdb.com, maplestorywiki.net, ms-classic.com, maplestory.quest, nexon.com) | ✅ | | | 2026-11-13: לא נדרש בסשן מקומי. meowdb (403) ו-maplestory.quest (503) דרך הדפדפן המובנה. ראו ההערה בסעיף 1 |
-| B1 | `maple-island` (1–10) | ⬜ | ⬜ | ⬜ | |
+| B1 | `maple-island` (1–10) | ✅ | ✅ | 🟡 | 19 משימות (14 חובה). 14 מאומתות (ms-classic + mapleclassic.wiki). לא מאומתות: AP (שתיים), Rain, SP של Beginner, Teo. השלב כולל גם את Lith Harbor עד רמה 10 (Phil, Olaf), והמטרה עודכנה בהתאם |
 | B2 | `job1-warrior` (10) | ⬜ | ⬜ | ⬜ | |
 | B3 | `victoria-10-21` | ⬜ | ⬜ | ⬜ | |
 | B4 | `victoria-21-30` + KPQ (רשות) | ⬜ | ⬜ | ⬜ | |
@@ -317,7 +321,7 @@
 | B10 | `job3-crusader` (placeholder) | ⏭️ | ⏭️ | ⏭️ | נדחה, עוד לא במשחק |
 | B11 | `apPlan` ו-`skillPlan` מלאים ומאומתים | ⬜ | ⬜ | ⬜ | |
 | B12 | `gearPath` ו-`data/items.json` | ⬜ | ⬜ | ⬜ | שני הסגנונות: חד-ידנית ומגן, ודו-ידנית |
-| B13 | `maps.json`, `monsters.json`, `npcs.json` | ⬜ | ⬜ | ⬜ | ממלאים תוך כדי B1–B7 |
+| B13 | `maps.json`, `monsters.json`, `npcs.json` | 🟡 | 🟡 | 🟡 | ממלאים תוך כדי B1–B7. אחרי B1: 15 מפות, 8 מפלצות, 11 NPC, 2 פריטים. חסר Stump (מופיע ב-Olaf) |
 | B14 | טיפים כלליים | ⬜ | ⬜ | ⬜ | |
 
 > סדר מומלץ: A1–A7 יחד עם B1–B5, ואז **לעצור ולהראות למשתמש** שהפורמט ורמת הפירוט נכונים. אחר כך B6–B14 ו-A8–A14.
@@ -393,3 +397,19 @@
   - Playwright ל-Python לא מותקן במחשב הזה, אז D3 עוד לא נעשה. הבדיקה הידנית רצה בדפדפן המובנה.
   - `.claude/launch.json` (שרת מקומי לבדיקה) נמצא ב-`.gitignore`.
 - **הצעד הבא:** B1 (מחקר וכתיבה של `maple-island`) ו-A6–A7. אחריהם B2–B5, ואז לעצור ולהראות למשתמש.
+
+### 2026-11-13 · Claude Code desktop d43eabf6 (המשך)
+- **מה נעשה:**
+  - B1: מחקר וכתיבה של `maple-island`. מקורות: ms-classic.com ו-mapleclassic.wiki (נקרא בדפדפן המובנה). 19 משימות, מתוכן 14 מאומתות.
+  - B13 התחיל: `maps.json`, `monsters.json`, `npcs.json` ו-`items.json` עם הישויות של השלב.
+  - A6: ציר שלבים, חצים ‹ › ופס "אתה צופה בשלב N" עם "חזרה לשלב הנוכחי" ו"הגדר כשלב נוכחי".
+  - A7: חלון פרטי משימה.
+  - תיקון RTL: נקודתיים אחרי שם באנגלית ("Biggs: ...") כבר לא קופצות לצד הלא נכון.
+  - נבדק בדפדפן המובנה ברוחב 390px. `tsc --strict` עובר.
+- **איפה עצרתי:** B1 כתוב. V של B1 חלקי: 5 משימות עם `verified: false`, וההערות בהן מסבירות מה לא ברור.
+- **בעיות:**
+  - **meowdb.com חוסם בקשות סקריפט (403).** ניסיון להתחזות לדפדפן כדי לעקוף את החסימה נחסם, ובצדק. לקרוא אותו רק בדפדפן המובנה, כמו מבקר רגיל.
+  - **סתירה ל-B5:** הוויקי (דף Skill points) אומר ש-SP של ג'וב 2 אפשר לשים בסקילים של ג'וב 1, ו-ms-classic אומר שלא. לבדוק לפני שכותבים את `skillPlan`.
+  - **סתירה ב-Rain's Maple Quiz:** בוויקי 245 EXP ו-5 Orange, וב-ms-classic 490 EXP ו-10 Orange.
+  - לא ברור איך מקבלים SP של Beginner ב-Classic World.
+- **הצעד הבא:** B2 (`job1-warrior`): לבדוק אם יש דרישת STR 35, וגם את מה ש-Phil's Call עושה ברמה 10. אחר כך B3–B5, ואז לעצור ולהראות למשתמש (סעיף 7).

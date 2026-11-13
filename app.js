@@ -6,11 +6,13 @@
   /**
    * @typedef {'job'|'quest'|'train'|'gear'|'ap'|'sp'|'pq'|'tip'} TaskType
    * @typedef {'one-handed'|'two-handed'} Variant
+   * @typedef {{ exp?: number, mesos?: number, items?: string[] }} Rewards
    * @typedef {{
    *   id: string, type: TaskType, variant?: Variant|null, required?: boolean,
    *   priority?: 'high'|'medium'|'low', titleHe: string, titleEn?: string,
    *   summary?: string, why?: string, steps?: string[], npc?: string, route?: string[],
-   *   maps?: string[], monsters?: string[], rewards?: object, requirements?: { level?: number, str?: number, dex?: number },
+   *   maps?: string[], monsters?: string[], items?: string[], rewards?: Rewards,
+   *   requirements?: { level?: number, str?: number, dex?: number },
    *   notes?: string[], sources?: string[], verified?: boolean
    * }} Task
    * @typedef {{
@@ -19,6 +21,11 @@
    *   tasks: Task[]
    * }} Stage
    * @typedef {{ id: string, nameHe: string, nameEn: string, stages: Stage[], tips?: string[] }} Build
+   * @typedef {{ id: string, nameEn: string, nameHe?: string, regionId?: string, levelRange?: string }} MapInfo
+   * @typedef {{ id: string, nameEn: string, nameHe?: string, level: number, hp: number, exp: number, drops?: string[] }} MonsterInfo
+   * @typedef {{ id: string, nameEn: string, nameHe?: string, mapId?: string }} NpcInfo
+   * @typedef {{ id: string, nameEn: string, nameHe?: string, slot: string, weaponType?: string, reqLevel?: number,
+   *   reqStr?: number, reqDex?: number, stats?: Record<string, number>, slots?: number, sources?: string[] }} ItemInfo
    * @typedef {{
    *   currentStage: string|null, viewStage: string|null, myLevel: number|null,
    *   weaponStyle: Variant|null, done: Record<string, string>, stagesCompleted: Record<string, string>
@@ -44,8 +51,11 @@
   const TYPE_ORDER = /** @type {TaskType[]} */ (Object.keys(TYPES));
   const VARIANTS = { 'one-handed': '🛡️ חד-ידנית', 'two-handed': '⚔️ דו-ידנית' };
   const PRIORITY_RANK = { high: 0, medium: 1, low: 2 };
+  const STAT_LABELS = { watk: 'W.ATK', matk: 'M.ATK', str: 'STR', dex: 'DEX', wdef: 'W.DEF', mdef: 'M.DEF', acc: 'ACC', avoid: 'Avoid', hp: 'HP', mp: 'MP' };
 
   const ICON_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  const ICON_CLOSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  const ICON_EXTERNAL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
 
   /**
    * @param {string} id
@@ -59,19 +69,26 @@
 
   const el = {
     buildName: byId('build-name'),
+    openTimeline: byId('open-timeline'),
+    viewBar: byId('view-bar'),
     stageHead: byId('stage-head'),
     banner: byId('banner'),
     list: byId('list'),
+    sheet: /** @type {HTMLDialogElement} */ (byId('sheet')),
+    sheetBody: byId('sheet-body'),
     toast: byId('toast'),
     toastText: byId('toast-text'),
     toastUndo: byId('toast-undo'),
   };
 
   const dateFmt = new Intl.DateTimeFormat('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+  const numFmt = new Intl.NumberFormat('en-US');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   /** @type {Build[]} */
   let builds = [];
+  /** @type {{ maps: Record<string, MapInfo>, monsters: Record<string, MonsterInfo>, npcs: Record<string, NpcInfo>, items: Record<string, ItemInfo> }} */
+  let world = { maps: {}, monsters: {}, npcs: {}, items: {} };
   /** @type {Store} */
   let store = emptyStore();
   /** @type {ReturnType<typeof setTimeout>|undefined} */
@@ -79,6 +96,12 @@
   /** @type {(() => void)|null} */
   let toastUndoFn = null;
   let doneOpen = false;
+  /** @type {string|null} task id shown in the sheet, or TIMELINE */
+  let sheetContent = null;
+  let sheetHasHistory = false;
+  /** @type {(() => void)|null} */
+  let afterSheetClose = null;
+  const TIMELINE = '#timeline';
 
   /* ---------- Storage ---------- */
 
@@ -176,7 +199,9 @@
   }
 
   // Runs of Latin text get wrapped in <bdi> so punctuation around them stays in the right place.
-  const LATIN_RUN = /[A-Za-z](?:[A-Za-z0-9'’\-:]|\.(?=[A-Za-z0-9]))*(?: +[A-Za-z0-9](?:[A-Za-z0-9'’\-:]|\.(?=[A-Za-z0-9]))*)*/g;
+  // A colon stays inside only when Latin text follows it ("Final Attack: Sword"), not before Hebrew ("Biggs: נשק").
+  const LATIN_WORD = String.raw`(?:[A-Za-z0-9'’\-]|\.(?=[A-Za-z0-9])|:(?= [A-Za-z]))*`;
+  const LATIN_RUN = new RegExp(String.raw`[A-Za-z]${LATIN_WORD}(?: +[A-Za-z0-9]${LATIN_WORD})*`, 'g');
 
   /** @param {unknown} str */
   function richText(str) {
@@ -195,6 +220,11 @@
   function formatDate(iso) {
     const d = new Date(iso || '');
     return isNaN(d.getTime()) ? '' : dateFmt.format(d);
+  }
+
+  /** @param {number} n */
+  function num(n) {
+    return `<bdi dir="ltr">${escapeHtml(numFmt.format(n))}</bdi>`;
   }
 
   /** @returns {Build} */
@@ -224,12 +254,24 @@
   }
 
   /**
+   * The stage on screen: the one being viewed, or the current one.
+   * @param {Build} build
+   * @returns {Stage}
+   */
+  function shownStage(build) {
+    const state = buildState(build.id);
+    const viewed = build.stages.find((s) => s.id === state.viewStage);
+    return viewed || currentStage(build);
+  }
+
+  /**
    * @param {Build} build
    * @param {Stage} stage
+   * @param {number} step -1 for the previous stage, 1 for the next
    */
-  function nextStage(build, stage) {
+  function siblingStage(build, stage, step) {
     const stages = sortedStages(build);
-    return stages[stages.indexOf(stage) + 1] || null;
+    return stages[stages.indexOf(stage) + step] || null;
   }
 
   /**
@@ -309,6 +351,24 @@
       : `רמות <bdi dir="ltr">${escapeHtml(stage.levelFrom)}–${escapeHtml(stage.levelTo)}</bdi>`;
   }
 
+  /**
+   * @param {Build} build
+   * @param {string} taskId
+   */
+  function findTask(build, taskId) {
+    for (const stage of build.stages) {
+      const task = stage.tasks.find((t) => t.id === taskId);
+      if (task) return { stage, task };
+    }
+    return null;
+  }
+
+  /** @param {string} id */
+  function mapName(id) {
+    const m = world.maps[id];
+    return m ? m.nameEn : id;
+  }
+
   /* ---------- Rendering ---------- */
 
   /** @param {Task} task */
@@ -322,6 +382,15 @@
   }
 
   /**
+   * @param {Task} task
+   * @param {boolean} large
+   */
+  function thumbHtml(task, large) {
+    const icon = (TYPES[task.type] || { icon: '•' }).icon;
+    return `<span class="thumb${large ? ' thumb-lg' : ''}"><span class="thumb-emoji" aria-hidden="true">${icon}</span></span>`;
+  }
+
+  /**
    * @param {Build} build
    * @param {Task} task
    */
@@ -332,16 +401,15 @@
       ? `<span class="done-date">בוצע ב-${escapeHtml(formatDate(doneAt))}</span>`
       : `${task.summary ? `<span class="summary">${richText(task.summary)}</span>` : ''}${badgesHtml(task)}`;
     const checkLabel = done ? `החזרה לרשימה: ${task.titleHe}` : `סימון כבוצע: ${task.titleHe}`;
-    const icon = (TYPES[task.type] || { icon: '•' }).icon;
     return `<li class="card" data-id="${escapeHtml(task.id)}">
-      <div class="card-main">
-        <span class="thumb"><span class="thumb-emoji" aria-hidden="true">${icon}</span></span>
+      <button type="button" class="card-open" data-action="open" aria-haspopup="dialog">
+        ${thumbHtml(task, false)}
         <span class="card-body">
           <span class="name-he">${richText(task.titleHe)}</span>
           ${task.titleEn ? `<span class="name-en" dir="ltr">${escapeHtml(task.titleEn)}</span>` : ''}
           ${meta}
         </span>
-      </div>
+      </button>
       <button type="button" class="check" data-action="toggle" role="checkbox" aria-checked="${done}" aria-label="${escapeHtml(checkLabel)}">
         <span class="check-box">${ICON_CHECK}</span>
       </button>
@@ -352,12 +420,44 @@
    * @param {Build} build
    * @param {Stage} stage
    */
+  function renderViewBar(build, stage) {
+    const current = currentStage(build);
+    if (stage === current) {
+      el.viewBar.innerHTML = '';
+      return;
+    }
+    el.viewBar.innerHTML = `<div class="view-bar" role="status">
+      <span class="view-bar-text">אתה צופה בשלב ${escapeHtml(stage.order)}</span>
+      <span class="view-bar-actions">
+        <button type="button" class="link-btn" data-action="back-to-current">חזרה לשלב הנוכחי</button>
+        <button type="button" class="link-btn" data-action="make-current">הגדר כשלב נוכחי</button>
+      </span>
+    </div>`;
+  }
+
+  /**
+   * @param {Build} build
+   * @param {Stage} stage
+   */
   function renderStageHead(build, stage) {
     const p = stageProgress(build, stage);
     const pct = p.total ? (p.done / p.total) * 100 : 0;
+    const prev = siblingStage(build, stage, -1);
+    const next = siblingStage(build, stage, 1);
+    // RTL: the right-hand arrow (first in the row) goes back.
+    const arrow = (/** @type {Stage|null} */ s, /** @type {string} */ glyph, /** @type {string} */ label) =>
+      s
+        ? `<button type="button" class="stage-arrow" data-action="view-stage" data-stage="${escapeHtml(s.id)}" aria-label="${escapeHtml(`${label}: ${s.titleHe}`)}">${glyph}</button>`
+        : `<span class="stage-arrow" aria-hidden="true"></span>`;
     el.stageHead.innerHTML = `
-      <p class="stage-kicker">שלב ${escapeHtml(stage.order)} · ${levelsLabel(stage)} · ${richText(stage.regionHe)}</p>
-      <h2 class="stage-title">${richText(stage.titleHe)}</h2>
+      <div class="stage-nav">
+        ${arrow(prev, '›', 'לשלב הקודם')}
+        <div class="stage-titles">
+          <p class="stage-kicker">שלב ${escapeHtml(stage.order)} · ${levelsLabel(stage)} · ${richText(stage.regionHe)}</p>
+          <h2 class="stage-title">${richText(stage.titleHe)}</h2>
+        </div>
+        ${arrow(next, '‹', 'לשלב הבא')}
+      </div>
       <p class="stage-goal"><span class="stage-goal-label">🎯 מטרה:</span><span>${richText(stage.goalHe)}</span></p>
       ${p.total ? `<div class="stage-progress">
         <span class="progress-bar" aria-hidden="true"><span style="width:${pct.toFixed(1)}%"></span></span>
@@ -371,11 +471,11 @@
    */
   function renderBanner(build, stage) {
     const p = stageProgress(build, stage);
-    if (!p.total || p.done < p.total) {
+    if (stage !== currentStage(build) || !p.total || p.done < p.total) {
       el.banner.innerHTML = '';
       return;
     }
-    const next = nextStage(build, stage);
+    const next = siblingStage(build, stage, 1);
     el.banner.innerHTML = next
       ? `<section class="banner" aria-live="polite">
           <p class="banner-title">🎉 השלב הושלם!</p>
@@ -422,11 +522,263 @@
   function render() {
     const build = activeBuild();
     if (!build) return;
-    const stage = currentStage(build);
+    const stage = shownStage(build);
     el.buildName.textContent = `${build.nameHe} · Classic World`;
+    renderViewBar(build, stage);
     renderStageHead(build, stage);
     renderBanner(build, stage);
     renderList(build, stage);
+    if (sheetContent === TIMELINE && el.sheet.open) el.sheetBody.innerHTML = timelineHtml(build);
+  }
+
+  /* ---------- Sheet: task details ---------- */
+
+  /**
+   * @param {string} title
+   * @param {string} body
+   */
+  function section(title, body) {
+    return body ? `<section class="sheet-section"><h3>${title}</h3>${body}</section>` : '';
+  }
+
+  /** @param {string[]|undefined} list */
+  function listHtml(list, ordered = false) {
+    if (!list || !list.length) return '';
+    const tag = ordered ? 'ol' : 'ul';
+    return `<${tag}>${list.map((s) => `<li>${richText(s)}</li>`).join('')}</${tag}>`;
+  }
+
+  /** @param {Task} task */
+  function npcHtml(task) {
+    if (!task.npc) return '';
+    const npc = world.npcs[task.npc];
+    if (!npc) return `<p><bdi>${escapeHtml(task.npc)}</bdi></p>`;
+    const where = npc.mapId ? ` · ${richText(mapName(npc.mapId))}` : '';
+    return `<p><strong><bdi>${escapeHtml(npc.nameEn)}</bdi></strong>${where}</p>`;
+  }
+
+  /** @param {Task} task */
+  function routeHtml(task) {
+    if (!task.route || !task.route.length) return '';
+    return `<p class="route">${task.route.map((id) => `<span class="route-step"><bdi>${escapeHtml(mapName(id))}</bdi></span>`).join('<span class="route-sep" aria-hidden="true">←</span>')}</p>`;
+  }
+
+  /** @param {Task} task */
+  function monstersHtml(task) {
+    const list = (task.monsters || []).map((id) => world.monsters[id]).filter(Boolean);
+    if (!list.length) return '';
+    const rows = list
+      .map((m) => `<tr>
+        <th scope="row"><bdi>${escapeHtml(m.nameEn)}</bdi>${m.drops && m.drops.length ? `<span class="cell-sub"><bdi>${escapeHtml(m.drops.join(', '))}</bdi></span>` : ''}</th>
+        <td>${num(m.level)}</td><td>${num(m.hp)}</td><td>${num(m.exp)}</td>
+      </tr>`)
+      .join('');
+    return `<div class="table-wrap"><table class="data-table">
+      <thead><tr><th scope="col">מפלצת</th><th scope="col">רמה</th><th scope="col">HP</th><th scope="col">EXP</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  }
+
+  /** @param {Task} task */
+  function itemsHtml(task) {
+    const list = (task.items || []).map((id) => world.items[id]).filter(Boolean);
+    if (!list.length) return '';
+    return `<ul class="item-list">${list
+      .map((it) => {
+        const stats = Object.entries(it.stats || {})
+          .map(([k, v]) => `${escapeHtml(STAT_LABELS[/** @type {keyof typeof STAT_LABELS} */ (k)] || k)} +${escapeHtml(v)}`)
+          .join(', ');
+        const req = [it.reqLevel ? `רמה ${escapeHtml(it.reqLevel)}` : '', it.reqStr ? `${escapeHtml(it.reqStr)} STR` : '', it.reqDex ? `${escapeHtml(it.reqDex)} DEX` : '']
+          .filter(Boolean)
+          .join(', ');
+        return `<li><strong><bdi>${escapeHtml(it.nameEn)}</bdi></strong>${stats ? ` · <bdi dir="ltr">${stats}</bdi>` : ''}${req ? ` · ${req}` : ''}${
+          it.sources && it.sources.length ? `<span class="cell-sub">${it.sources.map((s) => richText(s)).join(' · ')}</span>` : ''
+        }</li>`;
+      })
+      .join('')}</ul>`;
+  }
+
+  /** @param {Task} task */
+  function rewardsHtml(task) {
+    const r = task.rewards;
+    if (!r) return '';
+    const parts = [];
+    if (r.exp) parts.push(`${num(r.exp)} EXP`);
+    if (r.mesos) parts.push(`${num(r.mesos)} מזו`);
+    for (const it of r.items || []) parts.push(richText(it));
+    return parts.length ? `<p>${parts.join(' · ')}</p>` : '';
+  }
+
+  /** @param {Task} task */
+  function requirementsHtml(task) {
+    const q = task.requirements || {};
+    const parts = [];
+    if (q.level) parts.push(`רמה ${escapeHtml(q.level)}`);
+    if (q.str) parts.push(`${escapeHtml(q.str)} STR`);
+    if (q.dex) parts.push(`${escapeHtml(q.dex)} DEX`);
+    return parts.length ? `<p>${parts.join(' · ')}</p>` : '';
+  }
+
+  /** @param {Task} task */
+  function sourcesHtml(task) {
+    const list = task.sources || [];
+    if (!list.length) return '';
+    return `<ul class="source-list">${list
+      .map((url) => {
+        let label = url;
+        try {
+          const u = new URL(url);
+          label = u.hostname.replace(/^www\./, '') + decodeURIComponent(u.pathname).replace(/^\/(wiki|guides)\//, ' · ').replace(/_/g, ' ');
+        } catch (e) {
+          /* not a URL: show as is */
+        }
+        return `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><bdi>${escapeHtml(label)}</bdi>${ICON_EXTERNAL}</a></li>`;
+      })
+      .join('')}</ul>`;
+  }
+
+  /**
+   * @param {Build} build
+   * @param {Stage} stage
+   * @param {Task} task
+   */
+  function detailsHtml(build, stage, task) {
+    const done = isDone(build, task.id);
+    return `
+      <div class="sheet-head">
+        <span class="sheet-grip" aria-hidden="true"></span>
+        <button type="button" class="sheet-close" data-action="close" aria-label="סגירה">${ICON_CLOSE}</button>
+      </div>
+      <div class="sheet-content">
+        <div class="sheet-hero">
+          ${thumbHtml(task, true)}
+          <div>
+            <h2 id="sheet-title">${richText(task.titleHe)}</h2>
+            ${task.titleEn ? `<span class="name-en" dir="ltr">${escapeHtml(task.titleEn)}</span>` : ''}
+            ${badgesHtml(task)}
+            <span class="hero-meta">שלב ${escapeHtml(stage.order)} · ${richText(stage.titleHe)}${task.verified ? '' : ' · <span class="unverified">⚠ עוד לא אומת</span>'}</span>
+          </div>
+        </div>
+        ${section('מה זה', task.summary ? `<p>${richText(task.summary)}</p>` : '')}
+        ${section('למה זה מקדם אותך', task.why ? `<p>${richText(task.why)}</p>` : '')}
+        ${section('צעדים', listHtml(task.steps, true))}
+        ${section('NPC', npcHtml(task))}
+        ${section('איך מגיעים', routeHtml(task))}
+        ${section('מפלצות', monstersHtml(task))}
+        ${section('ציוד', itemsHtml(task))}
+        ${section('פרס', rewardsHtml(task))}
+        ${section('דרישות', requirementsHtml(task))}
+        ${section('הערות', listHtml(task.notes))}
+        ${section('מקורות', sourcesHtml(task))}
+      </div>
+      <div class="sheet-actions">
+        <button type="button" class="toggle-btn" data-action="toggle" aria-pressed="${done}">
+          <span class="check-box">${ICON_CHECK}</span>
+          <span>${done ? 'בוצע · להחזיר לרשימה' : 'סימון כבוצע'}</span>
+        </button>
+      </div>`;
+  }
+
+  /* ---------- Sheet: stage timeline ---------- */
+
+  /** @param {Build} build */
+  function timelineHtml(build) {
+    const state = buildState(build.id);
+    const current = currentStage(build);
+    const shown = shownStage(build);
+    const rows = sortedStages(build)
+      .map((s) => {
+        const status = s === current ? 'current' : state.stagesCompleted[s.id] ? 'done' : 'future';
+        const mark = { current: '●', done: '✔', future: '○' }[status];
+        const statusLabel = { current: 'השלב הנוכחי', done: 'הושלם', future: 'עתידי' }[status];
+        const p = stageProgress(build, s);
+        const count = p.total ? `${p.done}/${p.total}` : 'בכתיבה';
+        return `<li>
+          <button type="button" class="timeline-row is-${status}${s === shown ? ' is-shown' : ''}" data-action="view-stage" data-stage="${escapeHtml(s.id)}">
+            <span class="timeline-mark" aria-hidden="true">${mark}</span>
+            <span class="timeline-body">
+              <span class="timeline-title">${escapeHtml(s.order)}. ${richText(s.titleHe)}</span>
+              <span class="timeline-meta">${levelsLabel(s)} · ${richText(s.regionHe)}</span>
+            </span>
+            <span class="timeline-count"><span class="visually-hidden">${statusLabel}, </span>${count}</span>
+          </button>
+        </li>`;
+      })
+      .join('');
+    return `
+      <div class="sheet-head">
+        <span class="sheet-grip" aria-hidden="true"></span>
+        <button type="button" class="sheet-close" data-action="close" aria-label="סגירה">${ICON_CLOSE}</button>
+      </div>
+      <div class="sheet-content">
+        <h2 id="sheet-title" class="sheet-heading">כל השלבים</h2>
+        <ol class="timeline">${rows}</ol>
+      </div>`;
+  }
+
+  /* ---------- Sheet open/close (history-aware, from arrow-to-the-knee) ---------- */
+
+  /**
+   * @param {string} content task id or TIMELINE
+   * @param {string} html
+   */
+  function openSheet(content, html) {
+    sheetContent = content;
+    el.sheetBody.innerHTML = html;
+    el.sheetBody.scrollTop = 0;
+    if (el.sheet.open) return;
+    el.sheet.showModal();
+    document.body.classList.add('sheet-open');
+    history.pushState({ sheet: content }, '');
+    sheetHasHistory = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => el.sheet.classList.add('is-open')));
+  }
+
+  /** @param {string} taskId */
+  function openDetails(taskId) {
+    const build = activeBuild();
+    const found = findTask(build, taskId);
+    if (found) openSheet(taskId, detailsHtml(build, found.stage, found.task));
+  }
+
+  function openTimeline() {
+    openSheet(TIMELINE, timelineHtml(activeBuild()));
+  }
+
+  function requestCloseSheet() {
+    if (!el.sheet.open) return;
+    if (sheetHasHistory) {
+      sheetHasHistory = false;
+      history.back();
+    } else {
+      closeSheetNow();
+    }
+  }
+
+  function closeSheetNow() {
+    if (!el.sheet.open) return;
+    el.sheet.classList.remove('is-open');
+    const finish = () => {
+      if (el.sheet.open) el.sheet.close();
+      onSheetClosed();
+    };
+    if (reducedMotion.matches) finish();
+    else setTimeout(finish, 210);
+  }
+
+  // Runs once per close, whether we closed the dialog or the browser did.
+  function onSheetClosed() {
+    if (!sheetContent) return;
+    el.sheet.classList.remove('is-open');
+    document.body.classList.remove('sheet-open');
+    sheetContent = null;
+    // The dialog can close natively (e.g. a forced Escape); drop our history entry too.
+    if (sheetHasHistory) {
+      sheetHasHistory = false;
+      history.back();
+    }
+    const cb = afterSheetClose;
+    afterSheetClose = null;
+    if (cb) cb();
   }
 
   /* ---------- Actions ---------- */
@@ -459,10 +811,33 @@
     });
   }
 
+  /** @param {string} stageId */
+  function viewStage(stageId) {
+    const build = activeBuild();
+    if (!build.stages.some((s) => s.id === stageId)) return;
+    const state = buildState(build.id);
+    state.viewStage = stageId === currentStage(build).id ? null : stageId;
+    saveStore();
+    doneOpen = false;
+    hideToast();
+    render();
+    window.scrollTo({ top: 0 });
+  }
+
+  function makeShownCurrent() {
+    const build = activeBuild();
+    const state = buildState(build.id);
+    const stage = shownStage(build);
+    state.currentStage = stage.id;
+    state.viewStage = null;
+    saveStore();
+    render();
+  }
+
   function goToNextStage() {
     const build = activeBuild();
     const stage = currentStage(build);
-    const next = nextStage(build, stage);
+    const next = siblingStage(build, stage, 1);
     if (!next) return;
     const state = buildState(build.id);
     state.stagesCompleted[stage.id] = new Date().toISOString();
@@ -528,13 +903,23 @@
 
   /* ---------- Events ---------- */
 
+  /**
+   * @param {Event} e
+   * @returns {HTMLElement|null}
+   */
+  function actionTarget(e) {
+    const t = e.target;
+    const btn = t instanceof Element ? t.closest('[data-action]') : null;
+    return btn instanceof HTMLElement ? btn : null;
+  }
+
   el.list.addEventListener('click', (e) => {
-    const target = /** @type {HTMLElement} */ (e.target);
-    const btn = target.closest('[data-action]');
-    if (!(btn instanceof HTMLElement)) return;
+    const btn = actionTarget(e);
+    if (!btn) return;
     const card = btn.closest('.card');
     if (!(card instanceof HTMLElement) || !card.dataset.id) return;
     if (btn.dataset.action === 'toggle') toggleTask(card.dataset.id);
+    else if (btn.dataset.action === 'open') openDetails(card.dataset.id);
   });
 
   el.list.addEventListener(
@@ -547,8 +932,54 @@
   );
 
   el.banner.addEventListener('click', (e) => {
-    const target = /** @type {HTMLElement} */ (e.target);
-    if (target.closest('[data-action="next-stage"]')) goToNextStage();
+    const btn = actionTarget(e);
+    if (btn && btn.dataset.action === 'next-stage') goToNextStage();
+  });
+
+  el.stageHead.addEventListener('click', (e) => {
+    const btn = actionTarget(e);
+    if (btn && btn.dataset.action === 'view-stage' && btn.dataset.stage) viewStage(btn.dataset.stage);
+  });
+
+  el.viewBar.addEventListener('click', (e) => {
+    const btn = actionTarget(e);
+    if (!btn) return;
+    if (btn.dataset.action === 'back-to-current') viewStage(currentStage(activeBuild()).id);
+    else if (btn.dataset.action === 'make-current') makeShownCurrent();
+  });
+
+  el.openTimeline.addEventListener('click', openTimeline);
+
+  el.sheet.addEventListener('close', onSheetClosed);
+
+  el.sheet.addEventListener('cancel', (e) => {
+    e.preventDefault();
+    requestCloseSheet();
+  });
+
+  el.sheet.addEventListener('click', (e) => {
+    if (e.target === el.sheet) {
+      requestCloseSheet();
+      return;
+    }
+    const btn = actionTarget(e);
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (action === 'close') requestCloseSheet();
+    else if (action === 'toggle' && sheetContent && sheetContent !== TIMELINE) {
+      const id = sheetContent;
+      afterSheetClose = () => toggleTask(id);
+      requestCloseSheet();
+    } else if (action === 'view-stage' && btn.dataset.stage) {
+      const id = btn.dataset.stage;
+      afterSheetClose = () => viewStage(id);
+      requestCloseSheet();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    sheetHasHistory = false;
+    if (el.sheet.open) closeSheetNow();
   });
 
   el.toastUndo.addEventListener('click', () => {
@@ -564,6 +995,18 @@
     const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) throw new Error(url + ': ' + res.status);
     return res.json();
+  }
+
+  /**
+   * @template T
+   * @param {any} list
+   * @returns {Record<string, T>}
+   */
+  function indexById(list) {
+    /** @type {Record<string, T>} */
+    const out = {};
+    if (Array.isArray(list)) for (const x of list) if (isObj(x) && typeof x.id === 'string') out[x.id] = x;
+    return out;
   }
 
   /**
@@ -589,6 +1032,8 @@
   }
 
   async function init() {
+    // A reload while the sheet was open leaves a stale history entry.
+    if (history.state && history.state.sheet) history.replaceState(null, '');
     store = loadStore();
     try {
       builds = parseGuide(await fetchJson('data/guide.json'));
@@ -600,7 +1045,14 @@
       el.list.innerHTML = '<p class="empty">אין בילדים בקובץ הנתונים.</p>';
       return;
     }
+    // Maps, monsters, NPCs and items are optional: without them the details sheet skips those parts.
+    const [maps, monsters, npcs, items] = await Promise.all(
+      ['maps', 'monsters', 'npcs', 'items'].map((n) => fetchJson(`data/${n}.json`).catch(() => null))
+    );
+    world = { maps: indexById(maps), monsters: indexById(monsters), npcs: indexById(npcs), items: indexById(items) };
     if (!builds.some((b) => b.id === store.activeBuild)) store.activeBuild = builds[0].id;
+    // The app always opens on the current stage.
+    for (const b of builds) buildState(b.id).viewStage = null;
     saveStore();
     render();
   }

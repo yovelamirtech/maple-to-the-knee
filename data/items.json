@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": "fruit-knife",
+    "nameEn": "Fruit Knife",
+    "slot": "weapon",
+    "weaponType": "dagger",
+    "reqLevel": 8,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "watk": 23
+    },
+    "slots": 7,
+    "sources": [
+      "Biggs's Collection of Items (אקראי)",
+      "Silver, Lith Harbor Weapon Shop: 1,500 מזו"
+    ]
+  },
+  {
+    "id": "razor",
+    "nameEn": "Razor",
+    "slot": "weapon",
+    "weaponType": "dagger",
+    "reqLevel": 5,
+    "reqStr": 0,
+    "reqDex": 0,
+    "stats": {
+      "watk": 23
+    },
+    "slots": 7,
+    "sources": [
+      "Biggs's Collection of Items (אקראי)"
+    ]
+  }
+]

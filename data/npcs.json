@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "id": "heena",
+    "nameEn": "Heena",
+    "mapId": "mushroom-town-west-entrance"
+  },
+  {
+    "id": "mai",
+    "nameEn": "Mai",
+    "mapId": "a-split-road"
+  },
+  {
+    "id": "maria",
+    "nameEn": "Maria",
+    "mapId": "a-split-road"
+  },
+  {
+    "id": "pio",
+    "nameEn": "Pio",
+    "mapId": "amherst"
+  },
+  {
+    "id": "rain",
+    "nameEn": "Rain",
+    "mapId": "amherst"
+  },
+  {
+    "id": "lucas",
+    "nameEn": "Lucas",
+    "mapId": "amherst"
+  },
+  {
+    "id": "biggs",
+    "nameEn": "Biggs",
+    "mapId": "southperry"
+  },
+  {
+    "id": "shanks",
+    "nameEn": "Shanks",
+    "mapId": "southperry"
+  },
+  {
+    "id": "phil",
+    "nameEn": "Phil",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "olaf",
+    "nameEn": "Olaf",
+    "mapId": "lith-harbor"
+  },
+  {
+    "id": "teo",
+    "nameEn": "Teo",
+    "mapId": "lith-harbor"
+  }
+]

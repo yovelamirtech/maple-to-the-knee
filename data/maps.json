@@ -1,1 +1,78 @@
-[]
+[
+  {
+    "id": "mushroom-town-west-entrance",
+    "nameEn": "Mushroom Town - West Entrance",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "mushroom-town",
+    "nameEn": "Mushroom Town",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "east-entrance-to-mushroom-town",
+    "nameEn": "East Entrance to Mushroom Town",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "snail-hunting-ground-1",
+    "nameEn": "Snail Hunting Ground I",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "a-split-road",
+    "nameEn": "A Split Road",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "the-field-west-of-amherst",
+    "nameEn": "The Field West of Amherst",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "dangerous-forest",
+    "nameEn": "Dangerous Forest",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "amherst",
+    "nameEn": "Amherst",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "the-field-east-of-amherst",
+    "nameEn": "The Field East of Amherst",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "southperry",
+    "nameEn": "Southperry",
+    "regionId": "maple-island"
+  },
+  {
+    "id": "lith-harbor",
+    "nameEn": "Lith Harbor",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "right-around-lith-harbor",
+    "nameEn": "Right Around Lith Harbor",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "thicket-around-the-beach-1",
+    "nameEn": "Thicket Around the Beach I",
+    "regionId": "victoria-island"
+  },
+  {
+    "id": "thicket-around-the-beach-2",
+    "nameEn": "Thicket Around the Beach II",
+    "regionId": "victoria-island",
+    "levelRange": "2–4"
+  },
+  {
+    "id": "thicket-around-the-beach-3",
+    "nameEn": "Thicket Around the Beach III",
+    "regionId": "victoria-island"
+  }
+]

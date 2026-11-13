@@ -19,10 +19,12 @@
         <h1 class="title"><span aria-hidden="true">🍁</span> <bdi dir="ltr">Maple to the Knee</bdi></h1>
         <p class="subtitle" id="build-name"></p>
       </div>
+      <button type="button" class="header-btn" id="open-timeline" aria-haspopup="dialog">כל השלבים</button>
     </div>
   </header>
 
   <main class="container" id="main">
+    <div id="view-bar"></div>
     <section class="stage-head" id="stage-head" aria-live="polite"></section>
     <div id="banner"></div>
     <div id="list"></div>
@@ -33,6 +35,10 @@
     <p>מדריך אישי לא רשמי. המידע מבוסס על מקורות קהילה ונבדק מול המקורות הרשמיים כשאפשר.</p>
     <p>המשחק <bdi>MapleStory</bdi> הוא <bdi>© Nexon</bdi>.</p>
   </footer>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-scroll" id="sheet-body"></div>
+  </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden>
     <span class="toast-text" id="toast-text"></span>

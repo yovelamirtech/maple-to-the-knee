@@ -1,1 +1,76 @@
-[]
+[
+  {
+    "id": "tutorial-jr-sentinel",
+    "nameEn": "Tutorial Jr. Sentinel",
+    "level": 1,
+    "hp": 30,
+    "exp": 1,
+    "drops": [
+      "Jr. Sentinel Shellpiece"
+    ]
+  },
+  {
+    "id": "snail",
+    "nameEn": "Snail",
+    "level": 1,
+    "hp": 45,
+    "exp": 2,
+    "drops": [
+      "Snail Shell"
+    ]
+  },
+  {
+    "id": "blue-snail",
+    "nameEn": "Blue Snail",
+    "level": 2,
+    "hp": 51,
+    "exp": 4,
+    "drops": [
+      "Blue Snail Shell"
+    ]
+  },
+  {
+    "id": "shroom",
+    "nameEn": "Shroom",
+    "level": 3,
+    "hp": 62,
+    "exp": 6,
+    "drops": []
+  },
+  {
+    "id": "red-snail",
+    "nameEn": "Red Snail",
+    "level": 4,
+    "hp": 68,
+    "exp": 8,
+    "drops": [
+      "Red Snail Shell"
+    ]
+  },
+  {
+    "id": "slime",
+    "nameEn": "Slime",
+    "level": 6,
+    "hp": 115,
+    "exp": 12,
+    "drops": []
+  },
+  {
+    "id": "pig",
+    "nameEn": "Pig",
+    "level": 7,
+    "hp": 128,
+    "exp": 13,
+    "drops": []
+  },
+  {
+    "id": "orange-mushroom",
+    "nameEn": "Orange Mushroom",
+    "level": 8,
+    "hp": 142,
+    "exp": 15,
+    "drops": [
+      "Orange Mushroom Cap"
+    ]
+  }
+]

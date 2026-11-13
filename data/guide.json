@@ -21,10 +21,731 @@
           "levelFrom": 1,
           "levelTo": 10,
           "job": "beginner",
-          "regionHe": "מייפל איילנד",
-          "goalHe": "להגיע לרמה 10 ולהפליג לוויקטוריה",
+          "regionHe": "מייפל איילנד ו-Lith Harbor",
+          "goalHe": "לסיים את קווסטי האי, להפליג ל-Lith Harbor ולהגיע לרמה 10",
           "availability": "live",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "mi-ap-creation",
+              "type": "ap",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "סטטים ביצירת הדמות: 12 STR ו-5 DEX",
+              "titleEn": "Character creation: 12 STR / 5 DEX",
+              "summary": "אין קוביות ב-Classic World. כל סטט מתחיל ב-4, ומחלקים 9 נקודות בעצמך.",
+              "why": "STR הוא הסטט הראשי של Warrior ושל Fighter, ומוכפל בנוסחת הנזק. DEX מתווסף רק כתוספת קטנה, אז שמים בו רק כמה שצריך.",
+              "steps": [
+                "במסך יצירת הדמות: 8 נקודות ל-STR ו-1 ל-DEX.",
+                "התוצאה: 12 STR, 5 DEX, 4 INT, 4 LUK."
+              ],
+              "requirements": {
+                "level": 1
+              },
+              "notes": [
+                "AP לא מתאפס במעבר ג'וב. איפוס AP עולה 7,000 NX ב-Cash Shop, ומאפס את כל הסטטים יחד."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/starting-stats-and-ap-guide",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": false
+            },
+            {
+              "id": "mi-ap-all-str",
+              "type": "ap",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "כל ה-AP ל-STR עד רמה 10",
+              "titleEn": "All AP into STR until level 10",
+              "summary": "5 AP בכל רמה, הכל ל-STR. ברמה 10 אמורים להגיע ל-57 STR ו-5 DEX.",
+              "why": "אין סיבה לשים DEX עכשיו: הנשקים הראשונים של Warrior דורשים STR, ובאי המפלצות חלשות ואין בעיית דיוק.",
+              "steps": [
+                "אחרי כל עליית רמה: לפתוח את חלון הסטטים (S) ולשים את 5 הנקודות ב-STR.",
+                "ברמה 10 לבדוק: 57 STR, 5 DEX."
+              ],
+              "requirements": {
+                "level": 2
+              },
+              "notes": [
+                "⚠ מקור אחד אומר שעד רמה 11 ה-AP של Beginner מחולק אוטומטית. אם אחרי עליית הרמה הראשונה יש נקודות פנויות, לחלק אותן ידנית.",
+                "⚠ המקורות חלוקים אם יש דרישת STR 35 לג'וב 1. עם כל ה-AP ב-STR עוברים אותה בכל מקרה."
+              ],
+              "sources": [
+                "https://ms-classic.com/guides/starting-stats-and-ap-guide",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": false
+            },
+            {
+              "id": "mi-quest-mushroom-town",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "קווסטי הפתיחה ב-Mushroom Town",
+              "titleEn": "Heena, Roger, Nina and Todd",
+              "summary": "ארבעה קווסטים קצרים שמלמדים את הממשק, על הדרך מזרחה.",
+              "why": "כמעט בלי EXP, אבל הם בדרך, לוקחים דקות ספורות, ונותנים את הביצים הראשונות (פוטים).",
+              "steps": [
+                "Heena ← Sera: Borrowing Sera's Mirror.",
+                "Roger: Roger's Apple (מלמד את טאב ה-Use).",
+                "Nina ← Sen: What Sen wants to eat, וחזרה ל-Nina.",
+                "Todd ב-East Entrance to Mushroom Town: Todd's How-to-Hunt. להרוג 3 Tutorial Jr. Sentinel ולהביא 3 Jr. Sentinel Shellpiece ל-Peter."
+              ],
+              "npc": "heena",
+              "route": [
+                "mushroom-town-west-entrance",
+                "mushroom-town",
+                "east-entrance-to-mushroom-town"
+              ],
+              "maps": [
+                "mushroom-town-west-entrance",
+                "mushroom-town",
+                "east-entrance-to-mushroom-town"
+              ],
+              "monsters": [
+                "tutorial-jr-sentinel"
+              ],
+              "rewards": {
+                "exp": 15,
+                "mesos": 0,
+                "items": [
+                  "Egg ×3"
+                ]
+              },
+              "requirements": {
+                "level": 1
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Maple_Island",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-quest-sam-mai",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Sam ו-Mai: האימון הראשון",
+              "titleEn": "Sam's Suggestion → Mai's Training → Mai's Final Training",
+              "summary": "שרשרת של שלושה קווסטי ציד. משלמת 150 מזו, חצי מהכרטיס לסירה.",
+              "why": "את המפלצות האלה הורגים בכל מקרה בדרך, וזה אחד משני הקווסטים היחידים באי שמשלמים מזו.",
+              "steps": [
+                "Sam ב-Snail Hunting Ground I: להרוג 10 Snail (Sam's Suggestion), ולמסור ל-Mai ב-A Split Road.",
+                "Mai's Training (רמה 3): להרוג 10 Blue Snail, 10 Shroom ו-5 Red Snail.",
+                "Mai's Final Training: להרוג Orange Mushroom אחד."
+              ],
+              "npc": "mai",
+              "route": [
+                "snail-hunting-ground-1",
+                "a-split-road"
+              ],
+              "maps": [
+                "snail-hunting-ground-1",
+                "a-split-road",
+                "the-field-west-of-amherst"
+              ],
+              "monsters": [
+                "snail",
+                "blue-snail",
+                "shroom",
+                "red-snail",
+                "orange-mushroom"
+              ],
+              "rewards": {
+                "exp": 230,
+                "mesos": 150,
+                "items": [
+                  "Egg ×25"
+                ]
+              },
+              "requirements": {
+                "level": 1
+              },
+              "notes": [
+                "לשמור את ה-Blue Snail Shell שנופלים: Biggs צריך 10."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Mai's_Final_Training",
+                "https://mapleclassic.wiki/wiki/Sam's_Suggestion",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-quest-lucas-letter",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "המכתב של Maria ל-Lucas",
+              "titleEn": "Letter for Lucas → Lucas' Reply",
+              "summary": "להעביר מכתב מ-Maria ב-A Split Road ל-Lucas ב-Amherst, ולהחזיר תשובה.",
+              "why": "120 EXP וכובע ראשון (Skullcap או Headband, אקראי). שני ביקורים במקומות שעוברים בהם בכל מקרה.",
+              "steps": [
+                "Maria ב-A Split Road נותנת את המכתב (רמה 2).",
+                "למסור ל-Lucas ב-Amherst ולקבל את התשובה.",
+                "להחזיר ל-Maria."
+              ],
+              "npc": "maria",
+              "route": [
+                "a-split-road",
+                "the-field-west-of-amherst",
+                "amherst"
+              ],
+              "maps": [
+                "a-split-road",
+                "amherst"
+              ],
+              "rewards": {
+                "exp": 120,
+                "mesos": 0,
+                "items": [
+                  "Skullcap או Headband (אקראי)"
+                ]
+              },
+              "requirements": {
+                "level": 2
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Letter_for_Lucas",
+                "https://mapleclassic.wiki/wiki/Lucas'_Reply",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-quest-pio",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "הכיסא של Pio",
+              "titleEn": "Pio's Collecting Recycled Goods",
+              "summary": "לשבור קופסאות עץ ב-Amherst ולהביא ל-Pio ברגים ולוחות. הפרס: הכיסא The Green Relaxer.",
+              "why": "הכיסא מחזיר 30 HP נוספים כל 10 שניות בזמן ישיבה, וחוסך הרבה פוטים עד ג'וב 2. אי אפשר לחזור לאי, אז מי שמפספס כאן מפספס לתמיד. גם 150 מזו לסירה.",
+              "steps": [
+                "לקבל את הקווסט מ-Pio ב-Amherst (רמה 5).",
+                "לשבור את קופסאות העץ בעיר עם התקפה רגילה.",
+                "לאסוף Rusty Screw ו-Old Wooden Board (הכמות מופיעה ביומן הקווסטים).",
+                "להחזיר ל-Pio."
+              ],
+              "npc": "pio",
+              "route": [
+                "amherst"
+              ],
+              "maps": [
+                "amherst"
+              ],
+              "rewards": {
+                "exp": 100,
+                "mesos": 150,
+                "items": [
+                  "The Green Relaxer"
+                ]
+              },
+              "requirements": {
+                "level": 5
+              },
+              "notes": [
+                "⚠ בוויקי כתוב ×2 מכל חומר, ובהסבר באותו דף ×3. לסמוך על מה שכתוב ביומן הקווסטים.",
+                "אם פספסת: Sky-blue Wooden Chair ב-Lith Harbor עושה אותו דבר, תמורת מזו."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Pio's_Collecting_Recycled_Goods",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island",
+                "https://ms-classic.com/guides/quests-worth-doing"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-quest-biggs",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Biggs: נשק ראשון",
+              "titleEn": "Biggs's Collection of Items",
+              "summary": "10 Blue Snail Shell ו-Orange Mushroom Cap אחד, תמורת 120 EXP וסכין אקראית.",
+              "why": "הפרס הוא Fruit Knife (רמה 8) או Razor (רמה 5), שתיהן עם 23 W.ATK ושמישות לכל ג'וב. זה הנשק הכי טוב שתקבל עד שתקנה חרב בפריון.",
+              "steps": [
+                "לאסוף 10 Blue Snail Shell ו-Orange Mushroom Cap אחד תוך כדי האימון.",
+                "למסור ל-Biggs ב-Southperry (רמה 3)."
+              ],
+              "npc": "biggs",
+              "route": [
+                "southperry"
+              ],
+              "maps": [
+                "southperry"
+              ],
+              "monsters": [
+                "blue-snail",
+                "orange-mushroom"
+              ],
+              "rewards": {
+                "exp": 120,
+                "mesos": 0,
+                "items": [
+                  "Fruit Knife או Razor (50/50)"
+                ]
+              },
+              "requirements": {
+                "level": 3
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Biggs's_Collection_of_Items",
+                "https://mapleclassic.wiki/wiki/Fruit_Knife",
+                "https://mapleclassic.wiki/wiki/Razor",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true,
+              "items": [
+                "razor",
+                "fruit-knife"
+              ]
+            },
+            {
+              "id": "mi-quest-rain",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "החידון של Rain",
+              "titleEn": "Rain's Maple Quiz",
+              "summary": "שבע שאלות טריוויה קצרות ב-Amherst. EXP על כל תשובה נכונה ותפוזים בסוף.",
+              "why": "EXP קל בלי לצוד. לא חובה, אבל לוקח כמה דקות.",
+              "steps": [
+                "לדבר עם Rain ב-Amherst (רמה 5).",
+                "לענות על שבע השאלות."
+              ],
+              "npc": "rain",
+              "maps": [
+                "amherst"
+              ],
+              "rewards": {
+                "exp": 245,
+                "mesos": 0,
+                "items": [
+                  "Orange ×5"
+                ]
+              },
+              "requirements": {
+                "level": 5
+              },
+              "notes": [
+                "⚠ הפרס לא ברור: בוויקי (נתוני טרום-השקה) 245 EXP ו-5 Orange, וב-ms-classic 490 EXP ו-10 Orange בסך הכל."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Rain's_Maple_Quiz",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": false
+            },
+            {
+              "id": "mi-train-west-amherst",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון ב-The Field West of Amherst",
+              "titleEn": "The Field West of Amherst",
+              "summary": "מפת הצומת ליד Amherst: 24 Red Snail, 17 Shroom ו-13 Blue Snail. טובה לרמות 3–6.",
+              "why": "המפה הכי צפופה באי למפלצות הנמוכות, ובדיוק המפלצות של Mai's Training. Blue Snail Shell ל-Biggs נופלים כאן.",
+              "steps": [
+                "להתאמן כאן מרמה 3 עד 6 בערך.",
+                "לעשות את Mai's Training ולאסוף Blue Snail Shell תוך כדי.",
+                "לעבור הלאה כשהמפלצות מתות במכה אחת."
+              ],
+              "route": [
+                "a-split-road",
+                "the-field-west-of-amherst"
+              ],
+              "maps": [
+                "the-field-west-of-amherst"
+              ],
+              "monsters": [
+                "red-snail",
+                "shroom",
+                "blue-snail"
+              ],
+              "requirements": {
+                "level": 3
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/The_Field_West_of_Amherst"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-train-east-amherst",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון ב-The Field East of Amherst",
+              "titleEn": "The Field East of Amherst",
+              "summary": "12 Orange Mushroom ו-12 Red Snail. טובה לרמות 6–8.",
+              "why": "Orange Mushroom (רמה 8, 15 EXP) היא המפלצת הכי משתלמת באי. גם Orange Mushroom Cap ל-Biggs נופל ממנה.",
+              "steps": [
+                "מרמה 6 בערך, להתאמן כאן עד 7–8.",
+                "לאסוף Orange Mushroom Cap אחד ל-Biggs.",
+                "כשיש 300 מזו והקווסטים גמורים, ללכת ל-Southperry."
+              ],
+              "route": [
+                "amherst",
+                "the-field-east-of-amherst"
+              ],
+              "maps": [
+                "the-field-east-of-amherst"
+              ],
+              "monsters": [
+                "orange-mushroom",
+                "red-snail"
+              ],
+              "requirements": {
+                "level": 6
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/The_Field_East_of_Amherst",
+                "https://mapleclassic.wiki/wiki/Maple_Island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-train-dangerous-forest",
+              "type": "train",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "חלופה: Dangerous Forest",
+              "titleEn": "Dangerous Forest",
+              "summary": "12 Orange Mushroom ו-14 Snail. חלופה ל-The Field East of Amherst אם היא עמוסה.",
+              "why": "אותה כמות Orange Mushroom, יוצאים אליה מ-The Field West of Amherst.",
+              "steps": [
+                "להיכנס מ-The Field West of Amherst.",
+                "להתאמן עד 7–8."
+              ],
+              "route": [
+                "the-field-west-of-amherst",
+                "dangerous-forest"
+              ],
+              "maps": [
+                "dangerous-forest"
+              ],
+              "monsters": [
+                "orange-mushroom",
+                "snail"
+              ],
+              "requirements": {
+                "level": 6
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Dangerous_Forest"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-sp-beginner",
+              "type": "sp",
+              "variant": null,
+              "required": false,
+              "priority": "medium",
+              "titleHe": "סקילים של Beginner: Three Snails קודם",
+              "titleEn": "Beginner skills: Three Snails, Recovery, Nimble Feet",
+              "summary": "אם יש לך SP של Beginner: קודם Three Snails, אחר כך Recovery ו-Nimble Feet.",
+              "why": "Three Snails היא התקפה מרחוק, שימושית לפני שיש נשק. Recovery חוסכת פוטים.",
+              "steps": [
+                "לפתוח את חלון הסקילים (K).",
+                "Three Snails עד 3, אחר כך Recovery עד 3, ואז Nimble Feet."
+              ],
+              "requirements": {
+                "level": 2
+              },
+              "notes": [
+                "⚠ לא ברור איך מקבלים SP של Beginner ב-Classic World. מקור אחד אומר 9 נקודות עד רמה 10 (3 לכל סקיל), והוויקי אומר שהם ניתנים במסלול ההדרכה באי."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Beginner",
+                "https://mapleclassic.wiki/wiki/Skill_points",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": false
+            },
+            {
+              "id": "mi-gear-quest-rewards",
+              "type": "gear",
+              "variant": null,
+              "required": true,
+              "priority": "medium",
+              "titleHe": "ללבוש את הכובע והסכין מהקווסטים",
+              "titleEn": "Equip the quest hat and dagger",
+              "summary": "הכובע מ-Lucas והסכין מ-Biggs הם הציוד הראשון שלך. אין חנות ציוד באי.",
+              "why": "23 W.ATK של הסכין זה הרבה יותר מכל מה שיש ל-Beginner, וזה מקצר את האימון עד רמה 10.",
+              "steps": [
+                "לפתוח את המלאי (I), טאב Equip.",
+                "ללבוש את Skullcap או Headband.",
+                "ללבוש את Razor מיד, או את Fruit Knife מרמה 8."
+              ],
+              "requirements": {
+                "level": 5
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Fruit_Knife",
+                "https://mapleclassic.wiki/wiki/Razor",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true,
+              "items": [
+                "razor",
+                "fruit-knife"
+              ]
+            },
+            {
+              "id": "mi-boat-shanks",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "להפליג ל-Lith Harbor עם Shanks",
+              "titleEn": "Shanks: boat to Lith Harbor",
+              "summary": "300 מזו, בכיוון אחד. אין סירה חזרה לאי.",
+              "why": "אחרי הקווסטים, האי כבר לא נותן EXP טוב. ב-Lith Harbor מחכים קווסטים של רמה 8.",
+              "steps": [
+                "לוודא שכל הקווסטים באי גמורים, במיוחד Pio.",
+                "לוודא שיש 300 מזו.",
+                "לדבר עם Shanks ב-Southperry ולשלם."
+              ],
+              "npc": "shanks",
+              "route": [
+                "the-field-east-of-amherst",
+                "southperry"
+              ],
+              "maps": [
+                "southperry",
+                "lith-harbor"
+              ],
+              "requirements": {
+                "level": 7
+              },
+              "notes": [
+                "⚠ מקור קהילה אחד אומר ש-Shanks מפליג רק מרמה 7. רוב השחקנים יוצאים ברמה 8 בערך."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Shanks",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-lith-phil",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "Phil's Call",
+              "titleEn": "Phil's Call",
+              "summary": "Phil ב-Lith Harbor שולח אותך ל-Olaf ול-Teo. מקבלים ברמה 8 ומסיימים ברמה 10.",
+              "why": "188 EXP, 245 מזו ו-16 פוטים, רק על כך שהגעת לרמה 10.",
+              "steps": [
+                "לדבר עם Phil ב-Lith Harbor ולקבל את הקווסט (רמה 8).",
+                "להתאמן עד רמה 10.",
+                "לחזור ל-Phil ולסיים."
+              ],
+              "npc": "phil",
+              "route": [
+                "lith-harbor"
+              ],
+              "maps": [
+                "lith-harbor"
+              ],
+              "rewards": {
+                "exp": 188,
+                "mesos": 245,
+                "items": [
+                  "Red Potion ×8",
+                  "Blue Potion ×8"
+                ]
+              },
+              "requirements": {
+                "level": 8
+              },
+              "notes": [
+                "לפי הוויקי, Phil יכול לשלוח אותך ישר לעיר של הג'וב. לבדוק אם הוא מציע את זה כשמסיימים."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Phil's_Call",
+                "https://mapleclassic.wiki/wiki/Beginner",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-lith-olaf",
+              "type": "quest",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "שני האימונים של Olaf",
+              "titleEn": "Olaf's First Training → Olaf's Second Training",
+              "summary": "8 Stump ו-8 Slime, ואחר כך 8 Pig ו-8 Orange Mushroom. כולם ליד Lith Harbor.",
+              "why": "248 EXP, 554 מזו, 16 פוטים ו-3 Return Scroll, על מפלצות שהורגים בכל מקרה בדרך לרמה 10.",
+              "steps": [
+                "לקבל מ-Olaf ב-Lith Harbor את האימון הראשון (רמה 8).",
+                "Slime ב-Thicket Around the Beach II, ו-Stump ב-Thicket Around the Beach III.",
+                "לחזור ל-Olaf ולקבל את האימון השני: Pig ו-Orange Mushroom, שניהם ב-Thicket Around the Beach II.",
+                "לחזור ל-Olaf."
+              ],
+              "npc": "olaf",
+              "route": [
+                "lith-harbor",
+                "right-around-lith-harbor",
+                "thicket-around-the-beach-1",
+                "thicket-around-the-beach-2"
+              ],
+              "maps": [
+                "thicket-around-the-beach-2",
+                "thicket-around-the-beach-3"
+              ],
+              "monsters": [
+                "slime",
+                "pig",
+                "orange-mushroom"
+              ],
+              "rewards": {
+                "exp": 248,
+                "mesos": 554,
+                "items": [
+                  "Red Potion ×8",
+                  "Blue Potion ×8",
+                  "Return Scroll - Nearest Town ×3"
+                ]
+              },
+              "requirements": {
+                "level": 8
+              },
+              "notes": [
+                "Stump לא מופיע ברשימת המפלצות כאן כי עוד לא נאספו הנתונים שלו. לפי מדריך Mano, ב-Thicket Around the Beach III יש 10 Stump."
+              ],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Olaf's_First_Training",
+                "https://mapleclassic.wiki/wiki/Olaf's_Second_Training",
+                "https://ms-classic.com/guides/mano-boss-guide",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-train-thicket-2",
+              "type": "train",
+              "variant": null,
+              "required": true,
+              "priority": "high",
+              "titleHe": "אימון עד רמה 10 ב-Thicket Around the Beach II",
+              "titleEn": "Thicket Around the Beach II",
+              "summary": "18 Pig, 12 Slime ו-9 Orange Mushroom, שלוש מפות מ-Lith Harbor. לרמות 8–10.",
+              "why": "כל המפלצות של Olaf במפה אחת, והן נותנות 12–15 EXP כל אחת. קרוב לעיר בשביל פוטים.",
+              "steps": [
+                "Lith Harbor ← Right Around Lith Harbor ← Thicket Around the Beach I ← Thicket Around the Beach II.",
+                "להתאמן עד רמה 10 ולסיים את Olaf תוך כדי.",
+                "ברמה 10: לחזור ל-Phil, ואז לפריון."
+              ],
+              "route": [
+                "lith-harbor",
+                "right-around-lith-harbor",
+                "thicket-around-the-beach-1",
+                "thicket-around-the-beach-2"
+              ],
+              "maps": [
+                "thicket-around-the-beach-2"
+              ],
+              "monsters": [
+                "pig",
+                "slime",
+                "orange-mushroom"
+              ],
+              "requirements": {
+                "level": 8
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Thicket_Around_the_Beach_II",
+                "https://ms-classic.com/guides/warrior-guide-level-1-30"
+              ],
+              "verified": true
+            },
+            {
+              "id": "mi-lith-teo",
+              "type": "quest",
+              "variant": null,
+              "required": false,
+              "priority": "low",
+              "titleHe": "התחביבים של Teo",
+              "titleEn": "Teo's Weird Hobby → Even Weirder Hobby",
+              "summary": "שני קווסטי איסוף קטנים ב-Lith Harbor.",
+              "why": "EXP ומזו נוספים ו-Sniper Potion, אבל לא הכרחי. לעשות רק אם החומרים כבר אצלך.",
+              "steps": [
+                "לדבר עם Teo ב-Lith Harbor (רמה 8).",
+                "להביא את מה שהוא מבקש (רשום ביומן הקווסטים)."
+              ],
+              "npc": "teo",
+              "maps": [
+                "lith-harbor"
+              ],
+              "rewards": {
+                "exp": 248,
+                "mesos": 554,
+                "items": [
+                  "Fried Chicken",
+                  "Sniper Potion",
+                  "Lemon"
+                ]
+              },
+              "requirements": {
+                "level": 8
+              },
+              "notes": [],
+              "sources": [
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": false
+            },
+            {
+              "id": "mi-tip-one-way",
+              "type": "tip",
+              "variant": null,
+              "required": false,
+              "priority": "high",
+              "titleHe": "האי הוא בכיוון אחד",
+              "titleEn": "Maple Island is one-way",
+              "summary": "אין סירה חזרה, ואין באי Storage. מה שנשאר באי נשאר שם.",
+              "why": "הכיסא של Pio והפרסים של הקווסטים אבודים אם יוצאים מוקדם מדי.",
+              "steps": [
+                "לפני ההפלגה: Pio, Biggs, Mai ו-Lucas גמורים.",
+                "לא לזרוק ביצים ותפוחים: באי אין חנות פוטים."
+              ],
+              "requirements": {
+                "level": 1
+              },
+              "notes": [],
+              "sources": [
+                "https://mapleclassic.wiki/wiki/Maple_Island",
+                "https://ms-classic.com/guides/maple-island-to-victoria-island"
+              ],
+              "verified": true
+            }
+          ]
         },
         {
           "id": "job1-warrior",
