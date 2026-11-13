@@ -266,13 +266,14 @@
                 "level": 5
               },
               "notes": [
-                "⚠ בוויקי כתוב ×2 מכל חומר, ובהסבר באותו דף ×3. לסמוך על מה שכתוב ביומן הקווסטים.",
+                "⚠ בוויקי כתוב ×2 מכל חומר, ובהסבר באותו דף ×3. במשחק הישן (v83) הקווסט ביקש פריט אחד מכל סוג. לסמוך על מה שכתוב ביומן הקווסטים.",
                 "אם פספסת: Sky-blue Wooden Chair ב-Lith Harbor עושה אותו דבר, תמורת מזו."
               ],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Pio's_Collecting_Recycled_Goods",
                 "https://ms-classic.com/guides/maple-island-to-victoria-island",
-                "https://ms-classic.com/guides/quests-worth-doing"
+                "https://ms-classic.com/guides/quests-worth-doing",
+                "https://maplestory.io/api/GMS/83/quest/1008"
               ],
               "verified": true,
               "time": {
@@ -664,6 +665,7 @@
                 "thicket-around-the-beach-3"
               ],
               "monsters": [
+                "stump",
                 "slime",
                 "pig",
                 "orange-mushroom"
@@ -681,7 +683,7 @@
                 "level": 8
               },
               "notes": [
-                "Stump לא מופיע ברשימת המפלצות כאן כי עוד לא נאספו הנתונים שלו. לפי מדריך Mano, ב-Thicket Around the Beach III יש 10 Stump."
+                "Stump נמצאים ב-Thicket Around the Beach III (10 לפי מדריך Mano)."
               ],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Olaf's_First_Training",
@@ -1753,11 +1755,13 @@
               },
               "notes": [
                 "לשמור Leaf מ-Blackbull ו-Octopus Leg מ-Nella אם נשארו.",
-                "⚠ אין בנתוני המשחק מקור ל-Charm of the Undead. ההנחה היא שהוא נופל מ-Zombie Mushroom."
+                "Charm of the Undead נופל מ-Zombie Mushroom: ככה בבדיקות ההריגה של הוויקי של Classic, וככה גם במשחק הישן. גם Squishy Liquid מ-Slime, Leaf מ-Dark Stump ו-Octopus Leg מ-Octopus תואמים בשניהם."
               ],
               "sources": [
                 "https://ms-classic.com/guides/maya-and-the-weird-medicine-quest-guide",
-                "https://mapleclassic.wiki/wiki/Brown_Bamboo_Hat"
+                "https://mapleclassic.wiki/wiki/Brown_Bamboo_Hat",
+                "https://mapleclassic.wiki/wiki/Zombie_Mushroom",
+                "https://royals-library.netlify.app/"
               ],
               "verified": true,
               "time": {
@@ -1853,11 +1857,13 @@
                 "level": 23
               },
               "notes": [
-                "Stirge עפות, וזה לא נוח ל-Warrior. אפשר לעשות את החלק הזה כשיש בדיוק כמה ב-Transfer Area."
+                "Stirge עפות, וזה לא נוח ל-Warrior. אפשר לעשות את החלק הזה כשיש בדיוק כמה ב-Transfer Area.",
+                "Broken Mirror Glass נופל מ-Stirge (בדיקות ההריגה של הוויקי של Classic). Charm of the Undead מ-Zombie Mushroom."
               ],
               "sources": [
                 "https://ms-classic.com/guides/how-to-get-old-raggedy-cape",
-                "https://mapleclassic.wiki/wiki/Old_Raggedy_Cape"
+                "https://mapleclassic.wiki/wiki/Old_Raggedy_Cape",
+                "https://mapleclassic.wiki/wiki/Broken_Mirror_Glass"
               ],
               "verified": true,
               "time": {
@@ -1925,11 +1931,12 @@
                 "level": 21
               },
               "notes": [
-                "⚠ מגבלת 30 הדקות והשאלות של שלב 1 מגיעות מדיווחי קהילה מגרסאות הבדיקה."
+                "⚠ מגבלת 30 הדקות והשאלות של שלב 1 מגיעות מדיווחי קהילה מגרסאות הבדיקה. מבנה השלבים זהה למשחק הישן (22 Ligator, ואז 3 Curse Eye, 6 Jr. Necki ו-King Slime). מגבלת הזמן לא שמורה בנתוני המפה, אז לא הצלחתי לאמת אותה גם שם."
               ],
               "sources": [
                 "https://ms-classic.com/guides/kpq-walkthrough",
-                "https://ms-classic.com/guides/kerning-city-party-quest-kpq"
+                "https://ms-classic.com/guides/kerning-city-party-quest-kpq",
+                "https://maplestory.io/api/GMS/83/map/103000804"
               ],
               "verified": true,
               "time": {
@@ -2267,12 +2274,13 @@
                 "level": 30
               },
               "notes": [
-                "⚠ אין בנתונים מגבלת זמן, דמי כניסה או כמה Dark Marble נופלים מכל מפלצת."
+                "⚠ ב-Classic אין בנתונים מגבלת זמן, דמי כניסה או כמה Dark Marble נופלים מכל מפלצת. במשחק הישן (v83) המפה הייתה זהה: 15 Fire Boar ו-15 Lupin של מבחן, בלי מגבלת זמן במפה עצמה."
               ],
               "sources": [
                 "https://ms-classic.com/guides/second-job-advancement-quests",
                 "https://mapleclassic.wiki/wiki/Fire_Boar",
-                "https://mapleclassic.wiki/wiki/Lupin"
+                "https://mapleclassic.wiki/wiki/Lupin",
+                "https://maplestory.io/api/GMS/83/map/108000300"
               ],
               "verified": true,
               "time": {
@@ -2393,10 +2401,13 @@
               "requirements": {
                 "level": 30
               },
-              "notes": [],
+              "notes": [
+                "במשחק הישן (לפי שרת שמבוסס על הגרסה הישנה) Gladius נפל רק מ-Drumming Bunny ב-Ludibrium. Ludibrium לא קיים ב-Classic, וזה כנראה ההסבר לכך שאין לו מקור."
+              ],
               "sources": [
                 "https://mapleclassic.wiki/wiki/Gladius",
-                "https://ms-classic.com/guides/equipment-guide-by-level"
+                "https://ms-classic.com/guides/equipment-guide-by-level",
+                "https://royals-library.netlify.app/"
               ],
               "verified": false
             },
@@ -2604,11 +2615,12 @@
                 "max": 660
               },
               "notes": [
-                "⚠ אין בנתוני המשחק טבלאות דרופ. ה-Glass Shoe מ-Fire Boar הוא דיווח קהילה."
+                "Arwen's Glass Shoe נופל מ-Fire Boar: ככה בבדיקות ההריגה של הוויקי של Classic, וככה גם במשחק הישן. שיעור הדרופ לא ידוע."
               ],
               "sources": [
                 "https://mapleclassic.wiki/wiki/The_Burnt_Land_V",
-                "https://ms-classic.com/guides/where-to-train-level-30-50"
+                "https://ms-classic.com/guides/where-to-train-level-30-50",
+                "https://mapleclassic.wiki/wiki/Arwen's_Glass_Shoe"
               ],
               "verified": true
             },
@@ -2644,9 +2656,12 @@
                 "min": 480,
                 "max": 660
               },
-              "notes": [],
+              "notes": [
+                "במשחק הישן (v83) המפה הזו הכילה 70 Jr. Wraith ו-21 Stirge, כמעט זהה למספרים של Classic (69 ו-21)."
+              ],
               "sources": [
-                "https://ms-classic.com/guides/where-to-train-level-30-50"
+                "https://ms-classic.com/guides/where-to-train-level-30-50",
+                "https://maplestory.io/api/GMS/83/map/103000103"
               ],
               "verified": false
             },
@@ -2697,13 +2712,18 @@
                 "max": 240
               },
               "notes": [
-                "⚠ ה-Diamond הוא הבעיה: בלי מימון צריך לקנות אותו בשוק, ואין לי מחיר. דרך אחרת היא הקווסט של Luke ברמה 19, עם סיכוי של 1 ל-8.",
-                "Sleepy Dungeon V מכיל Lupin ו-Curse Eye יחד, אבל יש בו גם Dark Stone Golem ברמה 58. Hunting Ground in the Deep Forest II בטוח יותר."
+                "⚠ ה-Diamond הוא הבעיה. ב-Classic, Diamond מגיע רק מ-Arcforge 6 (מ-Diamond Ore), ו-Diamond Ore מגיע רק מקווסט של Rowen, שנפתח אחרי השרשרת הזו. בלי מימון נשארים: לקנות Diamond בשוק (לא מצאתי מחיר), או הקווסט של Luke ברמה 19 (סיכוי של 1 ל-8).",
+                "Sleepy Dungeon V מכיל Lupin ו-Curse Eye יחד, אבל יש בו גם Dark Stone Golem ברמה 58. Hunting Ground in the Deep Forest II בטוח יותר.",
+                "במשחק הישן Diamond Ore נפל מהרבה מפלצות רגילות (למשל Dark Stump, Fire Boar, Evil Eye). ב-Classic עוד לא דווח על דרופ כזה, אבל שווה לשים לב אם הוא נופל.",
+                "מקורות הדרופ: Lupin's Banana מ-Lupin ו-Curse Eye Tail מ-Curse Eye (במשחק הישן. ב-Classic עוד לא נבדק). Pig's Head מ-Pig (בערך 1 ל-16 בבדיקות של הוויקי של Classic)."
               ],
               "sources": [
                 "https://ms-classic.com/guides/how-to-get-sauna-robe",
                 "https://mapleclassic.wiki/wiki/Returned_Secret_Book",
-                "https://mapleclassic.wiki/wiki/Blue_Sauna_Robe"
+                "https://mapleclassic.wiki/wiki/Blue_Sauna_Robe",
+                "https://mapleclassic.wiki/wiki/Diamond",
+                "https://mapleclassic.wiki/wiki/Pig",
+                "https://royals-library.netlify.app/"
               ],
               "verified": true
             },
